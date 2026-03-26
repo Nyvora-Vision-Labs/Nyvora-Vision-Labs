@@ -54,7 +54,7 @@
         font-family: "DM Sans", sans-serif;
         background: var(--bg);
         color: var(--text-1);
-        font-size: 16px; /* bumped from 15px */
+        font-size: 16px;
         line-height: 1.65;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -123,7 +123,7 @@
       }
 
       .logo-name {
-        font-size: 14px; /* bumped */
+        font-size: 14px;
         font-weight: 600;
         color: var(--text-1);
         letter-spacing: -0.015em;
@@ -135,7 +135,7 @@
       }
 
       nav a {
-        font-size: 13px; /* bumped */
+        font-size: 13px;
         font-weight: 500;
         color: var(--text-2);
         padding: 6px 15px;
@@ -190,7 +190,7 @@
 
       /* ─── Hero ─── */
       .hero {
-        padding: 80px 0 72px; /* tightened from 108/96 */
+        padding: 80px 0 72px;
         position: relative;
         overflow: hidden;
       }
@@ -260,13 +260,13 @@
         );
         border: 1px solid var(--blue-mid);
         color: var(--blue);
-        font-size: 11px; /* bumped */
+        font-size: 11px;
         font-weight: 600;
         letter-spacing: 0.12em;
         text-transform: uppercase;
         padding: 5px 14px 5px 10px;
         border-radius: 100px;
-        margin-bottom: 24px; /* tightened from 30px */
+        margin-bottom: 24px;
         position: relative;
         z-index: 1;
         box-shadow: 0 1px 6px rgba(26, 71, 200, 0.1),
@@ -302,7 +302,7 @@
         line-height: 1.06;
         letter-spacing: -0.028em;
         color: var(--text-1);
-        margin-bottom: 20px; /* tightened from 24px */
+        margin-bottom: 20px;
         position: relative;
         z-index: 1;
         animation: fadeUp 0.55s 0.07s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -329,12 +329,12 @@
       }
 
       .hero p {
-        font-size: 18px; /* bumped from 17px */
-        font-weight: 400; /* bumped from 300 */
+        font-size: 18px;
+        font-weight: 400;
         color: var(--text-2);
         max-width: 490px;
         line-height: 1.7;
-        margin-bottom: 32px; /* tightened from 40px */
+        margin-bottom: 32px;
         position: relative;
         z-index: 1;
         animation: fadeUp 0.55s 0.14s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -353,8 +353,8 @@
         display: inline-flex;
         align-items: center;
         gap: 7px;
-        padding: 12px 24px; /* slightly more generous */
-        font-size: 14px; /* bumped from 13px */
+        padding: 12px 24px;
+        font-size: 14px;
         font-weight: 600;
         border-radius: 9px;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -426,19 +426,19 @@
 
       /* ─── Sections ─── */
       .section {
-        padding: 52px 0; /* tightened from 72px */
+        padding: 52px 0;
       }
 
       .section-eyebrow {
         display: flex;
         align-items: center;
         gap: 14px;
-        font-size: 11px; /* bumped */
-        font-weight: 700; /* bumped from 600 */
+        font-size: 11px;
+        font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.15em;
         color: var(--blue);
-        margin-bottom: 32px; /* tightened from 44px */
+        margin-bottom: 32px;
       }
 
       .section-eyebrow::after {
@@ -460,7 +460,7 @@
         background: var(--surface-raised);
         border: 1px solid var(--border);
         border-radius: 16px;
-        padding: 28px 24px 26px; /* slightly tighter */
+        padding: 28px 24px 26px;
         transition: border-color 0.22s, box-shadow 0.22s,
           transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
@@ -499,12 +499,12 @@
         font-weight: bold;
         color: var(--blue-mid);
         line-height: 1;
-        margin-bottom: 14px; /* tightened */
+        margin-bottom: 14px;
         letter-spacing: -0.02em;
       }
 
       .pillar h3 {
-        font-size: 15px; /* bumped from 13.5px */
+        font-size: 15px;
         font-weight: 600;
         color: var(--text-1);
         margin-bottom: 8px;
@@ -512,8 +512,8 @@
       }
 
       .pillar p {
-        font-size: 14px; /* bumped from 13px */
-        color: var(--text-2); /* darkened from text-3 */
+        font-size: 14px;
+        color: var(--text-2);
         line-height: 1.65;
         font-weight: 400;
       }
@@ -530,7 +530,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 28px;
-        padding: 22px 26px; /* tightened from 24/28 */
+        padding: 22px 26px;
         background: var(--surface-raised);
         border: 1px solid var(--border);
         border-radius: 16px;
@@ -587,7 +587,7 @@
       }
 
       .repo-name {
-        font-size: 15px; /* bumped from 14px */
+        font-size: 15px;
         font-weight: 600;
         color: var(--text-1);
         margin-bottom: 5px;
@@ -595,9 +595,41 @@
       }
 
       .repo-desc {
-        font-size: 14px; /* bumped from 13px */
-        color: var(--text-2); /* darkened from text-3 */
+        font-size: 14px;
+        color: var(--text-2);
         line-height: 1.58;
+      }
+
+      .repo-links {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+
+      .repo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--blue);
+        background: var(--blue-light);
+        border: 1px solid var(--blue-mid);
+        padding: 3px 10px;
+        border-radius: 100px;
+        transition: all 0.16s;
+        letter-spacing: 0.005em;
+      }
+
+      .repo-link:hover {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue);
+      }
+
+      .repo-link svg {
+        flex-shrink: 0;
       }
 
       .repo-meta {
@@ -608,12 +640,12 @@
       }
 
       .tag {
-        font-size: 12px; /* bumped from 11px */
+        font-size: 12px;
         font-weight: 500;
         padding: 4px 12px;
         border-radius: 100px;
         background: var(--bg-warm);
-        color: var(--text-2); /* darkened */
+        color: var(--text-2);
         border: 1px solid var(--border);
         white-space: nowrap;
         letter-spacing: 0.01em;
@@ -638,7 +670,7 @@
 
       /* ─── CTA Banner ─── */
       .cta-wrap {
-        padding: 0 0 64px; /* tightened from 80px */
+        padding: 0 0 64px;
       }
 
       .cta-banner {
@@ -649,7 +681,7 @@
           #1a47c8 100%
         );
         border-radius: 20px;
-        padding: 48px 52px; /* tightened from 58/60 */
+        padding: 48px 52px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -721,7 +753,7 @@
 
       .cta-banner h2 {
         font-family: "Playfair Display", Georgia, serif;
-        font-size: 30px; /* bumped from 28px */
+        font-size: 30px;
         font-weight: 600;
         color: #fff;
         letter-spacing: -0.022em;
@@ -729,9 +761,9 @@
       }
 
       .cta-banner p {
-        font-size: 15px; /* bumped from 14px */
-        color: rgba(255, 255, 255, 0.6); /* slightly more visible */
-        font-weight: 400; /* bumped from 300 */
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 400;
         letter-spacing: 0.01em;
       }
 
@@ -741,7 +773,7 @@
         gap: 8px;
         background: rgba(255, 255, 255, 0.97);
         color: var(--blue-dark);
-        font-size: 14px; /* bumped from 13px */
+        font-size: 14px;
         font-weight: 600;
         padding: 12px 24px;
         border-radius: 10px;
@@ -775,7 +807,7 @@
       }
 
       footer p {
-        font-size: 13px; /* bumped from 12px */
+        font-size: 13px;
         color: var(--text-3);
         letter-spacing: 0.01em;
       }
@@ -786,7 +818,7 @@
       }
 
       footer nav a {
-        font-size: 13px; /* bumped from 12px */
+        font-size: 13px;
         color: var(--text-3);
         transition: color 0.15s;
         letter-spacing: 0.005em;
@@ -921,11 +953,7 @@
         <div class="container">
           <div class="section-eyebrow">Repositories</div>
           <div class="repos">
-            <a
-              href="https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper"
-              target="_blank"
-              class="repo-card"
-            >
+            <div class="repo-card">
               <div>
                 <div class="repo-name">Miscrits Random Arena Helper</div>
                 <div class="repo-desc">
@@ -933,13 +961,54 @@
                   screenshot to get instant Miscrit detection and a ranked pick
                   order.
                 </div>
+                <div class="repo-links">
+                  <a
+                    href="https://nyvora-vision-labs.github.io/Miscrits-Random-Arena-Helper/"
+                    target="_blank"
+                    class="repo-link"
+                  >
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path
+                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                      />
+                    </svg>
+                    Live Demo
+                  </a>
+                  <a
+                    href="https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper"
+                    target="_blank"
+                    class="repo-link"
+                  >
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+                      />
+                    </svg>
+                    GitHub
+                  </a>
+                </div>
               </div>
               <div class="repo-meta">
                 <span class="tag live">Active</span>
                 <span class="tag">HTML · Python</span>
                 <span class="arrow-icon">→</span>
               </div>
-            </a>
+            </div>
             <div class="repo-card muted">
               <div>
                 <div class="repo-name">More repositories coming soon</div>
