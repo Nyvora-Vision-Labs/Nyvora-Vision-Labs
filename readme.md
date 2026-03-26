@@ -1,4 +1,4 @@
-# Nyvora Vision Labs : **Systems that not only see—but remember and understand.**
+# Nyvora Vision Labs : **Smarter models start with better data.**
 
 ---
 
