@@ -1,6 +1,4 @@
-# Nyvora Vision Labs
-
-**Open Source Computer vision Solutions**
+# Nyvora Vision Labs : **Open Source Computer vision Solutions**
 
 ---
 
