@@ -1,4 +1,4 @@
-# Nyvora Vision Labs : **Open Source Computer vision Solutions**
+# Nyvora Vision Labs : **Systems that not only see—but remember and understand.**
 
 ---
 
