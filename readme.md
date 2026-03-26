@@ -38,7 +38,13 @@ Everything here is open source. Use it in your research, your projects, your pro
 
 ## Contact
 
-Questions or ideas? Feel free to let us know. Join our discord at https://discord.gg/GXzFNKpnWr.
+The owner of Nyvora Vision Labs is Gaurab Baral. You can reach him at:
+
+- 🔗 [LinkedIn](https://www.linkedin.com/in/gaurab-baral-991333216/)
+- 🐦 [X / Twitter](https://x.com/gaurabbaral5)
+- 🐙 [GitHub](https://github.com/TempGaurab)
+
+Questions or ideas? Feel free to let us know. Join our Discord at https://discord.gg/GXzFNKpnWr.
 
 ---
 
