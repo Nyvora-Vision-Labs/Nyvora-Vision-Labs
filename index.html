@@ -1,1118 +1,1072 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="Logo/logo-nobg.png" />
-    <title>Nyvora Vision Labs</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
 
-      :root {
-        --bg: #f9f8f5;
-        --bg-warm: #f2f0e8;
-        --surface: #ffffff;
-        --surface-raised: #fdfdfc;
-        --border: #e8e4d9;
-        --border-mid: #ccc8ba;
-        --blue: #1a47c8;
-        --blue-dark: #111f6e;
-        --blue-richer: #0f3bba;
-        --blue-light: #eef3fd;
-        --blue-mid: #b8d0fb;
-        --text-1: #090f22;
-        --text-2: #3a4a60;
-        --text-3: #7a8696;
-        --gold: #c9a84c;
-        --gold-light: #f5ead4;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Logo/logo-nobg.png" />
+  <title>Nyvora Vision Labs</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        --shadow-sm: 0 1px 3px rgba(9, 15, 34, 0.05),
-          0 1px 2px rgba(9, 15, 34, 0.04);
-        --shadow-md: 0 4px 16px rgba(9, 15, 34, 0.07),
-          0 2px 6px rgba(9, 15, 34, 0.04);
-        --shadow-blue: 0 4px 24px rgba(26, 71, 200, 0.18),
-          0 1px 4px rgba(26, 71, 200, 0.12);
-        --shadow-blue-hover: 0 8px 36px rgba(26, 71, 200, 0.26),
-          0 2px 8px rgba(26, 71, 200, 0.14);
-      }
+    :root {
+      --bg: #f9f8f5;
+      --bg-warm: #f2f0e8;
+      --surface: #ffffff;
+      --surface-raised: #fdfdfc;
+      --border: #e8e4d9;
+      --border-mid: #ccc8ba;
+      --blue: #1a47c8;
+      --blue-dark: #111f6e;
+      --blue-richer: #0f3bba;
+      --blue-light: #eef3fd;
+      --blue-mid: #b8d0fb;
+      --text-1: #090f22;
+      --text-2: #3a4a60;
+      --text-3: #7a8696;
+      --gold: #c9a84c;
+      --gold-light: #f5ead4;
 
-      html {
-        scroll-behavior: smooth;
-      }
+      --shadow-sm: 0 1px 3px rgba(9, 15, 34, 0.05),
+        0 1px 2px rgba(9, 15, 34, 0.04);
+      --shadow-md: 0 4px 16px rgba(9, 15, 34, 0.07),
+        0 2px 6px rgba(9, 15, 34, 0.04);
+      --shadow-blue: 0 4px 24px rgba(26, 71, 200, 0.18),
+        0 1px 4px rgba(26, 71, 200, 0.12);
+      --shadow-blue-hover: 0 8px 36px rgba(26, 71, 200, 0.26),
+        0 2px 8px rgba(26, 71, 200, 0.14);
+    }
 
-      body {
-        font-family: "DM Sans", sans-serif;
-        background: var(--bg);
-        color: var(--text-1);
-        font-size: 16px;
-        line-height: 1.65;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      /* Grain overlay */
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        z-index: 1000;
-        pointer-events: none;
-        opacity: 0.028;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-        background-size: 200px 200px;
-      }
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+    /* Grain overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      pointer-events: none;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
 
-      .container {
-        max-width: 940px;
-        margin: 0 auto;
-        padding: 0 44px;
-      }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-      /* ─── Header ─── */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: rgba(249, 248, 245, 0.88);
-        backdrop-filter: blur(20px) saturate(1.4);
-        -webkit-backdrop-filter: blur(20px) saturate(1.4);
-        border-bottom: 1px solid var(--border);
-        padding: 15px 0;
-      }
+    .container {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0 44px;
+    }
 
-      header .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
+    /* ─── Header ─── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(249, 248, 245, 0.88);
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+      padding: 15px 0;
+    }
 
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 11px;
-      }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-      .logo-mark {
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
 
-      .logo-mark img {
-        width: 30px;
-        height: 30px;
-        object-fit: contain;
-      }
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
 
-      .logo-name {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--text-1);
-        letter-spacing: -0.015em;
-      }
+    .logo-mark img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
 
-      nav {
-        display: flex;
-        gap: 2px;
-      }
+    .logo-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-1);
+      letter-spacing: -0.015em;
+    }
 
-      nav a {
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--text-2);
-        padding: 6px 15px;
-        border-radius: 100px;
-        border: 1px solid transparent;
-        transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-        letter-spacing: 0.005em;
-      }
+    nav {
+      display: flex;
+      gap: 2px;
+    }
 
-      nav a:hover {
-        color: var(--blue);
-        background: var(--blue-light);
-        border-color: var(--blue-mid);
-      }
+    nav a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      padding: 6px 15px;
+      border-radius: 100px;
+      border: 1px solid transparent;
+      transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.005em;
+    }
 
+    nav a:hover {
+      color: var(--blue);
+      background: var(--blue-light);
+      border-color: var(--blue-mid);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeUp 0.6s 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .hero-logo img {
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 720px) {
       .hero-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 48px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero-text {
-        flex: 1;
-        min-width: 0;
+        flex-direction: column;
       }
 
       .hero-logo {
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        animation: fadeUp 0.6s 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+        display: none;
       }
+    }
 
-      .hero-logo img {
-        width: 300px;
-        height: 300px;
-        object-fit: contain;
-      }
+    /* ─── Hero ─── */
+    .hero {
+      padding: 80px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
 
-      @media (max-width: 720px) {
-        .hero-inner {
-          flex-direction: column;
-        }
-        .hero-logo {
-          display: none;
-        }
-      }
-
-      /* ─── Hero ─── */
-      .hero {
-        padding: 80px 0 72px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      /* Ambient blobs */
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: -80px;
-        right: -200px;
-        width: 700px;
-        height: 700px;
-        background: radial-gradient(
-          ellipse,
+    /* Ambient blobs */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(ellipse,
           rgba(178, 210, 255, 0.18) 0%,
-          transparent 62%
-        );
-        pointer-events: none;
-      }
+          transparent 62%);
+      pointer-events: none;
+    }
 
-      .hero::after {
-        content: "";
-        position: absolute;
-        bottom: -120px;
-        left: -120px;
-        width: 480px;
-        height: 480px;
-        background: radial-gradient(
-          ellipse,
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -120px;
+      left: -120px;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(ellipse,
           rgba(255, 243, 190, 0.22) 0%,
-          transparent 60%
-        );
-        pointer-events: none;
-      }
+          transparent 60%);
+      pointer-events: none;
+    }
 
-      /* Subtle grid pattern */
-      .hero-grid {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background-image: linear-gradient(
-            rgba(26, 71, 200, 0.03) 1px,
-            transparent 1px
-          ),
-          linear-gradient(90deg, rgba(26, 71, 200, 0.03) 1px, transparent 1px);
-        background-size: 52px 52px;
-        mask-image: radial-gradient(
-          ellipse 70% 80% at 80% 20%,
+    /* Subtle grid pattern */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(26, 71, 200, 0.03) 1px,
+          transparent 1px),
+        linear-gradient(90deg, rgba(26, 71, 200, 0.03) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: radial-gradient(ellipse 70% 80% at 80% 20%,
           black 0%,
-          transparent 70%
-        );
-        -webkit-mask-image: radial-gradient(
-          ellipse 70% 80% at 80% 20%,
+          transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 80% at 80% 20%,
           black 0%,
-          transparent 70%
-        );
-      }
+          transparent 70%);
+    }
 
-      .hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: linear-gradient(
-          135deg,
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg,
           rgba(255, 255, 255, 0.95) 0%,
-          var(--blue-light) 100%
-        );
-        border: 1px solid var(--blue-mid);
-        color: var(--blue);
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 5px 14px 5px 10px;
-        border-radius: 100px;
-        margin-bottom: 24px;
-        position: relative;
-        z-index: 1;
-        box-shadow: 0 1px 6px rgba(26, 71, 200, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-        animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
+          var(--blue-light) 100%);
+      border: 1px solid var(--blue-mid);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px 5px 10px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 1px 6px rgba(26, 71, 200, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
 
-      .badge-dot {
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: var(--blue);
-        animation: blink 2.4s ease-in-out infinite;
+    .badge-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--blue);
+      animation: blink 2.4s ease-in-out infinite;
+      box-shadow: 0 0 0 2px rgba(26, 71, 200, 0.15);
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
         box-shadow: 0 0 0 2px rgba(26, 71, 200, 0.15);
       }
 
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
-          box-shadow: 0 0 0 2px rgba(26, 71, 200, 0.15);
-        }
-        50% {
-          opacity: 0.35;
-          box-shadow: 0 0 0 2px transparent;
-        }
+      50% {
+        opacity: 0.35;
+        box-shadow: 0 0 0 2px transparent;
       }
+    }
 
-      .hero h1 {
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: 62px;
-        font-weight: 600;
-        line-height: 1.06;
-        letter-spacing: -0.028em;
-        color: var(--text-1);
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
-        animation: fadeUp 0.55s 0.07s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
+    .hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 62px;
+      font-weight: 600;
+      line-height: 1.06;
+      letter-spacing: -0.028em;
+      color: var(--text-1);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.55s 0.07s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
 
-      .hero h1 em {
-        font-style: italic;
-        font-weight: 500;
-        color: var(--blue);
-        position: relative;
-      }
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--blue);
+      position: relative;
+    }
 
-      /* Underline accent on italic word */
-      .hero h1 em::after {
-        content: "";
-        position: absolute;
-        bottom: 1px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, var(--blue-mid), transparent);
-        border-radius: 2px;
-        opacity: 0.5;
-      }
+    /* Underline accent on italic word */
+    .hero h1 em::after {
+      content: "";
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue-mid), transparent);
+      border-radius: 2px;
+      opacity: 0.5;
+    }
 
-      .hero p {
-        font-size: 18px;
-        font-weight: 400;
-        color: var(--text-2);
-        max-width: 490px;
-        line-height: 1.7;
-        margin-bottom: 32px;
-        position: relative;
-        z-index: 1;
-        animation: fadeUp 0.55s 0.14s cubic-bezier(0.22, 1, 0.36, 1) both;
-        letter-spacing: 0.002em;
-      }
+    .hero p {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-2);
+      max-width: 490px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.55s 0.14s cubic-bezier(0.22, 1, 0.36, 1) both;
+      letter-spacing: 0.002em;
+    }
 
-      .hero-cta {
-        display: flex;
-        gap: 12px;
-        position: relative;
-        z-index: 1;
-        animation: fadeUp 0.55s 0.21s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.55s 0.21s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
 
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        padding: 12px 24px;
-        font-size: 14px;
-        font-weight: 600;
-        border-radius: 9px;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        letter-spacing: 0.01em;
-        position: relative;
-        overflow: hidden;
-      }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 9px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.01em;
+      position: relative;
+      overflow: hidden;
+    }
 
-      .btn-primary {
-        background: linear-gradient(160deg, #2756e8 0%, #1230a0 100%);
-        color: #fff;
-        box-shadow: var(--shadow-blue), inset 0 1px 0 rgba(255, 255, 255, 0.14);
-      }
+    .btn-primary {
+      background: linear-gradient(160deg, #2756e8 0%, #1230a0 100%);
+      color: #fff;
+      box-shadow: var(--shadow-blue), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    }
 
-      .btn-primary::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          160deg,
+    .btn-primary::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg,
           rgba(255, 255, 255, 0.1) 0%,
-          transparent 50%
-        );
-        pointer-events: none;
+          transparent 50%);
+      pointer-events: none;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(160deg, #2e60f0 0%, #1535b0 100%);
+      box-shadow: var(--shadow-blue-hover);
+      transform: translateY(-1.5px);
+    }
+
+    .btn-ghost {
+      background: var(--surface);
+      color: var(--text-2);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--blue-mid);
+      color: var(--blue);
+      transform: translateY(-1.5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
 
-      .btn-primary:hover {
-        background: linear-gradient(160deg, #2e60f0 0%, #1535b0 100%);
-        box-shadow: var(--shadow-blue-hover);
-        transform: translateY(-1.5px);
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      .btn-ghost {
-        background: var(--surface);
-        color: var(--text-2);
-        border: 1px solid var(--border);
-        box-shadow: var(--shadow-sm);
-      }
-
-      .btn-ghost:hover {
-        border-color: var(--blue-mid);
-        color: var(--blue);
-        transform: translateY(-1.5px);
-        box-shadow: var(--shadow-md);
-      }
-
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* ─── Divider ─── */
-      .rule {
-        height: 1px;
-        background: linear-gradient(
-          to right,
+    /* ─── Divider ─── */
+    .rule {
+      height: 1px;
+      background: linear-gradient(to right,
           transparent,
           var(--border) 12%,
           var(--border) 88%,
-          transparent
-        );
+          transparent);
+    }
+
+    /* ─── Sections ─── */
+    .section {
+      padding: 52px 0;
+    }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--blue);
+      margin-bottom: 32px;
+    }
+
+    .section-eyebrow::after {
+      content: "";
+      height: 1px;
+      width: 52px;
+      background: linear-gradient(to right, var(--blue-mid), transparent);
+      border-radius: 1px;
+    }
+
+    /* ─── Pillars ─── */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .pillar {
+      background: var(--surface-raised);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px 26px;
+      transition: border-color 0.22s, box-shadow 0.22s,
+        transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Inset top highlight */
+    .pillar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 20px;
+      right: 20px;
+      height: 1px;
+      background: linear-gradient(to right,
+          transparent,
+          rgba(255, 255, 255, 0.9),
+          transparent);
+      border-radius: 1px;
+    }
+
+    .pillar:hover {
+      border-color: var(--blue-mid);
+      box-shadow: 0 6px 28px rgba(26, 71, 200, 0.09),
+        0 2px 8px rgba(26, 71, 200, 0.05);
+      transform: translateY(-3px);
+    }
+
+    .pillar-num {
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-size: 34px;
+      font-weight: bold;
+      color: var(--blue-mid);
+      line-height: 1;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .pillar h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-1);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .pillar p {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    /* ─── Repos ─── */
+    .repos {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .repo-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 22px 26px;
+      background: var(--surface-raised);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .repo-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      height: 1px;
+      background: linear-gradient(to right,
+          transparent,
+          rgba(255, 255, 255, 0.9),
+          transparent);
+    }
+
+    .repo-card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 16px;
+      bottom: 16px;
+      width: 3px;
+      border-radius: 0 2px 2px 0;
+      background: linear-gradient(to bottom, var(--blue), var(--blue-dark));
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .repo-card:hover {
+      border-color: var(--blue-mid);
+      box-shadow: 0 6px 28px rgba(26, 71, 200, 0.09),
+        0 2px 8px rgba(26, 71, 200, 0.05);
+      transform: translateX(4px);
+    }
+
+    .repo-card:hover::after {
+      opacity: 1;
+    }
+
+    .repo-card.muted {
+      opacity: 0.38;
+      pointer-events: none;
+      background: var(--bg-warm);
+      box-shadow: none;
+    }
+
+    .repo-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-1);
+      margin-bottom: 5px;
+      letter-spacing: -0.012em;
+    }
+
+    .repo-desc {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.58;
+    }
+
+    .repo-links {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .repo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--blue);
+      background: var(--blue-light);
+      border: 1px solid var(--blue-mid);
+      padding: 3px 10px;
+      border-radius: 100px;
+      transition: all 0.16s;
+      letter-spacing: 0.005em;
+    }
+
+    .repo-link:hover {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+
+    .repo-link svg {
+      flex-shrink: 0;
+    }
+
+    .repo-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: var(--bg-warm);
+      color: var(--text-2);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+
+    .tag.live {
+      background: #f0fdf5;
+      color: #148038;
+      border-color: #a7f0c4;
+    }
+
+    .arrow-icon {
+      font-size: 16px;
+      color: var(--text-3);
+      transition: color 0.18s, transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .repo-card:hover .arrow-icon {
+      color: var(--blue);
+      transform: translateX(4px);
+    }
+
+    /* ─── CTA Banner ─── */
+    .cta-wrap {
+      padding: 0 0 64px;
+    }
+
+    .cta-banner {
+      background: linear-gradient(128deg,
+          #080f28 0%,
+          #132070 48%,
+          #1a47c8 100%);
+      border-radius: 20px;
+      padding: 48px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(8, 15, 40, 0.3),
+        0 4px 16px rgba(26, 71, 200, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Decorative rings */
+    .cta-banner::before {
+      content: "";
+      position: absolute;
+      right: -110px;
+      top: -110px;
+      width: 460px;
+      height: 460px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+    }
+
+    .cta-banner::after {
+      content: "";
+      position: absolute;
+      right: -56px;
+      top: -56px;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+    }
+
+    /* Inner glow */
+    .cta-glow {
+      position: absolute;
+      top: -60px;
+      right: 80px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle,
+          rgba(100, 149, 255, 0.18) 0%,
+          transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Top inset highlight */
+    .cta-highlight {
+      position: absolute;
+      top: 0;
+      left: 60px;
+      right: 60px;
+      height: 1px;
+      background: linear-gradient(to right,
+          transparent,
+          rgba(255, 255, 255, 0.15),
+          transparent);
+    }
+
+    .cta-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-banner h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.022em;
+      margin-bottom: 6px;
+    }
+
+    .cta-banner p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-inverse {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.97);
+      color: var(--blue-dark);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22), 0 1px 4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.01em;
+    }
+
+    .btn-inverse:hover {
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28),
+        0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--text-3);
+      letter-spacing: 0.01em;
+    }
+
+    footer nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    footer nav a {
+      font-size: 13px;
+      color: var(--text-3);
+      transition: color 0.15s;
+      letter-spacing: 0.005em;
+    }
+
+    footer nav a:hover {
+      color: var(--blue);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 720px) {
+      .hero h1 {
+        font-size: 38px;
       }
 
-      /* ─── Sections ─── */
-      .section {
-        padding: 52px 0;
-      }
-
-      .section-eyebrow {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: var(--blue);
-        margin-bottom: 32px;
-      }
-
-      .section-eyebrow::after {
-        content: "";
-        height: 1px;
-        width: 52px;
-        background: linear-gradient(to right, var(--blue-mid), transparent);
-        border-radius: 1px;
-      }
-
-      /* ─── Pillars ─── */
       .pillars {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-      }
-
-      .pillar {
-        background: var(--surface-raised);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 28px 24px 26px;
-        transition: border-color 0.22s, box-shadow 0.22s,
-          transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        box-shadow: var(--shadow-sm);
-      }
-
-      /* Inset top highlight */
-      .pillar::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 20px;
-        right: 20px;
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(255, 255, 255, 0.9),
-          transparent
-        );
-        border-radius: 1px;
-      }
-
-      .pillar:hover {
-        border-color: var(--blue-mid);
-        box-shadow: 0 6px 28px rgba(26, 71, 200, 0.09),
-          0 2px 8px rgba(26, 71, 200, 0.05);
-        transform: translateY(-3px);
-      }
-
-      .pillar-num {
-        font-family: "Playfair Display", Georgia, serif;
-        font-style: italic;
-        font-size: 34px;
-        font-weight: bold;
-        color: var(--blue-mid);
-        line-height: 1;
-        margin-bottom: 14px;
-        letter-spacing: -0.02em;
-      }
-
-      .pillar h3 {
-        font-size: 15px;
-        font-weight: 600;
-        color: var(--text-1);
-        margin-bottom: 8px;
-        letter-spacing: -0.01em;
-      }
-
-      .pillar p {
-        font-size: 14px;
-        color: var(--text-2);
-        line-height: 1.65;
-        font-weight: 400;
-      }
-
-      /* ─── Repos ─── */
-      .repos {
-        display: flex;
-        flex-direction: column;
-        gap: 9px;
-      }
-
-      .repo-card {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 28px;
-        padding: 22px 26px;
-        background: var(--surface-raised);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        box-shadow: var(--shadow-sm);
-      }
-
-      .repo-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 24px;
-        right: 24px;
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(255, 255, 255, 0.9),
-          transparent
-        );
-      }
-
-      .repo-card::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 16px;
-        bottom: 16px;
-        width: 3px;
-        border-radius: 0 2px 2px 0;
-        background: linear-gradient(to bottom, var(--blue), var(--blue-dark));
-        opacity: 0;
-        transition: opacity 0.2s;
-      }
-
-      .repo-card:hover {
-        border-color: var(--blue-mid);
-        box-shadow: 0 6px 28px rgba(26, 71, 200, 0.09),
-          0 2px 8px rgba(26, 71, 200, 0.05);
-        transform: translateX(4px);
-      }
-
-      .repo-card:hover::after {
-        opacity: 1;
-      }
-
-      .repo-card.muted {
-        opacity: 0.38;
-        pointer-events: none;
-        background: var(--bg-warm);
-        box-shadow: none;
-      }
-
-      .repo-name {
-        font-size: 15px;
-        font-weight: 600;
-        color: var(--text-1);
-        margin-bottom: 5px;
-        letter-spacing: -0.012em;
-      }
-
-      .repo-desc {
-        font-size: 14px;
-        color: var(--text-2);
-        line-height: 1.58;
-      }
-
-      .repo-links {
-        display: flex;
-        gap: 8px;
-        margin-top: 10px;
-        flex-wrap: wrap;
-      }
-
-      .repo-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 12px;
-        font-weight: 500;
-        color: var(--blue);
-        background: var(--blue-light);
-        border: 1px solid var(--blue-mid);
-        padding: 3px 10px;
-        border-radius: 100px;
-        transition: all 0.16s;
-        letter-spacing: 0.005em;
-      }
-
-      .repo-link:hover {
-        background: var(--blue);
-        color: #fff;
-        border-color: var(--blue);
-      }
-
-      .repo-link svg {
-        flex-shrink: 0;
-      }
-
-      .repo-meta {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex-shrink: 0;
-      }
-
-      .tag {
-        font-size: 12px;
-        font-weight: 500;
-        padding: 4px 12px;
-        border-radius: 100px;
-        background: var(--bg-warm);
-        color: var(--text-2);
-        border: 1px solid var(--border);
-        white-space: nowrap;
-        letter-spacing: 0.01em;
-      }
-
-      .tag.live {
-        background: #f0fdf5;
-        color: #148038;
-        border-color: #a7f0c4;
-      }
-
-      .arrow-icon {
-        font-size: 16px;
-        color: var(--text-3);
-        transition: color 0.18s, transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .repo-card:hover .arrow-icon {
-        color: var(--blue);
-        transform: translateX(4px);
-      }
-
-      /* ─── CTA Banner ─── */
-      .cta-wrap {
-        padding: 0 0 64px;
+        grid-template-columns: 1fr;
       }
 
       .cta-banner {
-        background: linear-gradient(
-          128deg,
-          #080f28 0%,
-          #132070 48%,
-          #1a47c8 100%
-        );
-        border-radius: 20px;
-        padding: 48px 52px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 36px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 24px 64px rgba(8, 15, 40, 0.3),
-          0 4px 16px rgba(26, 71, 200, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.06);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 36px 28px;
       }
 
-      /* Decorative rings */
-      .cta-banner::before {
-        content: "";
-        position: absolute;
-        right: -110px;
-        top: -110px;
-        width: 460px;
-        height: 460px;
-        border: 1px solid rgba(255, 255, 255, 0.04);
-        border-radius: 50%;
+      .repo-card {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .cta-banner::after {
-        content: "";
-        position: absolute;
-        right: -56px;
-        top: -56px;
-        width: 260px;
-        height: 260px;
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        border-radius: 50%;
+      header nav {
+        display: none;
       }
+    }
+  </style>
+</head>
 
-      /* Inner glow */
-      .cta-glow {
-        position: absolute;
-        top: -60px;
-        right: 80px;
-        width: 320px;
-        height: 320px;
-        background: radial-gradient(
-          circle,
-          rgba(100, 149, 255, 0.18) 0%,
-          transparent 60%
-        );
-        pointer-events: none;
-      }
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <div class="logo-mark">
+          <img src="Logo/logo-nobg.png" alt="Nyvora Vision Labs logo" />
+        </div>
+        <span class="logo-name">Nyvora Vision Labs</span>
+      </div>
+      <nav>
+        <a href="https://github.com/Nyvora-Vision-Labs" target="_blank">GitHub</a>
+        <a href="https://discord.gg/GXzFNKpnWr" target="_blank">Discord</a>
+      </nav>
+    </div>
+  </header>
 
-      /* Top inset highlight */
-      .cta-highlight {
-        position: absolute;
-        top: 0;
-        left: 60px;
-        right: 60px;
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(255, 255, 255, 0.15),
-          transparent
-        );
-      }
-
-      .cta-text {
-        position: relative;
-        z-index: 1;
-      }
-
-      .cta-banner h2 {
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: 30px;
-        font-weight: 600;
-        color: #fff;
-        letter-spacing: -0.022em;
-        margin-bottom: 6px;
-      }
-
-      .cta-banner p {
-        font-size: 15px;
-        color: rgba(255, 255, 255, 0.6);
-        font-weight: 400;
-        letter-spacing: 0.01em;
-      }
-
-      .btn-inverse {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(255, 255, 255, 0.97);
-        color: var(--blue-dark);
-        font-size: 14px;
-        font-weight: 600;
-        padding: 12px 24px;
-        border-radius: 10px;
-        white-space: nowrap;
-        flex-shrink: 0;
-        position: relative;
-        z-index: 1;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22), 0 1px 4px rgba(0, 0, 0, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        letter-spacing: 0.01em;
-      }
-
-      .btn-inverse:hover {
-        background: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28),
-          0 2px 8px rgba(0, 0, 0, 0.12);
-      }
-
-      /* ─── Footer ─── */
-      footer {
-        border-top: 1px solid var(--border);
-        padding: 24px 0;
-      }
-
-      footer .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      footer p {
-        font-size: 13px;
-        color: var(--text-3);
-        letter-spacing: 0.01em;
-      }
-
-      footer nav {
-        display: flex;
-        gap: 20px;
-      }
-
-      footer nav a {
-        font-size: 13px;
-        color: var(--text-3);
-        transition: color 0.15s;
-        letter-spacing: 0.005em;
-      }
-
-      footer nav a:hover {
-        color: var(--blue);
-      }
-
-      /* ─── Responsive ─── */
-      @media (max-width: 720px) {
-        .hero h1 {
-          font-size: 38px;
-        }
-        .pillars {
-          grid-template-columns: 1fr;
-        }
-        .cta-banner {
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 36px 28px;
-        }
-        .repo-card {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        header nav {
-          display: none;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
+  <main>
+    <section class="hero">
+      <div class="hero-grid"></div>
       <div class="container">
-        <div class="logo">
-          <div class="logo-mark">
-            <img src="Logo/logo-nobg.png" alt="Nyvora Vision Labs logo" />
-          </div>
-          <span class="logo-name">Nyvora Vision Labs</span>
-        </div>
-        <nav>
-          <a href="https://github.com/Nyvora-Vision-Labs" target="_blank"
-            >GitHub</a
-          >
-          <a href="https://discord.gg/GXzFNKpnWr" target="_blank">Discord</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-grid"></div>
-        <div class="container">
-          <div class="hero-inner">
-            <div class="hero-text">
-              <div class="hero-badge">
-                <span class="badge-dot"></span>
-                Open Source
-              </div>
-              <h1>Computer Vision<br /><em>Tooling</em> for Everyone</h1>
-              <p>
-                Free, composable tools for computer vision : Detection
-                Pipelines, Annotation Utilities, and Dataset Schemas. No
-                paywalls. No gatekeeping.
-              </p>
-              <div class="hero-cta">
-                <a
-                  href="https://github.com/Nyvora-Vision-Labs"
-                  target="_blank"
-                  class="btn btn-primary"
-                  >View on GitHub →</a
-                >
-                <a
-                  href="https://discord.gg/GXzFNKpnWr"
-                  target="_blank"
-                  class="btn btn-ghost"
-                  >Join Discord</a
-                >
-              </div>
+        <div class="hero-inner">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              Open Source
             </div>
-            <div class="hero-logo">
-              <img
-                src="Logo/logo_with_text_part_2.png"
-                alt="Nyvora Vision Labs"
-              />
+            <h1>Computer Vision<br /><em>Tooling</em> for Everyone</h1>
+            <p>
+              Free, composable tools for computer vision : Detection
+              Pipelines, Annotation Utilities, and Dataset Schemas. No
+              paywalls. No gatekeeping.
+            </p>
+            <div class="hero-cta">
+              <a href="https://github.com/Nyvora-Vision-Labs" target="_blank" class="btn btn-primary">View on GitHub
+                →</a>
+              <a href="https://discord.gg/GXzFNKpnWr" target="_blank" class="btn btn-ghost">Join Discord</a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <div class="rule"></div>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-eyebrow">What we build</div>
-          <div class="pillars">
-            <div class="pillar">
-              <div class="pillar-num">01</div>
-              <h3>Computer Vision</h3>
-              <p>
-                Detection, classification, segmentation, and real-time inference
-                pipelines that work out of the box.
-              </p>
-            </div>
-            <div class="pillar">
-              <div class="pillar-num">02</div>
-              <h3>Data Collection</h3>
-              <p>
-                Tools and scripts for sourcing and capturing high-quality visual
-                data at scale.
-              </p>
-            </div>
-            <div class="pillar">
-              <div class="pillar-num">03</div>
-              <h3>Data Annotation</h3>
-              <p>
-                Open utilities for labeling, reviewing, and exporting training
-                datasets in any format.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="rule"></div>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-eyebrow">Repositories</div>
-          <div class="repos">
-            <div class="repo-card">
-              <div>
-                <div class="repo-name">Miscrits Random Arena Helper</div>
-                <div class="repo-desc">
-                  Browser-based draft analyzer for Miscrits. Upload a lobby
-                  screenshot to get instant Miscrit detection and a ranked pick
-                  order.
-                </div>
-                <div class="repo-links">
-                  <a
-                    href="https://nyvora-vision-labs.github.io/Miscrits-Random-Arena-Helper/"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      />
-                    </svg>
-                    Live Demo
-                  </a>
-                  <a
-                    href="https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                      />
-                    </svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag live">Active</span>
-                <span class="tag">HTML · Python</span>
-                <span class="arrow-icon">→</span>
-              </div>
-            </div>
-
-            <div class="repo-card">
-              <div>
-                <div class="repo-name">Guess the Miscrit?!</div>
-                <div class="repo-desc">
-                  A nostalgic, interactive web game where players test their
-                  knowledge by guessing Miscrits based on their silhouettes.
-                  Features multiple game modes and social sharing scorecards.
-                </div>
-                <div class="repo-links">
-                  <a
-                    href="https://nyvora-vision-labs.github.io/Guess_the_Miscrit/"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      />
-                    </svg>
-                    Live Demo
-                  </a>
-                  <a
-                    href="https://github.com/Nyvora-Vision-Labs/Guess_the_Miscrit"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                      />
-                    </svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag live">Active</span>
-                <span class="tag">HTML · JS · Python</span>
-                <span class="arrow-icon">→</span>
-              </div>
-            </div>
-
-            <div class="repo-card muted">
-              <div>
-                <div class="repo-name">More repositories coming soon</div>
-                <div class="repo-desc">
-                  Watch the org for upcoming releases.
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag">In development</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="rule"></div>
-
-      <div class="cta-wrap">
-        <div class="container">
-          <div class="cta-banner">
-            <div class="cta-highlight"></div>
-            <div class="cta-glow"></div>
-            <div class="cta-text">
-              <h2>Join the community</h2>
-              <p>Questions, ideas, or contributions — we're in Discord.</p>
-            </div>
-            <a
-              href="https://discord.gg/GXzFNKpnWr"
-              target="_blank"
-              class="btn-inverse"
-              >Join Discord →</a
-            >
+          <div class="hero-logo">
+            <img src="Logo/logo_with_text_part_2.png" alt="Nyvora Vision Labs" />
           </div>
         </div>
       </div>
-    </main>
+    </section>
 
-    <footer>
+    <div class="rule"></div>
+
+    <section class="section">
       <div class="container">
-        <p>
-          © 2026 Nyvora Vision Labs — Smarter models start with better data.
-        </p>
-        <nav>
-          <a href="https://github.com/Nyvora-Vision-Labs" target="_blank"
-            >GitHub</a
-          >
-          <a href="https://discord.gg/GXzFNKpnWr" target="_blank">Discord</a>
-        </nav>
+        <div class="section-eyebrow">What we build</div>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar-num">01</div>
+            <h3>Computer Vision</h3>
+            <p>
+              Detection, classification, segmentation, and real-time inference
+              pipelines that work out of the box.
+            </p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">02</div>
+            <h3>Data Collection</h3>
+            <p>
+              Tools and scripts for sourcing and capturing high-quality visual
+              data at scale.
+            </p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">03</div>
+            <h3>Data Annotation</h3>
+            <p>
+              Open utilities for labeling, reviewing, and exporting training
+              datasets in any format.
+            </p>
+          </div>
+        </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-eyebrow">Repositories</div>
+        <div class="repos">
+          <div class="repo-card">
+            <div>
+              <div class="repo-name">Miscrits Random Arena Helper</div>
+              <div class="repo-desc">
+                Browser-based draft analyzer for Miscrits. Upload a lobby
+                screenshot to get instant Miscrit detection and a ranked pick
+                order.
+              </div>
+              <div class="repo-links">
+                <a href="https://nyvora-vision-labs.github.io/Miscrits-Random-Arena-Helper/" target="_blank"
+                  class="repo-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path
+                      d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                  Live Demo
+                </a>
+                <a href="https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper" target="_blank"
+                  class="repo-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+            <div class="repo-meta">
+              <span class="tag live">Active</span>
+              <span class="tag">HTML · Python</span>
+              <span class="arrow-icon">→</span>
+            </div>
+          </div>
+
+          <div class="repo-card">
+            <div>
+              <div class="repo-name">Guess the Miscrit?!</div>
+              <div class="repo-desc">
+                A nostalgic, interactive web game where players test their
+                knowledge by guessing Miscrits based on their silhouettes.
+                Features multiple game modes and social sharing scorecards.
+              </div>
+              <div class="repo-links">
+                <a href="https://nyvora-vision-labs.github.io/Guess_the_Miscrit/" target="_blank" class="repo-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path
+                      d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                  Live Demo
+                </a>
+                <a href="https://github.com/Nyvora-Vision-Labs/Guess_the_Miscrit" target="_blank" class="repo-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+            <div class="repo-meta">
+              <span class="tag live">Active</span>
+              <span class="tag">HTML · JS · Python</span>
+              <span class="arrow-icon">→</span>
+            </div>
+          </div>
+
+
+          <div class="repo-card">
+            <div>
+              <div class="repo-name">GitSphere</div>
+              <div class="repo-desc">
+                An immersive 3D architecture visualizer and AI-powered repository analyzer.
+                Transforms complex codebases into interactive knowledge graphs using DeepSeek AI
+                to explain structural patterns and dependencies.
+              </div>
+              <div class="repo-links">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="repo-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 2.9 2.9 0 0 0-.46-5.33z" />
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                  </svg>
+                  Watch Demo
+                </a>
+                <a href="https://github.com/Nyvora-Vision-Labs/GitSphere" target="_blank" class="repo-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+            <div class="repo-meta">
+              <span class="tag live">Prototype</span>
+              <span class="tag">Python · Three.js</span>
+              <span class="arrow-icon">→</span>
+            </div>
+          </div>
+
+          <div class="repo-card muted">
+            <div>
+              <div class="repo-name">More repositories coming soon</div>
+              <div class="repo-desc">
+                Watch the org for upcoming releases.
+              </div>
+            </div>
+            <div class="repo-meta">
+              <span class="tag">In development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <div class="cta-wrap">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-highlight"></div>
+          <div class="cta-glow"></div>
+          <div class="cta-text">
+            <h2>Join the community</h2>
+            <p>Questions, ideas, or contributions — we're in Discord.</p>
+          </div>
+          <a href="https://discord.gg/GXzFNKpnWr" target="_blank" class="btn-inverse">Join Discord →</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 Nyvora Vision Labs — Smarter models start with better data.
+      </p>
+      <nav>
+        <a href="https://github.com/Nyvora-Vision-Labs" target="_blank">GitHub</a>
+        <a href="https://discord.gg/GXzFNKpnWr" target="_blank">Discord</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+
 </html>
