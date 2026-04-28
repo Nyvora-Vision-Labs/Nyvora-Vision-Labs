@@ -24,11 +24,12 @@ Everything here is open source. Use it in your research, your projects, your pro
 
 ## Repositories
 
-| Repo        | Description |
-| ----------- | ----------- |
-| Coming soon |             |
-| Coming soon |             |
-| Coming soon |             |
+| Repo | Description | Links | Status & Tech |
+| ---- | ----------- | ----- | ------------- |
+| **[AI Chip Rack Counter](https://github.com/Nyvora-Vision-Labs)** | High-precision, computer-vision-based chip inventory system. Segment and classify bags using CLIP with Global NMS to avoid double-counting. | [Live Demo](https://huggingface.co/spaces/Gauurab/chips-counter) | Active (Python, Flask, CLIP) |
+| **[Guess the Miscrit?!](https://github.com/Nyvora-Vision-Labs/Guess_the_Miscrit)** | A nostalgic, interactive web game where players test their knowledge by guessing Miscrits based on their silhouettes. | [Live Demo](https://nyvora-vision-labs.github.io/Guess_the_Miscrit/) | Active (HTML, JS, Python) |
+| **[GitSphere](https://github.com/Nyvora-Vision-Labs/GitSphere)** | An immersive 3D architecture visualizer and AI-powered repository analyzer using DeepSeek AI. | [Watch Demo](https://www.youtube.com/watch?v=52FlQTq3I2Y) | Prototype (Python, Three.js) |
+| **[Miscrits Random Arena Helper](https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper)** | Browser-based draft analyzer for Miscrits. Upload a lobby screenshot to get instant Miscrit detection and a ranked pick order. | [Live Demo](https://nyvora-vision-labs.github.io/Miscrits-Random-Arena-Helper/) | Active (HTML, Python) |
 
 ---
 
