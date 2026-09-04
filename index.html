@@ -295,9 +295,9 @@
 
       .hero h1 {
         font-family: "Playfair Display", Georgia, serif;
-        font-size: 62px;
+        font-size: 58px;
         font-weight: 600;
-        line-height: 1.06;
+        line-height: 1.08;
         letter-spacing: -0.028em;
         color: var(--text-1);
         margin-bottom: 20px;
@@ -449,7 +449,7 @@
       /* ─── Pillars ─── */
       .pillars {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 12px;
       }
 
@@ -582,6 +582,15 @@
         box-shadow: none;
       }
 
+      .repo-card.featured {
+        border-color: var(--blue-mid);
+        background: linear-gradient(
+          160deg,
+          var(--surface-raised) 0%,
+          var(--blue-light) 140%
+        );
+      }
+
       .repo-name {
         font-size: 15px;
         font-weight: 600;
@@ -651,6 +660,12 @@
         background: #f0fdf5;
         color: #148038;
         border-color: #a7f0c4;
+      }
+
+      .tag.ongoing {
+        background: var(--blue-light);
+        color: var(--blue);
+        border-color: var(--blue-mid);
       }
 
       .arrow-icon {
@@ -879,7 +894,7 @@
       /* ─── Responsive ─── */
       @media (max-width: 720px) {
         .hero h1 {
-          font-size: 38px;
+          font-size: 36px;
         }
         .pillars {
           grid-template-columns: 1fr;
@@ -928,11 +943,11 @@
                 <span class="badge-dot"></span>
                 Open Source
               </div>
-              <h1>Computer Vision<br /><em>Tooling</em> for Everyone</h1>
+              <h1>Vision &amp; Language<br /><em>Tooling</em> for Everyone</h1>
               <p>
-                Free, composable tools for computer vision: Detection Pipelines,
-                Annotation Utilities, and Dataset Schemas. No paywalls. No
-                gatekeeping.
+                Free, composable tools for machine learning: Detection
+                Pipelines, Annotation Utilities, NLP Datasets, and Dataset
+                Schemas. No paywalls. No gatekeeping.
               </p>
               <div class="hero-cta">
                 <a
@@ -969,24 +984,32 @@
               <div class="pillar-num">01</div>
               <h3>Computer Vision</h3>
               <p>
-                Detection, classification, segmentation, and real-time inference
-                pipelines that work out of the box.
+                Detection, classification, segmentation, and real-time
+                inference pipelines that work out of the box.
               </p>
             </div>
             <div class="pillar">
               <div class="pillar-num">02</div>
-              <h3>Data Collection</h3>
+              <h3>Language &amp; NLP</h3>
               <p>
-                Tools and scripts for sourcing and capturing high-quality visual
-                data at scale.
+                Annotated text datasets, annotation apps, and evaluation
+                diagnostics for models that read and judge language.
               </p>
             </div>
             <div class="pillar">
               <div class="pillar-num">03</div>
+              <h3>Data Collection</h3>
+              <p>
+                Tools and scripts for sourcing and capturing high-quality
+                visual and textual data at scale.
+              </p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-num">04</div>
               <h3>Data Annotation</h3>
               <p>
-                Open utilities for labeling, reviewing, and exporting training
-                datasets in any format.
+                Open utilities for labeling, reviewing, and exporting
+                training datasets in any format.
               </p>
             </div>
           </div>
@@ -999,7 +1022,106 @@
         <div class="container">
           <div class="section-eyebrow">Repositories</div>
           <div class="repos">
-            <!-- ── 1. AI Chip Rack Counter ── -->
+            <!-- ── 1. NEPSEE (ongoing) ── -->
+            <div class="repo-card featured">
+              <div>
+                <div class="repo-name">NEPSEE</div>
+                <div class="repo-desc">
+                  A Nepali-language sentiment, emotion, and explanation
+                  dataset. Tweets from 20 public figures are scraped,
+                  filtered, split into sentences, and independently labeled
+                  by three annotators through a purpose-built annotation app.
+                  Sentiment labeling is underway; emotion and explanation
+                  layers are next.
+                </div>
+                <div class="repo-links">
+                  <a
+                    href="https://nepsee-a-nepali-sentiment-emotion-and.onrender.com/brief"
+                    target="_blank"
+                    class="repo-link"
+                  >
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path
+                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                      />
+                    </svg>
+                    Annotator Brief
+                  </a>
+                  <a
+                    href="https://github.com/Nyvora-Vision-Labs/NEPSEE-A-Nepali-Sentiment-Emotion-and-Explanation-Dataset"
+                    target="_blank"
+                    class="repo-link"
+                  >
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+                      />
+                    </svg>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+              <div class="repo-meta">
+                <span class="tag ongoing">Ongoing</span>
+                <span class="tag">Python · Flask · NLP</span>
+                <span class="arrow-icon">→</span>
+              </div>
+            </div>
+
+            <!-- ── 2. LexFlip ── -->
+            <div class="repo-card">
+              <div>
+                <div class="repo-name">LexFlip</div>
+                <div class="repo-desc">
+                  A dissociation diagnostic for legal meaning preservation
+                  metrics. Pulls lexical overlap and legal meaning apart to
+                  test whether embedding-based and LLM-judge metrics actually
+                  track meaning, not just shared words — validated on the
+                  FrJUDGE corpus.
+                </div>
+                <div class="repo-links">
+                  <a
+                    href="https://github.com/Nyvora-Vision-Labs/LexFlip"
+                    target="_blank"
+                    class="repo-link"
+                  >
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+                      />
+                    </svg>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+              <div class="repo-meta">
+                <span class="tag">Research</span>
+                <span class="tag">Python · LaTeX · NLP</span>
+                <span class="arrow-icon">→</span>
+              </div>
+            </div>
+
+            <!-- ── 3. AI Chip Rack Counter ── -->
             <div class="repo-card">
               <div>
                 <div class="repo-name">AI Chip Rack Counter</div>
@@ -1058,7 +1180,7 @@
               </div>
             </div>
 
-            <!-- ── 2. Guess the Miscrit ── -->
+            <!-- ── 4. Guess the Miscrit ── -->
             <div class="repo-card">
               <div>
                 <div class="repo-name">Guess the Miscrit?!</div>
@@ -1116,7 +1238,7 @@
               </div>
             </div>
 
-            <!-- ── 3. GitSphere ── -->
+            <!-- ── 5. GitSphere ── -->
             <div class="repo-card">
               <div>
                 <div class="repo-name">GitSphere</div>
@@ -1180,7 +1302,7 @@
 
           <!-- ── Hidden repos ── -->
           <div class="repos-hidden" id="repos-hidden">
-            <!-- ── 4. Miscrits Random Arena Helper ── -->
+            <!-- ── 6. Miscrits Random Arena Helper ── -->
             <div class="repo-card">
               <div>
                 <div class="repo-name">Miscrits Random Arena Helper</div>
@@ -1238,7 +1360,7 @@
               </div>
             </div>
 
-            <!-- ── 5. Miscrits Games (WordleMiscrits) ── -->
+            <!-- ── 7. Miscrits Games (WordleMiscrits) ── -->
             <div class="repo-card">
               <div>
                 <div class="repo-name">Miscrits Games</div>
