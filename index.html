@@ -1,1632 +1,1034 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="Logo/logo-nobg.png" />
-    <title>Nyvora Vision Labs</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nyvora Vision Labs</title>
+<meta name="description" content="Nyvora Vision Labs builds free, open-source tools for machine learning across vision and language.">
+<link rel="icon" href="Logo/logo-nobg.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;family=Noto+Sans+Devanagari:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F6F3}
+a{color:#0E1530;text-decoration:none}a:hover{color:#1A4FA0}
+.snip svg{display:block;width:100%;height:100%}
+.mono{font-family:"Geist Mono",ui-monospace,monospace}
+/* chip counter */
+.scan{animation:scan 4s linear infinite}
+@keyframes scan{0%{transform:translateY(0);opacity:1}85%{transform:translateY(192px);opacity:1}100%{transform:translateY(192px);opacity:0}}
+.bxA{animation:bxA 4s linear infinite}.bxB{animation:bxB 4s linear infinite}.bxC{animation:bxC 4s linear infinite}
+@keyframes bxA{0%,25%{opacity:0}27%,95%{opacity:1}100%{opacity:0}}
+@keyframes bxB{0%,54%{opacity:0}56%,95%{opacity:1}100%{opacity:0}}
+@keyframes bxC{0%,83%{opacity:0}85%,95%{opacity:1}100%{opacity:0}}
+/* guess the miscrit */
+.reveal{animation:reveal 6s ease-in-out infinite}
+@keyframes reveal{0%,62%{opacity:0}68%,93%{opacity:1}100%{opacity:0}}
+.qmark{transform-box:fill-box;transform-origin:50% 100%;animation:qmark 6s ease-in-out infinite}
+@keyframes qmark{0%{opacity:1;transform:translateY(0)}10%{transform:translateY(-6px)}20%{transform:translateY(0)}30%{transform:translateY(-6px)}40%{transform:translateY(0)}58%{opacity:1}64%,100%{opacity:0}}
+.p1{animation:p1 6s linear infinite}.p2{animation:p2 6s linear infinite}.p3{animation:p3 6s linear infinite}
+@keyframes p1{0%,18%{fill:#1B2650}20%,94%{fill:#6B2F3C}100%{fill:#1B2650}}
+@keyframes p2{0%,36%{fill:#1B2650}38%,94%{fill:#6B2F3C}100%{fill:#1B2650}}
+@keyframes p3{0%,58%{fill:#1B2650}60%,94%{fill:#3E9A5A}100%{fill:#1B2650}}
+.i1{opacity:0;animation:i1 6s linear infinite}.i2{opacity:0;animation:i2 6s linear infinite}.i3{opacity:0;animation:i3 6s linear infinite}
+@keyframes i1{0%,18%{opacity:0}20%,94%{opacity:1}100%{opacity:0}}
+@keyframes i2{0%,36%{opacity:0}38%,94%{opacity:1}100%{opacity:0}}
+@keyframes i3{0%,58%{opacity:0}60%,94%{opacity:1}100%{opacity:0}}
+.spark{transform-box:fill-box;transform-origin:50% 50%;transform:scale(0);animation:spark 6s ease-out infinite}
+@keyframes spark{0%,62%{transform:scale(0) rotate(0)}70%{transform:scale(1.2) rotate(45deg)}80%{transform:scale(0.8) rotate(90deg)}90%{transform:scale(1) rotate(120deg)}100%{transform:scale(0) rotate(160deg)}}
+/* arena helper */
+.upscan{animation:upscan 6s linear infinite}
+@keyframes upscan{0%{transform:translateY(0);opacity:1}20%{transform:translateY(190px);opacity:1}21%,100%{transform:translateY(190px);opacity:0}}
+.det{opacity:0;animation:det 6s linear infinite}
+@keyframes det{0%{opacity:0}2%,72%{opacity:1}80%,100%{opacity:0}}
+.rank{transform-box:fill-box;transform-origin:0 50%;transform:scaleX(0);animation:rank 6s ease-out infinite}
+@keyframes rank{0%{transform:scaleX(0)}10%,40%{transform:scaleX(1)}48%,100%{transform:scaleX(0)}}
+.rfade{opacity:0;animation:rfade 6s linear infinite}
+@keyframes rfade{0%{opacity:0}4%,40%{opacity:1}48%,100%{opacity:0}}
+/* miscrits games */
+.tile{transform-box:fill-box;transform-origin:50% 50%;animation:flip 6s ease-in-out infinite}
+@keyframes flip{0%{transform:scaleY(1)}3%{transform:scaleY(0)}6%,100%{transform:scaleY(1)}}
+.tile rect{animation:tfill 6s linear infinite}
+@keyframes tfill{0%,3%{fill:#1B2650}3.1%,88%{fill:var(--c)}100%{fill:#1B2650}}
+.cursor{animation:blink 1s steps(2) infinite}
+@keyframes blink{0%{opacity:1}100%{opacity:0}}
+.f1,.f2,.f3{transform-box:fill-box;transform-origin:0 50%}
+.f1{animation:f1 6s ease-in-out infinite}.f2{animation:f2 6s ease-in-out infinite}.f3{animation:f3 6s ease-in-out infinite}
+@keyframes f1{0%,10%{transform:scaleX(0)}20%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+@keyframes f2{0%,35%{transform:scaleX(0)}45%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+@keyframes f3{0%,60%{transform:scaleX(0)}70%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+/* stillroom */
+.ripple{transform-box:fill-box;transform-origin:50% 50%;animation:ripple 3s ease-out infinite}
+@keyframes ripple{0%{transform:scale(0.5);opacity:0.9}100%{transform:scale(2);opacity:0}}
+.drop{animation:drop 1s linear infinite}
+@keyframes drop{0%{transform:translateY(-3px);opacity:0}30%{opacity:1}100%{transform:translateY(5px);opacity:0}}
+.flicker{transform-box:fill-box;transform-origin:50% 100%;animation:flicker 0.8s ease-in-out infinite alternate}
+@keyframes flicker{0%{transform:scale(1,1)}100%{transform:scale(0.92,1.1)}}
+/* facetoreadme */
+.cover{transform-box:fill-box;transform-origin:100% 50%;animation:cover 6s ease-in-out infinite}
+@keyframes cover{0%,8%{transform:scaleX(1)}45%,90%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.aline{animation:aline 6s ease-in-out infinite}
+@keyframes aline{0%,8%{transform:translateX(0);opacity:1}45%{transform:translateX(150px);opacity:1}46%,100%{transform:translateX(150px);opacity:0}}
+.copied{opacity:0;animation:copied 6s linear infinite}
+@keyframes copied{0%,60%{opacity:0}63%,90%{opacity:1}93%,100%{opacity:0}}
+.knob{animation:knob 6s ease-in-out infinite}
+@keyframes knob{0%,8%{transform:translateX(0)}30%,100%{transform:translateX(34px)}}
+@media (prefers-reduced-motion: reduce){.snip *{animation:none !important}.spark{transform:none}.rank{transform:none}.det,.i1,.i2,.i3,.rfade{opacity:1}}
+/* nepsee */
+.ns1{animation:ns1 8s linear infinite}.ns2{opacity:0;animation:ns2 8s linear infinite}
+@keyframes ns1{0%,46%{opacity:1}50%,96%{opacity:0}100%{opacity:1}}
+@keyframes ns2{0%,46%{opacity:0}50%,96%{opacity:1}100%{opacity:0}}
+.nv1,.nv2,.nv3,.nv4,.nv5,.nv6,.na1,.na2{opacity:0}
+.nv1{animation:nv1 8s linear infinite}.nv2{animation:nv2 8s linear infinite}.nv3{animation:nv3 8s linear infinite}
+.nv4{animation:nv4 8s linear infinite}.nv5{animation:nv5 8s linear infinite}.nv6{animation:nv6 8s linear infinite}
+.na1{animation:na1 8s linear infinite}.na2{animation:na2 8s linear infinite}
+@keyframes nv1{0%,10%{opacity:0}12%,46%{opacity:1}48%,100%{opacity:0}}
+@keyframes nv2{0%,18%{opacity:0}20%,46%{opacity:1}48%,100%{opacity:0}}
+@keyframes nv3{0%,26%{opacity:0}28%,46%{opacity:1}48%,100%{opacity:0}}
+@keyframes nv4{0%,60%{opacity:0}62%,96%{opacity:1}98%,100%{opacity:0}}
+@keyframes nv5{0%,68%{opacity:0}70%,96%{opacity:1}98%,100%{opacity:0}}
+@keyframes nv6{0%,76%{opacity:0}78%,96%{opacity:1}98%,100%{opacity:0}}
+@keyframes na1{0%,31%{opacity:0}33%,46%{opacity:1}48%,100%{opacity:0}}
+@keyframes na2{0%,81%{opacity:0}83%,96%{opacity:1}98%,100%{opacity:0}}
+/* lexflip */
+.lxA{animation:lxA 8s linear infinite}.lxB{opacity:0;animation:lxB 8s linear infinite}
+@keyframes lxA{0%,46%{opacity:1}50%,96%{opacity:0}100%{opacity:1}}
+@keyframes lxB{0%,46%{opacity:0}50%,96%{opacity:1}100%{opacity:0}}
+.lxNot{animation:lxNot 8s linear infinite}
+@keyframes lxNot{0%,6%{fill:#FFFFFF}10%,46%{fill:#F08A90}50%,100%{fill:#FFFFFF}}
+.lxbar{transform-box:fill-box;transform-origin:0 50%;animation:lxbar 4s ease-out infinite}
+@keyframes lxbar{0%,4%{transform:scaleX(0)}30%,100%{transform:scaleX(1)}}
+@media (prefers-reduced-motion: reduce){.ns2,.lxB,.na2,.nv4,.nv5,.nv6{opacity:0 !important}.nv1,.nv2,.nv3,.na1{opacity:1}.lxbar{transform:none}}
+</style>
+</head>
+<body>
+<div style="--accent: #1A4FA0; min-height: 100vh; background: #F6F6F3; color: #0E1530; font-family: Geist, system-ui, sans-serif; font-size: 16px; line-height: 1.55">
+
+<svg aria-hidden="true" width="0" height="0" style="position: absolute">
+<defs>
+<linearGradient id="bagShade" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#000000" stop-opacity="0.35"></stop>
+<stop offset="0.22" stop-color="#000000" stop-opacity="0"></stop>
+<stop offset="0.38" stop-color="#FFFFFF" stop-opacity="0.32"></stop>
+<stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"></stop>
+<stop offset="0.8" stop-color="#000000" stop-opacity="0.05"></stop>
+<stop offset="1" stop-color="#000000" stop-opacity="0.4"></stop>
+</linearGradient>
+<pattern id="peg" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="#1D2A57"></circle></pattern>
+<symbol id="cbag" viewBox="0 0 40 52">
+<path d="M2 7 Q-0.6 26 2 45 L38 45 Q40.6 26 38 7 Z" fill="currentColor"></path>
+<path d="M1 2 L3 0 L5 2 L7 0 L9 2 L11 0 L13 2 L15 0 L17 2 L19 0 L21 2 L23 0 L25 2 L27 0 L29 2 L31 0 L33 2 L35 0 L37 2 L39 0 L39 7.5 L1 7.5 Z" fill="currentColor"></path>
+<path d="M1 44.5 L39 44.5 L39 50 L37 52 L35 50 L33 52 L31 50 L29 52 L27 50 L25 52 L23 50 L21 52 L19 50 L17 52 L15 50 L13 52 L11 50 L9 52 L7 50 L5 52 L3 50 L1 52 Z" fill="currentColor"></path>
+<path d="M2 7 Q-0.6 26 2 45 L38 45 Q40.6 26 38 7 Z" fill="url(#bagShade)"></path>
+<g stroke="#000000" stroke-opacity="0.28" stroke-width="0.8"><path d="M4 1.5v6M8 1.5v6M12 1.5v6M16 1.5v6M20 1.5v6M24 1.5v6M28 1.5v6M32 1.5v6M36 1.5v6M4 45v5.5M8 45v5.5M12 45v5.5M16 45v5.5M20 45v5.5M24 45v5.5M28 45v5.5M32 45v5.5M36 45v5.5"></path></g>
+<path d="M1 7.5 H39 M1 44.5 H39" stroke="#000000" stroke-opacity="0.35" stroke-width="0.8"></path>
+<path d="M2 32 Q12 28 20 33 T38 31 L38 38 Q28 35 20 39 T2 37 Z" fill="#FFFFFF" fill-opacity="0.22"></path>
+<ellipse cx="20" cy="21" rx="12.5" ry="8.5" fill="#FFFFFF" fill-opacity="0.94"></ellipse>
+<ellipse cx="20" cy="21" rx="12.5" ry="8.5" fill="none" stroke="currentColor" stroke-width="1.2"></ellipse>
+<g transform="rotate(-18 20 22)">
+<ellipse cx="20" cy="22.5" rx="7" ry="4.6" fill="#E9B23E"></ellipse>
+<ellipse cx="19" cy="21.6" rx="5" ry="2.8" fill="#F6D27A"></ellipse>
+<circle cx="17" cy="22.4" r="0.6" fill="#B07A1E"></circle><circle cx="21" cy="21.4" r="0.6" fill="#B07A1E"></circle><circle cx="23" cy="23.6" r="0.6" fill="#B07A1E"></circle><circle cx="19" cy="24.4" r="0.5" fill="#B07A1E"></circle>
+</g>
+<text x="20" y="42" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="5.6" font-weight="600" text-anchor="middle" letter-spacing="0.4">CRISPS</text>
+<path d="M6 10 Q5 26 6 42" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.4" fill="none" stroke-linecap="round"></path>
+</symbol>
+<symbol id="cbox" viewBox="0 0 46 58">
+<rect x="1" y="1" width="44" height="56" rx="2" fill="#3BB3E8" fill-opacity="0.08" stroke="#3BB3E8" stroke-width="1.4"></rect>
+<path d="M1 9V1h8M37 1h8v8M45 49v8h-8M9 57H1v-8" fill="none" stroke="#FFFFFF" stroke-width="2"></path>
+<rect x="1" y="1" width="20" height="8" fill="#3BB3E8"></rect>
+<text x="3" y="7" fill="#0B1430" font-family="Geist Mono, monospace" font-size="5.6" font-weight="500">bag</text>
+</symbol>
+<symbol id="mini" viewBox="0 0 40 40">
+<path d="M8 16 L5 2 L17 11 Z" fill="currentColor"></path><path d="M32 16 L35 2 L23 11 Z" fill="currentColor"></path>
+<path d="M8.5 13 L7 6 L13 11 Z" fill="#FFFFFF" fill-opacity="0.45"></path><path d="M31.5 13 L33 6 L27 11 Z" fill="#FFFFFF" fill-opacity="0.45"></path>
+<circle cx="20" cy="23" r="15" fill="currentColor"></circle>
+<ellipse cx="20" cy="30" rx="8" ry="6" fill="#FFFFFF" fill-opacity="0.4"></ellipse>
+<path d="M8 30 A15 15 0 0 0 32 30 A17 17 0 0 1 8 30 Z" fill="#000000" fill-opacity="0.2"></path>
+<ellipse cx="14.5" cy="21" rx="3.2" ry="3.8" fill="#FFFFFF"></ellipse><ellipse cx="25.5" cy="21" rx="3.2" ry="3.8" fill="#FFFFFF"></ellipse>
+<circle cx="15" cy="21.8" r="1.9" fill="#111111"></circle><circle cx="25" cy="21.8" r="1.9" fill="#111111"></circle>
+<circle cx="15.8" cy="20.6" r="0.7" fill="#FFFFFF"></circle><circle cx="25.8" cy="20.6" r="0.7" fill="#FFFFFF"></circle>
+<path d="M17.5 27 Q20 29 22.5 27" stroke="#111111" stroke-width="1" fill="none" stroke-linecap="round"></path>
+</symbol>
+<symbol id="mini2" viewBox="0 0 40 40">
+<path d="M20 9 C18 4 20 1 24 0 C24 4 23 7 20 9 Z" fill="#7BC67E"></path><path d="M20 9 C17 5 13 5 11 7 C14 9 17 10 20 9 Z" fill="#5BAA6A"></path>
+<path d="M5 26 C5 14 12 8 20 8 C28 8 35 14 35 26 C35 34 28 38 20 38 C12 38 5 34 5 26 Z" fill="currentColor"></path>
+<path d="M5 26 C5 34 12 38 20 38 C28 38 35 34 35 26 C33 33 27 35.5 20 35.5 C13 35.5 7 33 5 26 Z" fill="#000000" fill-opacity="0.2"></path>
+<ellipse cx="13" cy="15" rx="4" ry="2.5" fill="#FFFFFF" fill-opacity="0.35" transform="rotate(-25 13 15)"></ellipse>
+<ellipse cx="14" cy="23" rx="3.6" ry="4.2" fill="#FFFFFF"></ellipse><ellipse cx="26" cy="23" rx="3.6" ry="4.2" fill="#FFFFFF"></ellipse>
+<circle cx="14.6" cy="24" r="2.1" fill="#111111"></circle><circle cx="25.4" cy="24" r="2.1" fill="#111111"></circle>
+<circle cx="15.4" cy="22.8" r="0.8" fill="#FFFFFF"></circle><circle cx="26.2" cy="22.8" r="0.8" fill="#FFFFFF"></circle>
+<ellipse cx="9.5" cy="28.5" rx="2.4" ry="1.4" fill="#F2707A" fill-opacity="0.6"></ellipse><ellipse cx="30.5" cy="28.5" rx="2.4" ry="1.4" fill="#F2707A" fill-opacity="0.6"></ellipse>
+<path d="M18 30 L20 31.6 L22 30" stroke="#111111" stroke-width="1" fill="none" stroke-linecap="round"></path>
+</symbol>
+<symbol id="dbox" viewBox="0 0 64 84">
+<path d="M1 12V1h11M52 1h11v11M63 72v11H52M12 83H1V72" fill="none" stroke="#3BB3E8" stroke-width="2.2"></path>
+<rect x="1" y="1" width="64" height="84" fill="#3BB3E8" fill-opacity="0.07"></rect>
+</symbol>
+<radialGradient id="furGrad" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#F8AE57"></stop><stop offset="0.6" stop-color="#E8822E"></stop><stop offset="1" stop-color="#B9561B"></stop></radialGradient>
+<linearGradient id="tailGrad" x1="0" y1="1" x2="0.4" y2="0"><stop offset="0" stop-color="#D9481C"></stop><stop offset="0.55" stop-color="#F28C28"></stop><stop offset="1" stop-color="#FFD66B"></stop></linearGradient>
+<linearGradient id="cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FD8F5" stop-opacity="0.28"></stop><stop offset="1" stop-color="#9FD8F5" stop-opacity="0"></stop></linearGradient>
+<g id="critTail"><path d="M240 160 C282 166 306 132 291 96 C289 112 281 118 273 114 C285 96 279 72 258 62 C265 84 257 98 246 106 C262 120 256 146 240 160 Z"></path></g>
+<g id="critMain">
+<path d="M166 88 L148 28 L196 70 Z"></path><path d="M234 88 L252 28 L204 70 Z"></path>
+<ellipse cx="200" cy="148" rx="50" ry="38"></ellipse>
+<ellipse cx="175" cy="183" rx="16" ry="8"></ellipse><ellipse cx="225" cy="183" rx="16" ry="8"></ellipse>
+<ellipse cx="200" cy="98" rx="47" ry="40"></ellipse>
+</g>
+<path id="star" d="M0 -7 L1.8 -1.8 L7 0 L1.8 1.8 L0 7 L-1.8 1.8 L-7 0 L-1.8 -1.8 Z"></path>
+</defs>
+</svg>
+
+<header style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 17px; letter-spacing: -0.01em">
+<img src="Logo/logo-nobg.png" alt="" style="width: 36px; height: 36px">
+Nyvora Vision Labs
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 15px">
+<a href="#projects" style="padding: 10px 14px; border-radius: 8px">Projects</a>
+<a href="#community" style="padding: 10px 14px; border-radius: 8px">Community</a>
+<a href="https://github.com/Nyvora-Vision-Labs" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 8px; background: #0E1530; color: #FFFFFF; font-weight: 500">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.2 11.39.6.1.83-.26.83-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"></path></svg>
+GitHub
+</a>
+</nav>
+</header>
+
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 88px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<div class="mono" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5068">Open-source ML lab · vision &amp; language</div>
+<h1 style="margin: 0; font-size: clamp(40px, 6vw, 72px); line-height: 1.02; font-weight: 600; letter-spacing: -0.035em; max-width: 14ch">Smarter models start with better data.</h1>
+<p style="margin: 0; font-size: 19px; color: #3C4260; max-width: 52ch">Free tools for machine learning, across vision and language: detection pipelines, annotation apps, NLP datasets and dataset schemas. Use them, fork them, and send a PR when something is missing.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
+<a href="#projects" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500">See the projects
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"></path></svg>
+</a>
+<a href="https://discord.gg/GXzFNKpnWr" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 10px; border: 1px solid #CFCFC7; background: #FFFFFF; font-weight: 500">Join the Discord</a>
+</div>
+</div>
+<div style="flex: 1 1 260px; display: flex; justify-content: center">
+<img src="Logo/logo-nobg.png" alt="Nyvora Vision Labs logo: a lens inside a viewfinder" style="width: 100%; max-width: 320px; height: auto">
+</div>
+</section>
+
+<section id="projects" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 96px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; border-top: 1px solid #DEDED7; padding-top: 28px">
+<h2 style="margin: 0; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">Projects</h2>
+<span class="mono" style="font-size: 13px; color: #4A5068">09 repositories · all open source</span>
+</div>
+
+<!-- 01 featured: AI Chip Rack Counter -->
+<article style="display: flex; flex-wrap: wrap; gap: 0; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="flex: 999 1 560px; min-width: 0; aspect-ratio: 16 / 10; background: #0B1430">
+<svg role="img" aria-label="Animation: a scan line sweeps a store rack of chip bags, boxing each bag while the count climbs to 18" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<path d="M10 30V10h20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<rect x="32" y="38" width="336" height="196" fill="#101B3F"></rect>
+<rect x="32" y="38" width="336" height="196" fill="url(#peg)"></rect>
+<rect x="24" y="34" width="8" height="204" rx="2" fill="#24315E"></rect><rect x="368" y="34" width="8" height="204" rx="2" fill="#24315E"></rect>
+<path d="M28 40V234M372 40V234" stroke="#0B1430" stroke-width="2" stroke-dasharray="3 6"></path>
+<g>
+<use href="#cbag" x="48" y="44" width="40" height="52" style="color: #E07B39"></use>
+<use href="#cbag" x="100" y="44" width="40" height="52" style="color: #D8B032"></use>
+<use href="#cbag" x="152" y="44" width="40" height="52" style="color: #C23B3B" transform="rotate(-3 172 70)"></use>
+<use href="#cbag" x="204" y="44" width="40" height="52" style="color: #2F7FC1"></use>
+<use href="#cbag" x="256" y="44" width="40" height="52" style="color: #3E9A5A" transform="rotate(2 276 70)"></use>
+<use href="#cbag" x="308" y="44" width="40" height="52" style="color: #7B4FB8"></use>
+<use href="#cbag" x="48" y="110" width="40" height="52" style="color: #3E9A5A"></use>
+<use href="#cbag" x="100" y="110" width="40" height="52" style="color: #C23B3B"></use>
+<use href="#cbag" x="152" y="110" width="40" height="52" style="color: #D8B032" transform="rotate(3 172 136)"></use>
+<use href="#cbag" x="204" y="110" width="40" height="52" style="color: #E07B39"></use>
+<use href="#cbag" x="256" y="110" width="40" height="52" style="color: #7B4FB8"></use>
+<use href="#cbag" x="308" y="110" width="40" height="52" style="color: #2F7FC1" transform="rotate(-2 328 136)"></use>
+<use href="#cbag" x="48" y="176" width="40" height="52" style="color: #D8B032" transform="rotate(-2 68 202)"></use>
+<use href="#cbag" x="100" y="176" width="40" height="52" style="color: #2F7FC1"></use>
+<use href="#cbag" x="152" y="176" width="40" height="52" style="color: #E07B39"></use>
+<use href="#cbag" x="204" y="176" width="40" height="52" style="color: #C23B3B"></use>
+<use href="#cbag" x="256" y="176" width="40" height="52" style="color: #D8B032" transform="rotate(3 276 202)"></use>
+<use href="#cbag" x="308" y="176" width="40" height="52" style="color: #3E9A5A"></use>
+</g>
+<g>
+<rect x="30" y="96" width="340" height="8" fill="#2E3D70"></rect><rect x="30" y="96" width="340" height="1.5" fill="#5466A3"></rect>
+<rect x="30" y="162" width="340" height="8" fill="#2E3D70"></rect><rect x="30" y="162" width="340" height="1.5" fill="#5466A3"></rect>
+<rect x="30" y="228" width="340" height="8" fill="#2E3D70"></rect><rect x="30" y="228" width="340" height="1.5" fill="#5466A3"></rect>
+</g>
+<g font-family="Geist Mono, monospace" font-size="4.6" fill="#3A2E0A">
+<rect x="58" y="97.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="61" y="101.8">2.49</text>
+<rect x="162" y="97.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="165" y="101.8">3.19</text>
+<rect x="266" y="97.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="269" y="101.8">2.99</text>
+<rect x="110" y="163.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="113" y="167.8">1.99</text>
+<rect x="214" y="163.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="217" y="167.8">2.49</text>
+<rect x="318" y="163.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="321" y="167.8">3.49</text>
+<rect x="58" y="229.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="61" y="233.8">2.79</text>
+<rect x="162" y="229.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="165" y="233.8">2.49</text>
+<rect x="266" y="229.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="269" y="233.8">1.99</text>
+</g>
+<g class="bxA"><use href="#cbox" x="45" y="41" width="46" height="58"></use><use href="#cbox" x="97" y="41" width="46" height="58"></use><use href="#cbox" x="149" y="41" width="46" height="58"></use><use href="#cbox" x="201" y="41" width="46" height="58"></use><use href="#cbox" x="253" y="41" width="46" height="58"></use><use href="#cbox" x="305" y="41" width="46" height="58"></use></g>
+<g class="bxB"><use href="#cbox" x="45" y="107" width="46" height="58"></use><use href="#cbox" x="97" y="107" width="46" height="58"></use><use href="#cbox" x="149" y="107" width="46" height="58"></use><use href="#cbox" x="201" y="107" width="46" height="58"></use><use href="#cbox" x="253" y="107" width="46" height="58"></use><use href="#cbox" x="305" y="107" width="46" height="58"></use></g>
+<g class="bxC"><use href="#cbox" x="45" y="173" width="46" height="58"></use><use href="#cbox" x="97" y="173" width="46" height="58"></use><use href="#cbox" x="149" y="173" width="46" height="58"></use><use href="#cbox" x="201" y="173" width="46" height="58"></use><use href="#cbox" x="253" y="173" width="46" height="58"></use><use href="#cbox" x="305" y="173" width="46" height="58"></use></g>
+<g class="scan"><rect x="30" y="16" width="340" height="24" fill="#3BB3E8" fill-opacity="0.12"></rect><rect x="30" y="39" width="340" height="2" fill="#3BB3E8"></rect><circle cx="30" cy="40" r="3" fill="#FFFFFF"></circle><circle cx="370" cy="40" r="3" fill="#FFFFFF"></circle></g>
+<rect x="250" y="6" width="118" height="24" rx="6" fill="#0E1A3D" stroke="#3BB3E8" stroke-opacity="0.7"></rect>
+<circle cx="261" cy="18" r="3" fill="#E5484D"></circle>
+<text x="269" y="21.5" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="9.5">BAGS COUNTED</text>
+<text x="360" y="22" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="13" font-weight="500" text-anchor="end" data-bind-text="chipCount"></text>
+<text x="34" y="27" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="9">CLIP · GLOBAL NMS</text>
+</svg>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px; justify-content: center">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="mono" style="font-size: 13px; color: #4A5068">01 · Featured</span>
+<span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
+</div>
+<h3 style="margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15">AI Chip Rack Counter</h3>
+<p style="margin: 0; color: #3C4260">Counts chip bags on a rack from one photo. It segments each bag, classifies it with CLIP, and runs global NMS so no bag is counted twice.</p>
+<div class="mono" style="font-size: 13px; color: #4A5068">Python · Flask · CLIP</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 4px">
+<a href="https://huggingface.co/spaces/Gauurab/chips-counter" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500; font-size: 15px">Live demo</a>
+<a href="https://github.com/Nyvora-Vision-Labs/Chips-Counter" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #CFCFC7; font-weight: 500; font-size: 15px">GitHub</a>
+</div>
+</div>
+</article>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 28px">
+
+<!-- 02 Stillroom -->
+<article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
+<svg role="img" aria-label="Animation: an ambient sound mixer with a live waveform and six channels (rain, singing bowl, waves, fire, birds, wind) whose level meters move with the sound" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<text x="38" y="24" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">STILLROOM · FOCUS MIX</text>
+<circle cx="300" cy="21" r="6" fill="#3BB3E8"></circle><path d="M298 18 v6 M302 18 v6" stroke="#0B1430" stroke-width="1.6"></path>
+<text x="376" y="24" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="8" text-anchor="end">45:00</text>
+<rect x="24" y="32" width="352" height="46" rx="6" fill="#111C3F"></rect>
+<line x1="28" y1="55" x2="372" y2="55" stroke="#22305E"></line>
+<path d="M0 0" data-bind-d="sr.wave2" stroke="#8A6FD1" stroke-opacity="0.7" stroke-width="1.2" fill="none"></path>
+<path d="M0 0" data-bind-d="sr.wave" stroke="#3BB3E8" stroke-width="1.6" fill="none"></path>
+<g>
+<circle cx="52" cy="94" r="5" fill="#C9D2EA"></circle><circle cx="59" cy="90" r="7" fill="#C9D2EA"></circle><circle cx="65.5" cy="95" r="4.5" fill="#C9D2EA"></circle><rect x="47" y="94" width="23" height="5.5" rx="2.75" fill="#C9D2EA"></rect>
+<g stroke="#3BB3E8" stroke-width="1.5" stroke-linecap="round"><path class="drop" d="M52 104 l-1.5 4"></path><path class="drop" d="M59 104 l-1.5 4" style="animation-delay: 0.35s"></path><path class="drop" d="M66 104 l-1.5 4" style="animation-delay: 0.7s"></path></g>
+</g>
+<g>
+<ellipse class="ripple" cx="115" cy="95" rx="13" ry="4" fill="none" stroke="#F2D27A" stroke-width="1"></ellipse>
+<ellipse class="ripple" cx="115" cy="95" rx="13" ry="4" fill="none" stroke="#F2D27A" stroke-width="1" style="animation-delay: 1.5s"></ellipse>
+<path d="M103 95 h24 a12 10 0 0 1 -24 0 z" fill="#D8B032"></path>
+<path d="M106 99 a10 7 0 0 0 6 5" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1.4" fill="none" stroke-linecap="round"></path>
+<ellipse cx="115" cy="95" rx="12" ry="2.6" fill="#F2D27A"></ellipse>
+<path d="M124 84 l8 -6" stroke="#B9781F" stroke-width="2.4" stroke-linecap="round"></path>
+</g>
+<g stroke="#3BB3E8" stroke-width="2" fill="none" stroke-linecap="round"><path d="M160 92 q4 -4 8 0 t8 0 t8 0"></path><path d="M160 99 q4 -4 8 0 t8 0 t8 0" stroke-opacity="0.7"></path><path d="M160 106 q4 -4 8 0 t8 0 t8 0" stroke-opacity="0.4"></path></g>
+<g class="flicker"><path d="M229 84 c7 6 9 11 7 16 a7 7 0 0 1 -14 0 c-1 -4 2 -7 3 -10 c1 3 2 4 3 4 c0 -4 -1 -7 1 -10 z" fill="#E8822E"></path><path d="M229 95 c3 3 4 6 1 9 a3 3 0 0 1 -4 -1 c0 -3 2 -5 3 -8 z" fill="#FFD66B"></path></g>
+<path d="M219 108 h20" stroke="#8A5A2E" stroke-width="2.4" stroke-linecap="round"></path>
+<g stroke="#C9D2EA" stroke-width="1.6" fill="none" stroke-linecap="round"><path d="M275 93 q4 -4 7 0 q3 -4 7 0"></path><path d="M285 102 q3 -3 5 0 q2 -3 5 0"></path><path d="M290 88 q2 -2 4 0 q2 -2 4 0" stroke-opacity="0.6"></path></g>
+<g stroke="#9FB3D9" stroke-width="1.6" fill="none" stroke-linecap="round"><path d="M332 92 h14 a3 3 0 1 0 -3 -3"></path><path d="M332 98 h19 a3 3 0 1 1 -3 3"></path><path d="M332 104 h9"></path></g>
+<g fill="#1B2650">
+<rect x="50" y="116" width="3" height="84" rx="1.5"></rect><rect x="107" y="116" width="3" height="84" rx="1.5"></rect><rect x="164" y="116" width="3" height="84" rx="1.5"></rect><rect x="221" y="116" width="3" height="84" rx="1.5"></rect><rect x="278" y="116" width="3" height="84" rx="1.5"></rect><rect x="335" y="116" width="3" height="84" rx="1.5"></rect>
+<rect x="62" y="116" width="6" height="84" rx="1"></rect><rect x="119" y="116" width="6" height="84" rx="1"></rect><rect x="176" y="116" width="6" height="84" rx="1"></rect><rect x="233" y="116" width="6" height="84" rx="1"></rect><rect x="290" y="116" width="6" height="84" rx="1"></rect><rect x="347" y="116" width="6" height="84" rx="1"></rect>
+</g>
+<g fill="#3BB3E8">
+<rect x="50" y="132.8" width="3" height="67.2" rx="1.5"></rect><rect x="107" y="149.6" width="3" height="50.4" rx="1.5"></rect><rect x="164" y="162.2" width="3" height="37.8" rx="1.5"></rect><rect x="221" y="174.8" width="3" height="25.2" rx="1.5"></rect><rect x="278" y="153.8" width="3" height="46.2" rx="1.5"></rect><rect x="335" y="170.6" width="3" height="29.4" rx="1.5"></rect>
+</g>
+<g fill="#5CC27A">
+<rect x="62" y="0" data-bind-y="sr.y0" width="6" height="0" data-bind-height="sr.h0" rx="1"></rect><rect x="119" y="0" data-bind-y="sr.y1" width="6" height="0" data-bind-height="sr.h1" rx="1"></rect><rect x="176" y="0" data-bind-y="sr.y2" width="6" height="0" data-bind-height="sr.h2" rx="1"></rect><rect x="233" y="0" data-bind-y="sr.y3" width="6" height="0" data-bind-height="sr.h3" rx="1"></rect><rect x="290" y="0" data-bind-y="sr.y4" width="6" height="0" data-bind-height="sr.h4" rx="1"></rect><rect x="347" y="0" data-bind-y="sr.y5" width="6" height="0" data-bind-height="sr.h5" rx="1"></rect>
+</g>
+<g fill="#FFFFFF">
+<rect x="44.5" y="129.8" width="14" height="6" rx="3"></rect><rect x="101.5" y="146.6" width="14" height="6" rx="3"></rect><rect x="158.5" y="159.2" width="14" height="6" rx="3"></rect><rect x="215.5" y="171.8" width="14" height="6" rx="3"></rect><rect x="272.5" y="150.8" width="14" height="6" rx="3"></rect><rect x="329.5" y="167.6" width="14" height="6" rx="3"></rect>
+</g>
+<g font-family="Geist Mono, monospace" font-size="7" fill="#C9D2EA" text-anchor="middle">
+<text x="58" y="214">RAIN</text><text x="115" y="214">BOWL</text><text x="172" y="214">WAVES</text><text x="229" y="214">FIRE</text><text x="286" y="214">BIRDS</text><text x="343" y="214">WIND</text>
+</g>
+<text x="24" y="238" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7.5">173 SYNTHESIZED · 28 FIELD RECORDINGS</text>
+</svg>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="mono" style="font-size: 13px; color: #4A5068">02 · New</span>
+<span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
+</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Stillroom</h3>
+<p style="margin: 0; color: #3C4260">An ambient sound mixer for sleep, focus and meditation. It has 173 sounds synthesized live in the browser and 28 freely licensed field recordings, including Tibetan singing bowls.</p>
+<div class="mono" style="font-size: 13px; color: #4A5068; margin-top: auto; padding-top: 4px">HTML · Web Audio</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://stillroom-sounds.vercel.app" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500; font-size: 15px">Listen</a>
+<a href="https://github.com/Nyvora-Vision-Labs/Stillroom" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #CFCFC7; font-weight: 500; font-size: 15px">GitHub</a>
+</div>
+</div>
+</article>
+
+<!-- 03 FaceToREADME -->
+<article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
+<svg id="ftr" role="img" aria-label="Animation: a selfie gets a face-detection box, then is converted into an ASCII portrait at increasing detail and copied as Markdown" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<defs>
+<clipPath id="ftrClip"><rect x="0" y="0" width="136" height="170" rx="8"></rect></clipPath>
+<linearGradient id="ftrBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9EEF8"></stop><stop offset="1" stop-color="#C9D6EE"></stop></linearGradient>
+<radialGradient id="ftrSkin" cx="0.42" cy="0.36" r="0.75"><stop offset="0" stop-color="#F3C49E"></stop><stop offset="1" stop-color="#C98A60"></stop></radialGradient>
+</defs>
+<path d="M10 30V10h20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<text x="36" y="26" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="8">SELFIE.JPG</text>
+<g id="ftrPortrait" transform="translate(22 34)" clip-path="url(#ftrClip)"></g>
+<g id="ftrDet" opacity="0" transform="translate(22 34)">
+<path d="M30 34V24h10M96 24h10v10M106 108v10H96M40 118H30V108" fill="none" stroke="#1A8FD0" stroke-width="2"></path>
+<rect x="30" y="16" width="38" height="8" fill="#1A8FD0"></rect>
+<text x="32" y="22" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="5.6">face 0.99</text>
+<g fill="#1A8FD0"><circle cx="56" cy="70" r="1.8"></circle><circle cx="80" cy="70" r="1.8"></circle><circle cx="68" cy="84" r="1.8"></circle><circle cx="58" cy="96" r="1.8"></circle><circle cx="78" cy="96" r="1.8"></circle></g>
+</g>
+<rect id="ftrScan" x="22" y="34" width="2" height="170" fill="#3BB3E8" opacity="0"></rect>
+<text x="190" y="110" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7" text-anchor="middle">ASCII</text>
+<path d="M172 120h34M199 113l7 7 -7 7" stroke="#3BB3E8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+<rect x="218" y="34" width="160" height="170" rx="8" fill="#FFFFFF"></rect>
+<path d="M218 42 a8 8 0 0 1 8 -8 h144 a8 8 0 0 1 8 8 v8 h-160 z" fill="#F0F2F5"></path>
+<line x1="218" y1="50" x2="378" y2="50" stroke="#D8DEE4"></line>
+<text x="226" y="45" fill="#57606A" font-family="Geist Mono, monospace" font-size="7">README.md</text>
+<text id="ftrCols" x="370" y="45" fill="#57606A" font-family="Geist Mono, monospace" font-size="7" text-anchor="end"></text>
+<g id="ftrAscii" font-family="Geist Mono, ui-monospace, monospace" fill="#1F2328"></g>
+<rect x="22" y="214" width="92" height="20" rx="5" fill="#111C3F" stroke="#2A3866"></rect>
+<text id="ftrSet" x="68" y="227.5" fill="#C9D2EA" font-family="Geist Mono, monospace" font-size="7.5" text-anchor="middle">@%#*+=-:.</text>
+<text x="124" y="227.5" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7">DETAIL</text>
+<rect x="158" y="223" width="68" height="3" rx="1.5" fill="#22305E"></rect>
+<rect id="ftrFill" x="158" y="223" width="0" height="3" rx="1.5" fill="#3BB3E8"></rect>
+<circle id="ftrKnob" cx="160" cy="224.5" r="5" fill="#FFFFFF"></circle>
+<rect x="290" y="214" width="88" height="20" rx="5" fill="#3BB3E8"></rect>
+<text x="334" y="227.5" fill="#0B1430" font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle">COPY MARKDOWN</text>
+<g id="ftrCopied" opacity="0"><rect x="290" y="214" width="88" height="20" rx="5" fill="#3E9A5A"></rect><path d="M310 224 l3 3 l6 -6" stroke="#FFFFFF" stroke-width="1.6" fill="none" stroke-linecap="round"></path><text x="342" y="227.5" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle">COPIED</text></g>
+</svg>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="mono" style="font-size: 13px; color: #4A5068">03 · New</span>
+<span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
+</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">FaceToREADME</h3>
+<p style="margin: 0; color: #3C4260">Turns a selfie into ASCII art for your GitHub README. Pick the character style and level of detail, preview it live, then copy it as Markdown or download it as an SVG.</p>
+<div class="mono" style="font-size: 13px; color: #4A5068; margin-top: auto; padding-top: 4px">TypeScript</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://nyvora-vision-labs.github.io/FaceToREADME/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500; font-size: 15px">Try it</a>
+<a href="https://github.com/Nyvora-Vision-Labs/FaceToREADME" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #CFCFC7; font-weight: 500; font-size: 15px">GitHub</a>
+</div>
+</div>
+</article>
+
+<!-- 04 NEPSEE -->
+<article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
+<svg role="img" aria-label="Animation: a Nepali tweet sentence is labeled by three annotators; they agree on positive, then a second sentence gets two negative votes and one neutral" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<text x="38" y="24" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">NEPSEE ANNOTATOR · SENTIMENT</text>
+<text x="376" y="24" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="8" text-anchor="end">LAYER 1 / 3</text>
+<rect x="24" y="34" width="352" height="66" rx="8" fill="#111C3F" stroke="#22305E"></rect>
+<g class="ns1">
+<text x="38" y="62" fill="#FFFFFF" font-family="'Noto Sans Devanagari', sans-serif" font-size="17" font-weight="500">आजको दिन साँच्चै राम्रो छ ।</text>
+<text x="38" y="80" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="8">“Today is truly a good day.”</text>
+<text x="362" y="91" fill="#5C6B99" font-family="Geist Mono, monospace" font-size="7" text-anchor="end">TWEET 1204 · SENT 1</text>
+</g>
+<g class="ns2">
+<text x="38" y="62" fill="#FFFFFF" font-family="'Noto Sans Devanagari', sans-serif" font-size="17" font-weight="500">यो निर्णयले जनता निराश भए ।</text>
+<text x="38" y="80" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="8">“People were let down by this decision.”</text>
+<text x="362" y="91" fill="#5C6B99" font-family="Geist Mono, monospace" font-size="7" text-anchor="end">TWEET 1204 · SENT 2</text>
+</g>
+<g font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle">
+<circle cx="44" cy="127" r="11" fill="#8A6FD1"></circle><text x="44" y="130" fill="#FFFFFF">A1</text>
+<circle cx="44" cy="161" r="11" fill="#E8822E"></circle><text x="44" y="164" fill="#FFFFFF">A2</text>
+<circle cx="44" cy="195" r="11" fill="#2F7FC1"></circle><text x="44" y="198" fill="#FFFFFF">A3</text>
+</g>
+<g fill="#1B2650" stroke="#2A3866">
+<rect x="68" y="116" width="66" height="22" rx="11"></rect><rect x="140" y="116" width="66" height="22" rx="11"></rect><rect x="212" y="116" width="66" height="22" rx="11"></rect>
+<rect x="68" y="150" width="66" height="22" rx="11"></rect><rect x="140" y="150" width="66" height="22" rx="11"></rect><rect x="212" y="150" width="66" height="22" rx="11"></rect>
+<rect x="68" y="184" width="66" height="22" rx="11"></rect><rect x="140" y="184" width="66" height="22" rx="11"></rect><rect x="212" y="184" width="66" height="22" rx="11"></rect>
+</g>
+<g>
+<rect class="nv1" x="68" y="116" width="66" height="22" rx="11" fill="#3E9A5A"></rect>
+<rect class="nv2" x="68" y="150" width="66" height="22" rx="11" fill="#3E9A5A"></rect>
+<rect class="nv3" x="68" y="184" width="66" height="22" rx="11" fill="#3E9A5A"></rect>
+<rect class="nv4" x="212" y="116" width="66" height="22" rx="11" fill="#B8434B"></rect>
+<rect class="nv5" x="212" y="150" width="66" height="22" rx="11" fill="#B8434B"></rect>
+<rect class="nv6" x="140" y="184" width="66" height="22" rx="11" fill="#5C6B99"></rect>
+</g>
+<g font-family="Geist Mono, monospace" font-size="7.5" fill="#E6EBF7" text-anchor="middle">
+<text x="101" y="130">POSITIVE</text><text x="173" y="130">NEUTRAL</text><text x="245" y="130">NEGATIVE</text>
+<text x="101" y="164">POSITIVE</text><text x="173" y="164">NEUTRAL</text><text x="245" y="164">NEGATIVE</text>
+<text x="101" y="198">POSITIVE</text><text x="173" y="198">NEUTRAL</text><text x="245" y="198">NEGATIVE</text>
+</g>
+<rect x="290" y="116" width="86" height="90" rx="8" fill="#111C3F" stroke="#22305E"></rect>
+<text x="333" y="132" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7" text-anchor="middle">AGREEMENT</text>
+<g class="na1" text-anchor="middle"><text x="333" y="166" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="24" font-weight="600">3/3</text><text x="333" y="186" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7.5">POSITIVE</text></g>
+<g class="na2" text-anchor="middle"><text x="333" y="166" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="24" font-weight="600">2/3</text><text x="333" y="186" fill="#F08A90" font-family="Geist Mono, monospace" font-size="7.5">NEGATIVE</text></g>
+<text x="24" y="238" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7.5">20 PUBLIC FIGURES · 3 ANNOTATORS PER SENTENCE</text>
+</svg>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="mono" style="font-size: 13px; color: #4A5068">04 · Language</span>
+<span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #7A4A0E; background: #F7EDDC; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B9781F"></span>Ongoing</span>
+</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">NEPSEE</h3>
+<p style="margin: 0; color: #3C4260">A Nepali sentiment, emotion and explanation dataset. Tweets from 20 public figures are split into sentences and labeled by three annotators in a purpose-built app. Sentiment labeling is underway; emotion and explanation come next.</p>
+<div class="mono" style="font-size: 13px; color: #4A5068; margin-top: auto; padding-top: 4px">Python · Flask · Postgres</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://nepsee-a-nepali-sentiment-emotion-and.onrender.com/brief" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500; font-size: 15px">Annotator brief</a>
+<a href="https://github.com/Nyvora-Vision-Labs/NEPSEE-A-Nepali-Sentiment-Emotion-and-Explanation-Dataset" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #CFCFC7; font-weight: 500; font-size: 15px">GitHub</a>
+</div>
+</div>
+</article>
+
+<!-- 05 LexFlip -->
+<article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
+<svg role="img" aria-label="Animation: a legal sentence is compared to two simplifications; the one that drops the word not scores high on word overlap but flips the meaning, while a reworded one scores low but keeps the meaning" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<text x="38" y="24" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">LEXFLIP · METRIC DIAGNOSTIC</text>
+<text x="24" y="44" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7">SOURCE</text>
+<rect x="24" y="50" width="352" height="30" rx="6" fill="#111C3F" stroke="#22305E"></rect>
+<text x="34" y="69" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="11">The tenant shall <tspan class="lxNot" font-weight="600">not</tspan> sublet the premises without consent.</text>
+<text x="24" y="98" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7">SIMPLIFIED</text>
+<rect x="24" y="104" width="352" height="30" rx="6" fill="#111C3F" stroke="#22305E"></rect>
+<g class="lxA"><text x="34" y="123" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="11">The tenant shall sublet the premises without consent.</text><text x="370" y="98" fill="#F08A90" font-family="Geist Mono, monospace" font-size="7" text-anchor="end">"NOT" DROPPED</text></g>
+<g class="lxB"><text x="34" y="123" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="11">Renters need permission before renting the place out.</text><text x="370" y="98" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7" text-anchor="end">REWORDED</text></g>
+<g font-family="Geist Mono, monospace" font-size="7.5" fill="#C9D2EA">
+<text x="24" y="160">WORD OVERLAP</text><text x="24" y="182">METRIC SCORE</text><text x="24" y="204">MEANING KEPT</text>
+</g>
+<g fill="#1B2650"><rect x="110" y="153" width="220" height="9" rx="4.5"></rect><rect x="110" y="175" width="220" height="9" rx="4.5"></rect></g>
+<g class="lxA">
+<rect class="lxbar" x="110" y="153" width="202" height="9" rx="4.5" fill="#3BB3E8"></rect>
+<rect class="lxbar" x="110" y="175" width="196" height="9" rx="4.5" fill="#C9A227"></rect>
+<g font-family="Geist Mono, monospace" font-size="8" fill="#FFFFFF" text-anchor="end"><text x="376" y="161">0.92</text><text x="376" y="183">0.89</text></g>
+<circle cx="116" cy="200" r="7" fill="#B8434B"></circle><path d="M113 197 l6 6 M119 197 l-6 6" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"></path>
+<text x="130" y="203" fill="#F08A90" font-family="Geist Mono, monospace" font-size="7.5">NO: MEANING FLIPPED, METRIC STILL HIGH</text>
+</g>
+<g class="lxB">
+<rect class="lxbar" x="110" y="153" width="40" height="9" rx="4.5" fill="#3BB3E8"></rect>
+<rect class="lxbar" x="110" y="175" width="68" height="9" rx="4.5" fill="#C9A227"></rect>
+<g font-family="Geist Mono, monospace" font-size="8" fill="#FFFFFF" text-anchor="end"><text x="376" y="161">0.18</text><text x="376" y="183">0.31</text></g>
+<circle cx="116" cy="200" r="7" fill="#3E9A5A"></circle><path d="M112.5 200 l2.5 2.5 l5 -5" stroke="#FFFFFF" stroke-width="1.6" fill="none" stroke-linecap="round"></path>
+<text x="130" y="203" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7.5">YES: SAME MEANING, METRIC STILL LOW</text>
+</g>
+<text x="24" y="238" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7.5">DOES THE METRIC TRACK MEANING, OR JUST WORDS?</text>
+</svg>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="mono" style="font-size: 13px; color: #4A5068">05 · Language</span>
+<span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #3B3F8F; background: #E8E9F7; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #5B5FC7"></span>Research</span>
+</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">LexFlip</h3>
+<p style="margin: 0; color: #3C4260">A diagnostic for legal-text simplification metrics. It separates word overlap from legal meaning to test whether embedding and LLM-judge metrics track meaning or just shared words. Validated on the FrJUDGE corpus.</p>
+<div class="mono" style="font-size: 13px; color: #4A5068; margin-top: auto; padding-top: 4px">Python · LaTeX</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://github.com/Nyvora-Vision-Labs/LexFlip" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500; font-size: 15px">GitHub</a>
+</div>
+</div>
+</article>
+
+<!-- 06 Miscrits Games -->
+<article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
+<svg role="img" aria-label="Animation: a Wordle board flips a guess with an on-screen keyboard, next to a word search where three words get circled" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<g font-family="Geist Mono, monospace" font-size="14" font-weight="500" fill="#FFFFFF" text-anchor="middle">
+<rect x="24" y="26" width="26" height="26" rx="4" fill="#3A4570"></rect><text x="37" y="44">F</text>
+<rect x="54" y="26" width="26" height="26" rx="4" fill="#3A4570"></rect><text x="67" y="44">L</text>
+<rect x="84" y="26" width="26" height="26" rx="4" fill="#C9A227"></rect><text x="97" y="44">A</text>
+<rect x="114" y="26" width="26" height="26" rx="4" fill="#3A4570"></rect><text x="127" y="44">M</text>
+<rect x="144" y="26" width="26" height="26" rx="4" fill="#3E9A5A"></rect><text x="157" y="44">E</text>
+<g class="tile" style="animation-delay: 0s"><rect x="24" y="56" width="26" height="26" rx="4" fill="#1B2650" style="--c: #3A4570; animation-delay: 0s"></rect><text x="37" y="74">S</text></g>
+<g class="tile" style="animation-delay: 0.3s"><rect x="54" y="56" width="26" height="26" rx="4" fill="#1B2650" style="--c: #C9A227; animation-delay: 0.3s"></rect><text x="67" y="74">T</text></g>
+<g class="tile" style="animation-delay: 0.6s"><rect x="84" y="56" width="26" height="26" rx="4" fill="#1B2650" style="--c: #3E9A5A; animation-delay: 0.6s"></rect><text x="97" y="74">A</text></g>
+<g class="tile" style="animation-delay: 0.9s"><rect x="114" y="56" width="26" height="26" rx="4" fill="#1B2650" style="--c: #3A4570; animation-delay: 0.9s"></rect><text x="127" y="74">R</text></g>
+<g class="tile" style="animation-delay: 1.2s"><rect x="144" y="56" width="26" height="26" rx="4" fill="#1B2650" style="--c: #3E9A5A; animation-delay: 1.2s"></rect><text x="157" y="74">E</text></g>
+</g>
+<g fill="none" stroke="#2A3866" stroke-width="1.5"><rect x="24.75" y="86.75" width="24.5" height="24.5" rx="4"></rect><rect x="54.75" y="86.75" width="24.5" height="24.5" rx="4"></rect><rect x="84.75" y="86.75" width="24.5" height="24.5" rx="4"></rect><rect x="114.75" y="86.75" width="24.5" height="24.5" rx="4"></rect><rect x="144.75" y="86.75" width="24.5" height="24.5" rx="4"></rect></g>
+<rect class="cursor" x="35" y="92" width="2" height="14" fill="#3BB3E8"></rect>
+<g>
+<rect x="24" y="124" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="38.5" y="124" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="53" y="124" width="12" height="15" rx="2" fill="#3E9A5A"></rect><rect x="67.5" y="124" width="12" height="15" rx="2" fill="#1E2547"></rect><rect x="82" y="124" width="12" height="15" rx="2" fill="#C9A227"></rect><rect x="96.5" y="124" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="111" y="124" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="125.5" y="124" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="140" y="124" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="154.5" y="124" width="12" height="15" rx="2" fill="#3A4570"></rect>
+<rect x="31" y="142" width="12" height="15" rx="2" fill="#3E9A5A"></rect><rect x="45.5" y="142" width="12" height="15" rx="2" fill="#1E2547"></rect><rect x="60" y="142" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="74.5" y="142" width="12" height="15" rx="2" fill="#1E2547"></rect><rect x="89" y="142" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="103.5" y="142" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="118" y="142" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="132.5" y="142" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="147" y="142" width="12" height="15" rx="2" fill="#1E2547"></rect>
+<rect x="24" y="160" width="19" height="15" rx="2" fill="#4A5689"></rect><rect x="45.5" y="160" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="60" y="160" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="74.5" y="160" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="89" y="160" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="103.5" y="160" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="118" y="160" width="12" height="15" rx="2" fill="#3A4570"></rect><rect x="132.5" y="160" width="12" height="15" rx="2" fill="#1E2547"></rect><rect x="147" y="160" width="19.5" height="15" rx="2" fill="#4A5689"></rect>
+</g>
+<g font-family="Geist Mono, monospace" font-size="6.5" fill="#E6EBF7" text-anchor="middle">
+<text x="30 44.5 59 73.5 88 102.5 117 131.5 146 160.5" y="134">QWERTYUIOP</text>
+<text x="37 51.5 66 80.5 95 109.5 124 138.5 153" y="152">ASDFGHJKL</text>
+<text x="51.5 66 80.5 95 109.5 124 138.5" y="170">ZXCVBNM</text>
+<text x="33.5" y="170" font-size="5">ENT</text>
+</g>
+<path d="M153 166.5 h8 M153 166.5 l2.5 -2 M153 166.5 l2.5 2" stroke="#E6EBF7" stroke-width="0.9" fill="none"></path>
+<text x="24" y="198" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">MISCRITS WORDLE</text>
+<text x="24" y="212" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="8">GUESS 3 / 6</text>
+<line x1="190" y1="24" x2="190" y2="226" stroke="#22305E"></line>
+<rect x="202" y="24" width="176" height="176" rx="6" fill="#111C3F"></rect>
+<rect class="f1" x="224" y="26" width="128" height="18" rx="9" fill="#C9A227" fill-opacity="0.3" stroke="#C9A227" stroke-width="1.2"></rect>
+<rect class="f2" x="224" y="48" width="150" height="18" rx="9" fill="#3BB3E8" fill-opacity="0.28" stroke="#3BB3E8" stroke-width="1.2"></rect>
+<rect class="f3" x="202" y="136" width="106" height="18" rx="9" fill="#3E9A5A" fill-opacity="0.32" stroke="#5CC27A" stroke-width="1.2"></rect>
+<g font-family="Geist Mono, monospace" font-size="11" fill="#C9D2EA" text-anchor="middle">
+<text x="211 233 255 277 299 321 343 365" y="39">QNYVORAZ</text>
+<text x="211 233 255 277 299 321 343 365" y="61">LMISCRIT</text>
+<text x="211 233 255 277 299 321 343 365" y="83">BKPEXJWU</text>
+<text x="211 233 255 277 299 321 343 365" y="105">FOLAMDKG</text>
+<text x="211 233 255 277 299 321 343 365" y="127">HTRCVSNE</text>
+<text x="211 233 255 277 299 321 343 365" y="149">ARENAQIB</text>
+<text x="211 233 255 277 299 321 343 365" y="171">YWKLOPMS</text>
+<text x="211 233 255 277 299 321 343 365" y="193">DCUGHXTF</text>
+</g>
+<g font-family="Geist Mono, monospace" font-size="8" fill="#9FB3D9">
+<text x="202" y="216">NYVORA</text><text x="246" y="216">MISCRIT</text><text x="296" y="216">ARENA</text><text x="334" y="216">+397</text>
+</g>
+<g stroke="#FFFFFF" stroke-width="1">
+<line class="f1" x1="201" y1="213" x2="231" y2="213"></line>
+<line class="f2" x1="245" y1="213" x2="280" y2="213"></line>
+<line class="f3" x1="295" y1="213" x2="320" y2="213"></line>
+</g>
+</svg>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="mono" style="font-size: 13px; color: #4A5068">06</span>
+<span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
+</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Miscrits Games</h3>
+<p style="margin: 0; color: #3C4260">Two browser games in one: Miscrits Wordle, where you guess the name in six tries, and a word search with 400+ Miscrit names on a 12×12 grid.</p>
+<div class="mono" style="font-size: 13px; color: #4A5068; margin-top: auto; padding-top: 4px">HTML · JS · JSON</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://nyvora-vision-labs.github.io/WordleMiscrits/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500; font-size: 15px">Play</a>
+<a href="https://github.com/Nyvora-Vision-Labs/WordleMiscrits" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #CFCFC7; font-weight: 500; font-size: 15px">GitHub</a>
+</div>
+</div>
+</article>
+
+<!-- 03 Arena Helper -->
+<article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
+<svg role="img" aria-label="Animation: a lobby screenshot is scanned, six Miscrits are detected one by one, then a ranked pick order fills in with scores" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<rect x="22" y="22" width="224" height="210" rx="8" fill="#14204A" stroke="#2A3866"></rect>
+<rect x="22" y="22" width="224" height="20" rx="8" fill="#1E2B5C"></rect><rect x="22" y="34" width="224" height="8" fill="#1E2B5C"></rect>
+<circle cx="32" cy="32" r="2.5" fill="#E5484D"></circle><circle cx="40" cy="32" r="2.5" fill="#E6C24A"></circle><circle cx="48" cy="32" r="2.5" fill="#5CC27A"></circle>
+<text x="134" y="35" fill="#C9D2EA" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">RANDOM ARENA · LOBBY</text>
+<g>
+<rect x="36" y="52" width="58" height="80" rx="6" fill="#22306A"></rect><rect x="105" y="52" width="58" height="80" rx="6" fill="#22306A"></rect><rect x="174" y="52" width="58" height="80" rx="6" fill="#22306A"></rect>
+<rect x="36" y="140" width="58" height="80" rx="6" fill="#22306A"></rect><rect x="105" y="140" width="58" height="80" rx="6" fill="#22306A"></rect><rect x="174" y="140" width="58" height="80" rx="6" fill="#22306A"></rect>
+</g>
+<g>
+<use href="#mini" x="44" y="58" width="42" height="42" style="color: #E8822E"></use>
+<use href="#mini2" x="113" y="58" width="42" height="42" style="color: #4FA3D9"></use>
+<use href="#mini" x="182" y="58" width="42" height="42" style="color: #8A6FD1"></use>
+<use href="#mini2" x="44" y="146" width="42" height="42" style="color: #E6C24A"></use>
+<use href="#mini" x="113" y="146" width="42" height="42" style="color: #C9473F"></use>
+<use href="#mini2" x="182" y="146" width="42" height="42" style="color: #5CC27A"></use>
+</g>
+<g font-family="Geist Mono, monospace" font-size="6.5" fill="#9FB3D9" text-anchor="middle">
+<text x="65" y="112">LV 32</text><text x="134" y="112">LV 28</text><text x="203" y="112">LV 35</text>
+<text x="65" y="200">LV 30</text><text x="134" y="200">LV 33</text><text x="203" y="200">LV 27</text>
+</g>
+<g fill="#3BB3E8" fill-opacity="0.85"><rect x="44" y="118" width="42" height="4" rx="2"></rect><rect x="113" y="118" width="30" height="4" rx="2"></rect><rect x="182" y="118" width="38" height="4" rx="2"></rect><rect x="44" y="206" width="34" height="4" rx="2"></rect><rect x="113" y="206" width="40" height="4" rx="2"></rect><rect x="182" y="206" width="26" height="4" rx="2"></rect></g>
+<g class="upscan"><rect x="24" y="22" width="220" height="14" fill="#3BB3E8" fill-opacity="0.14"></rect><rect x="24" y="35" width="220" height="1.5" fill="#3BB3E8"></rect></g>
+<g>
+<use class="det" href="#dbox" x="33" y="49" width="64" height="86" style="animation-delay: 1.2s"></use>
+<use class="det" href="#dbox" x="102" y="49" width="64" height="86" style="animation-delay: 1.45s"></use>
+<use class="det" href="#dbox" x="171" y="49" width="64" height="86" style="animation-delay: 1.7s"></use>
+<use class="det" href="#dbox" x="33" y="137" width="64" height="86" style="animation-delay: 1.95s"></use>
+<use class="det" href="#dbox" x="102" y="137" width="64" height="86" style="animation-delay: 2.2s"></use>
+<use class="det" href="#dbox" x="171" y="137" width="64" height="86" style="animation-delay: 2.45s"></use>
+</g>
+<text x="258" y="34" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">PICK ORDER</text>
+<text x="258" y="46" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7">6 detected</text>
+<g font-family="Geist Mono, monospace" font-size="10" fill="#FFFFFF" font-weight="500">
+<text x="258" y="76">1</text><text x="258" y="112">2</text><text x="258" y="148">3</text><text x="258" y="184">4</text>
+</g>
+<g>
+<use class="rfade" href="#mini" x="268" y="61" width="20" height="20" style="color: #8A6FD1; animation-delay: 3s"></use>
+<use class="rfade" href="#mini" x="268" y="97" width="20" height="20" style="color: #C9473F; animation-delay: 3.25s"></use>
+<use class="rfade" href="#mini2" x="268" y="133" width="20" height="20" style="color: #4FA3D9; animation-delay: 3.5s"></use>
+<use class="rfade" href="#mini" x="268" y="169" width="20" height="20" style="color: #E8822E; animation-delay: 3.75s"></use>
+</g>
+<g>
+<rect x="294" y="66" width="72" height="9" rx="4.5" fill="#1B2650"></rect><rect x="294" y="102" width="72" height="9" rx="4.5" fill="#1B2650"></rect><rect x="294" y="138" width="72" height="9" rx="4.5" fill="#1B2650"></rect><rect x="294" y="174" width="72" height="9" rx="4.5" fill="#1B2650"></rect>
+<rect class="rank" x="294" y="66" width="70" height="9" rx="4.5" fill="#3BB3E8" style="animation-delay: 3s"></rect>
+<rect class="rank" x="294" y="102" width="58" height="9" rx="4.5" fill="#3BB3E8" fill-opacity="0.8" style="animation-delay: 3.25s"></rect>
+<rect class="rank" x="294" y="138" width="46" height="9" rx="4.5" fill="#3BB3E8" fill-opacity="0.62" style="animation-delay: 3.5s"></rect>
+<rect class="rank" x="294" y="174" width="34" height="9" rx="4.5" fill="#3BB3E8" fill-opacity="0.45" style="animation-delay: 3.75s"></rect>
+</g>
+<g font-family="Geist Mono, monospace" font-size="7" fill="#C9D2EA">
+<text class="rfade" x="372" y="74" text-anchor="end" style="animation-delay: 3s">96</text>
+<text class="rfade" x="372" y="110" text-anchor="end" style="animation-delay: 3.25s">81</text>
+<text class="rfade" x="372" y="146" text-anchor="end" style="animation-delay: 3.5s">64</text>
+<text class="rfade" x="372" y="182" text-anchor="end" style="animation-delay: 3.75s">47</text>
+</g>
+<rect class="rfade" x="258" y="200" width="118" height="20" rx="5" fill="none" stroke="#5CC27A" style="animation-delay: 3.9s"></rect>
+<text class="rfade" x="317" y="213.5" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7.5" text-anchor="middle" style="animation-delay: 3.9s">PICK #1 FIRST</text>
+</svg>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="mono" style="font-size: 13px; color: #4A5068">07</span>
+<span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
+</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Miscrits Random Arena Helper</h3>
+<p style="margin: 0; color: #3C4260">A draft analyzer that runs in the browser. Upload a lobby screenshot, and it detects every Miscrit and gives you a ranked pick order.</p>
+<div class="mono" style="font-size: 13px; color: #4A5068; margin-top: auto; padding-top: 4px">HTML · Python</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://nyvora-vision-labs.github.io/Miscrits-Random-Arena-Helper/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500; font-size: 15px">Live demo</a>
+<a href="https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #CFCFC7; font-weight: 500; font-size: 15px">GitHub</a>
+</div>
+</div>
+</article>
+
+<!-- 04 Guess the Miscrit -->
+<article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
+<svg role="img" aria-label="Animation: a creature silhouette under a spotlight; after two wrong guesses and one right one it is revealed as a fire fox Miscrit with sparkles" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<polygon points="176,0 224,0 318,196 82,196" fill="url(#cone)"></polygon>
+<ellipse cx="200" cy="190" rx="86" ry="12" fill="#1B2A5E"></ellipse>
+<ellipse cx="200" cy="190" rx="60" ry="7" fill="#000000" fill-opacity="0.35"></ellipse>
+<g fill="#050A1C"><use href="#critTail"></use><use href="#critMain"></use></g>
+<g class="reveal">
+<use href="#critTail" fill="url(#tailGrad)" stroke="#8A3A12" stroke-width="2"></use>
+<path d="M248 150 C276 150 291 128 283 104 C277 116 269 116 263 112 C269 128 261 140 248 150 Z" fill="#FFE08A" fill-opacity="0.75"></path>
+<use href="#critMain" fill="url(#furGrad)" stroke="#8A3A12" stroke-width="2"></use>
+<path d="M168 80 L156 40 L188 70 Z" fill="#FBE3B8"></path><path d="M232 80 L244 40 L212 70 Z" fill="#FBE3B8"></path>
+<path d="M148 28 L153 46 L163 41 Z" fill="#6E2A0C"></path><path d="M252 28 L247 46 L237 41 Z" fill="#6E2A0C"></path>
+<ellipse cx="200" cy="154" rx="28" ry="24" fill="#F9E1B6"></ellipse>
+<path d="M186 140 Q190 146 186 152 M200 138 Q204 145 200 152 M214 140 Q218 146 214 152" stroke="#E7BE85" stroke-width="1.4" fill="none" stroke-linecap="round"></path>
+<ellipse cx="200" cy="113" rx="23" ry="14" fill="#F9E1B6"></ellipse>
+<path d="M200 60 C207 69 205 78 200 83 C195 78 193 69 200 60 Z" fill="#FFE08A"></path>
+<path d="M200 66 C203 71 202 76 200 79 C198 76 197 71 200 66 Z" fill="#F28C28"></path>
+<ellipse cx="182" cy="96" rx="9.5" ry="11" fill="#FFFFFF"></ellipse><ellipse cx="218" cy="96" rx="9.5" ry="11" fill="#FFFFFF"></ellipse>
+<ellipse cx="183.5" cy="98" rx="6.5" ry="8" fill="#3B2412"></ellipse><ellipse cx="216.5" cy="98" rx="6.5" ry="8" fill="#3B2412"></ellipse>
+<ellipse cx="183.5" cy="100" rx="3.2" ry="4.2" fill="#0E0A06"></ellipse><ellipse cx="216.5" cy="100" rx="3.2" ry="4.2" fill="#0E0A06"></ellipse>
+<circle cx="186.5" cy="94" r="2.6" fill="#FFFFFF"></circle><circle cx="219.5" cy="94" r="2.6" fill="#FFFFFF"></circle>
+<circle cx="181" cy="102.5" r="1.1" fill="#FFFFFF"></circle><circle cx="214" cy="102.5" r="1.1" fill="#FFFFFF"></circle>
+<path d="M172 84 Q181 80 190 85 M210 85 Q219 80 228 84" stroke="#8A3A12" stroke-width="1.6" fill="none" stroke-linecap="round"></path>
+<ellipse cx="168" cy="112" rx="7" ry="4" fill="#F2707A" fill-opacity="0.55"></ellipse><ellipse cx="232" cy="112" rx="7" ry="4" fill="#F2707A" fill-opacity="0.55"></ellipse>
+<path d="M195.5 106 L204.5 106 L200 110.5 Z" fill="#3A1A0A"></path>
+<path d="M191 113.5 Q195.5 118 200 113.5 Q204.5 118 209 113.5" stroke="#3A1A0A" stroke-width="1.6" fill="none" stroke-linecap="round"></path>
+<path d="M178 118 l-14 -2 M178 121 l-13 3 M222 118 l14 -2 M222 121 l13 3" stroke="#8A3A12" stroke-width="1" stroke-linecap="round"></path>
+<path d="M169 183 v5 M175 184 v5 M181 183 v5 M219 183 v5 M225 184 v5 M231 183 v5" stroke="#8A3A12" stroke-width="1.3" stroke-linecap="round"></path>
+<ellipse cx="160" cy="146" rx="9" ry="15" fill="url(#furGrad)" stroke="#8A3A12" stroke-width="1.6" transform="rotate(22 160 146)"></ellipse>
+<ellipse cx="240" cy="146" rx="9" ry="15" fill="url(#furGrad)" stroke="#8A3A12" stroke-width="1.6" transform="rotate(-22 240 146)"></ellipse>
+</g>
+<g transform="translate(136 62)"><use class="spark" href="#star" fill="#FFE08A" style="animation-delay: 0s"></use></g>
+<g transform="translate(268 52)"><use class="spark" href="#star" fill="#9FD8F5" style="animation-delay: 0.15s"></use></g>
+<g transform="translate(124 150)"><use class="spark" href="#star" fill="#9FD8F5" style="animation-delay: 0.3s"></use></g>
+<g transform="translate(306 160)"><use class="spark" href="#star" fill="#FFE08A" style="animation-delay: 0.1s"></use></g>
+<text class="qmark" x="200" y="126" fill="#3BB3E8" font-family="Geist, sans-serif" font-size="46" font-weight="600" text-anchor="middle">?</text>
+<rect class="p1" x="128" y="204" width="44" height="18" rx="9" fill="#1B2650"></rect>
+<rect class="p2" x="178" y="204" width="44" height="18" rx="9" fill="#1B2650"></rect>
+<rect class="p3" x="228" y="204" width="44" height="18" rx="9" fill="#1B2650"></rect>
+<g stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" fill="none">
+<path class="i1" d="M146 209 l8 8 M154 209 l-8 8"></path>
+<path class="i2" d="M196 209 l8 8 M204 209 l-8 8"></path>
+<path class="i3" d="M244 213 l4 4 l8 -8"></path>
+</g>
+<text x="200" y="240" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="9" text-anchor="middle">WHO'S THAT MISCRIT?</text>
+</svg>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="mono" style="font-size: 13px; color: #4A5068">08</span>
+<span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
+</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Guess the Miscrit?!</h3>
+<p style="margin: 0; color: #3C4260">A nostalgic web game. You see a silhouette and have to name the Miscrit behind it.</p>
+<div class="mono" style="font-size: 13px; color: #4A5068; margin-top: auto; padding-top: 4px">HTML · JS · Python</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://nyvora-vision-labs.github.io/Guess_the_Miscrit/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500; font-size: 15px">Play</a>
+<a href="https://github.com/Nyvora-Vision-Labs/Guess_the_Miscrit" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #CFCFC7; font-weight: 500; font-size: 15px">GitHub</a>
+</div>
+</div>
+</article>
+
+<!-- 05 GitSphere -->
+<article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
+<svg role="img" aria-label="Animation: a 3D graph of repository modules rotates while each folder is highlighted and analyzed in turn" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<circle cx="150" cy="125" r="88" fill="#101B3F"></circle>
+<circle cx="150" cy="125" r="88" fill="none" stroke="#3BB3E8" stroke-opacity="0.3"></circle>
+<ellipse cx="150" cy="125" rx="88" ry="22" fill="none" stroke="#3BB3E8" stroke-opacity="0.12"></ellipse>
+<path d="M0 0" data-bind-d="gsEdgesBack" stroke="#3BB3E8" stroke-opacity="0.18" stroke-width="1" fill="none"></path>
+<path d="M0 0" data-bind-d="gsNodesBack" fill="#3BB3E8" fill-opacity="0.3"></path>
+<path d="M0 0" data-bind-d="gsEdgesFront" stroke="#3BB3E8" stroke-opacity="0.65" stroke-width="1.2" fill="none"></path>
+<path d="M0 0" data-bind-d="gsNodesFront" fill="#9FD8F5"></path>
+<path d="M0 0" data-bind-d="gsHubs" fill="#FFFFFF"></path>
+<path d="M0 0" data-bind-d="gsLeader" stroke="#E8822E" stroke-width="1" stroke-dasharray="3 3" fill="none"></path>
+<circle cx="0" data-bind-cx="gsRingX" cy="0" data-bind-cy="gsRingY" r="10" fill="none" stroke="#E8822E" stroke-width="1.8"></circle>
+<circle cx="0" data-bind-cx="gsRingX" cy="0" data-bind-cy="gsRingY" r="4" fill="#E8822E"></circle>
+<rect x="252" y="36" width="132" height="182" rx="8" fill="#111C3F" stroke="#22305E"></rect>
+<text x="262" y="54" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">REPO/</text>
+<rect x="256" y="0" data-bind-y="gsHlY" width="124" height="18" rx="4" fill="#E8822E" fill-opacity="0.2"></rect>
+<g fill="#3BB3E8"><path d="M262 70h5l1.5 1.5h5.5v6h-12z"></path><path d="M262 92h5l1.5 1.5h5.5v6h-12z"></path><path d="M262 114h5l1.5 1.5h5.5v6h-12z"></path><path d="M262 136h5l1.5 1.5h5.5v6h-12z"></path><path d="M262 158h5l1.5 1.5h5.5v6h-12z"></path></g>
+<g font-family="Geist Mono, monospace" font-size="8.5" fill="#C9D2EA">
+<text x="280" y="77">src/</text><text x="280" y="99">api/</text><text x="280" y="121">models/</text><text x="280" y="143">utils/</text><text x="280" y="165">tests/</text>
+</g>
+<g fill="#22305E"><rect x="330" y="72" width="44" height="5" rx="2.5"></rect><rect x="330" y="94" width="32" height="5" rx="2.5"></rect><rect x="330" y="116" width="40" height="5" rx="2.5"></rect><rect x="330" y="138" width="24" height="5" rx="2.5"></rect><rect x="330" y="160" width="36" height="5" rx="2.5"></rect></g>
+<text x="262" y="190" font-family="Geist Mono, monospace" font-size="7.5" fill="#9FB3D9">DEEPSEEK · ANALYZING</text>
+<rect x="262" y="198" width="112" height="4" rx="2" fill="#22305E"></rect>
+<rect x="262" y="198" width="0" data-bind-width="gsProg" height="4" rx="2" fill="#E8822E"></rect>
+<text x="36" y="236" font-family="Geist Mono, monospace" font-size="8" fill="#9FB3D9" data-bind-text="gsStats"></text>
+</svg>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="mono" style="font-size: 13px; color: #4A5068">09</span>
+<span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #7A4A0E; background: #F7EDDC; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B9781F"></span>Prototype</span>
+</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">GitSphere</h3>
+<p style="margin: 0; color: #3C4260">Turns a repository into a 3D map you can explore, and uses DeepSeek AI to explain how the code fits together.</p>
+<div class="mono" style="font-size: 13px; color: #4A5068; margin-top: auto; padding-top: 4px">Python · Three.js</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://www.youtube.com/watch?v=52FlQTq3I2Y" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500; font-size: 15px">Watch demo</a>
+<a href="https://github.com/Nyvora-Vision-Labs/GitSphere" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #CFCFC7; font-weight: 500; font-size: 15px">GitHub</a>
+</div>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="community" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 72px">
+<div style="background: #0E1530; color: #FFFFFF; border-radius: 20px; padding: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px">
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">Build with us</h2>
+<p style="margin: 0; color: #C9D2EA; max-width: 48ch">Bug fixes, features, docs and datasets are all welcome. Open an issue, send a PR, or come say hi on Discord.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="https://discord.gg/GXzFNKpnWr" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 10px; background: #FFFFFF; color: #0E1530; font-weight: 500">Join the Discord</a>
+<a href="https://github.com/Nyvora-Vision-Labs" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 10px; border: 1px solid #3A4570; color: #FFFFFF; font-weight: 500">Contribute on GitHub</a>
+</div>
+</div>
+</section>
+
+<footer style="max-width: 1200px; margin: 0 auto; padding: 0 24px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 14px; color: #4A5068">
+<span>© 2026 Nyvora Vision Labs · Run by Gaurab Baral</span>
+<nav aria-label="Contact" style="display: flex; flex-wrap: wrap; gap: 4px">
+<a href="https://www.linkedin.com/in/gaurab-baral-991333216/" target="_blank" rel="noopener" style="padding: 10px 12px; color: #4A5068">LinkedIn</a>
+<a href="https://x.com/gaurabbaral5" target="_blank" rel="noopener" style="padding: 10px 12px; color: #4A5068">X</a>
+<a href="https://github.com/TempGaurab" target="_blank" rel="noopener" style="padding: 10px 12px; color: #4A5068">GitHub</a>
+</nav>
+</footer>
+
+</div>
+<script>
+(function () {
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- bound attributes (chip counter, GitSphere, Stillroom) ----
+  var bound = [];
+  document.querySelectorAll('svg *').forEach(function (el) {
+    var b = [];
+    for (var i = 0; i < el.attributes.length; i++) {
+      var a = el.attributes[i];
+      if (a.name.indexOf('data-bind-') === 0) b.push([a.name.slice(10), a.value]);
+    }
+    if (b.length) bound.push([el, b]);
+  });
+
+  // GitSphere: points on a sphere joined to their nearest neighbours
+  var N = 22, pts = [], edges = [], hubs = [3, 8, 11, 15, 19];
+  for (var i = 0; i < N; i++) {
+    var y = 1 - 2 * (i + 0.5) / N, r = Math.sqrt(1 - y * y), p = i * 2.39996;
+    pts.push([Math.cos(p) * r, y, Math.sin(p) * r]);
+  }
+  var seen = {};
+  pts.forEach(function (a, i) {
+    pts.map(function (b, j) { return [j, Math.pow(a[0] - b[0], 2) + Math.pow(a[1] - b[1], 2) + Math.pow(a[2] - b[2], 2)]; })
+      .filter(function (d) { return d[0] !== i; })
+      .sort(function (u, v) { return u[1] - v[1]; }).slice(0, 3)
+      .forEach(function (d) { var j = d[0], k = i < j ? i + '-' + j : j + '-' + i; if (!seen[k]) { seen[k] = 1; edges.push([i, j]); } });
+  });
+
+  function vals(t) {
+    var v = {};
+    var ct = t % 4000;
+    v.chipCount = String(ct >= 3880 ? 0 : ct >= 3320 ? 18 : ct >= 2160 ? 12 : ct >= 1000 ? 6 : 0);
+
+    var a = t * 0.00045, b = 0.42, R = 80, cx = 150, cy = 125;
+    var P = pts.map(function (q) {
+      var x1 = q[0] * Math.cos(a) + q[2] * Math.sin(a), z1 = -q[0] * Math.sin(a) + q[2] * Math.cos(a);
+      var y2 = q[1] * Math.cos(b) - z1 * Math.sin(b), z2 = q[1] * Math.sin(b) + z1 * Math.cos(b);
+      return { x: +(cx + R * x1).toFixed(1), y: +(cy + R * y2).toFixed(1), z: z2 };
+    });
+    function circ(p, r) { return 'M' + (p.x - r).toFixed(1) + ' ' + p.y + 'a' + r + ' ' + r + ' 0 1 0 ' + 2 * r + ' 0a' + r + ' ' + r + ' 0 1 0 ' + -2 * r + ' 0'; }
+    var eF = '', eB = '', nF = '', nB = '', hb = '';
+    edges.forEach(function (e) {
+      var s = 'M' + P[e[0]].x + ' ' + P[e[0]].y + 'L' + P[e[1]].x + ' ' + P[e[1]].y;
+      if (P[e[0]].z < 0 && P[e[1]].z < 0) eF += s; else eB += s;
+    });
+    P.forEach(function (p, i) {
+      var hub = hubs.indexOf(i) >= 0;
+      if (p.z < 0) { if (hub) hb += circ(p, 5); else nF += circ(p, 3); } else nB += circ(p, hub ? 3 : 2);
+    });
+    var k = Math.floor((t % 5000) / 1000), h = P[hubs[k]];
+    v.gsEdgesFront = eF || 'M0 0'; v.gsEdgesBack = eB || 'M0 0';
+    v.gsNodesFront = nF || 'M0 0'; v.gsNodesBack = nB || 'M0 0'; v.gsHubs = hb || 'M0 0';
+    v.gsRingX = h.x; v.gsRingY = h.y;
+    v.gsLeader = 'M' + h.x + ' ' + h.y + 'L256 ' + (74 + 22 * k);
+    v.gsHlY = 65 + 22 * k;
+    v.gsProg = +(((t % 5000) / 5000) * 112).toFixed(1);
+    v.gsStats = N + ' MODULES · ' + edges.length + ' LINKS';
+
+    var vols = [0.8, 0.6, 0.45, 0.3, 0.55, 0.35];
+    vols.forEach(function (vo, i) {
+      var lv = vo * (0.72 + 0.28 * Math.sin(t * 0.006 + i * 1.7)) * (0.86 + 0.14 * Math.sin(t * 0.017 + i));
+      var hh = +(84 * lv).toFixed(1);
+      v['sr.h' + i] = hh; v['sr.y' + i] = +(200 - hh).toFixed(1);
+    });
+    var w1 = '', w2 = '';
+    for (var s = 0; s <= 86; s++) {
+      var x = 28 + s * 4, env = Math.sin(Math.PI * (x - 28) / 344);
+      var y1 = 55 + 16 * env * (0.6 * Math.sin(x * 0.08 + t * 0.004) + 0.3 * Math.sin(x * 0.21 - t * 0.007) + 0.1 * Math.sin(x * 0.5 + t * 0.013));
+      var yb = 55 + 9 * env * (0.7 * Math.sin(x * 0.05 - t * 0.003) + 0.3 * Math.sin(x * 0.17 + t * 0.009));
+      w1 += (s ? 'L' : 'M') + x + ' ' + y1.toFixed(1);
+      w2 += (s ? 'L' : 'M') + x + ' ' + yb.toFixed(1);
+    }
+    v['sr.wave'] = w1; v['sr.wave2'] = w2;
+    return v;
+  }
+
+  function apply(t) {
+    var v = vals(t);
+    bound.forEach(function (pair) {
+      pair[1].forEach(function (b) {
+        if (b[0] === 'text') pair[0].textContent = v[b[1]];
+        else pair[0].setAttribute(b[0], v[b[1]]);
+      });
+    });
+  }
+
+  // ---- FaceToREADME: draw the selfie, sample its pixels, print ASCII ----
+  var FACE = [
+    ['rect', { x: 0, y: 0, width: 136, height: 170 }, 'bg'],
+    ['circle', { cx: 112, cy: 28, r: 22 }, 'rgba(255,255,255,0.55)'],
+    ['path', { d: 'M6 170 C10 136 38 125 68 125 C98 125 126 136 130 170 Z' }, '#2F7FC1'],
+    ['path', { d: 'M40 170 C42 152 47 142 53 135 M96 170 C94 152 89 142 83 135' }, null, '#1F5E95', 2],
+    ['path', { d: 'M58 96 L58 128 Q68 136 78 128 L78 96 Z' }, '#B9805B'],
+    ['path', { d: 'M52 127 Q68 143 84 127 L86 132 Q68 151 50 132 Z' }, '#1F5E95'],
+    ['ellipse', { cx: 34, cy: 76, rx: 6, ry: 10 }, '#D29A72'],
+    ['ellipse', { cx: 102, cy: 76, rx: 6, ry: 10 }, '#D29A72'],
+    ['ellipse', { cx: 68, cy: 72, rx: 34, ry: 42 }, 'skin'],
+    ['path', { d: 'M33 72 C27 32 50 15 70 15 C97 15 111 36 103 72 C101 54 94 44 82 40 C72 50 52 50 42 44 C37 52 34 62 33 72 Z' }, '#2B1B12'],
+    ['path', { d: 'M50 28 C60 21 80 21 92 31' }, null, '#5A3A22', 2],
+    ['path', { d: 'M46 62 q9 -5 17 -1 M73 61 q8 -4 17 1' }, null, '#2B1B12', 3.2],
+    ['ellipse', { cx: 56, cy: 70, rx: 6.2, ry: 3.8 }, '#F7F1EA'],
+    ['ellipse', { cx: 80, cy: 70, rx: 6.2, ry: 3.8 }, '#F7F1EA'],
+    ['circle', { cx: 56.5, cy: 70.3, r: 3 }, '#2A1A0E'],
+    ['circle', { cx: 80.5, cy: 70.3, r: 3 }, '#2A1A0E'],
+    ['circle', { cx: 57.6, cy: 69.1, r: 1 }, '#FFFFFF'],
+    ['circle', { cx: 81.6, cy: 69.1, r: 1 }, '#FFFFFF'],
+    ['path', { d: 'M68 72 q-5 12 -1 15 q4 2 7 -1' }, null, '#9C6440', 2],
+    ['ellipse', { cx: 47, cy: 86, rx: 6, ry: 3.5 }, 'rgba(220,110,100,0.28)'],
+    ['ellipse', { cx: 89, cy: 86, rx: 6, ry: 3.5 }, 'rgba(220,110,100,0.28)'],
+    ['path', { d: 'M56 96 q12 9 24 0 q-12 4 -24 0 Z' }, '#8E3F32'],
+    ['path', { d: 'M56 96 q12 9 24 0' }, null, '#6E2C22', 1.8]
+  ];
+
+  var ftr = document.getElementById('ftr');
+  if (ftr) {
+    var g = document.getElementById('ftrPortrait');
+    FACE.forEach(function (s) {
+      var el = document.createElementNS(SVGNS, s[0]);
+      for (var k in s[1]) el.setAttribute(k, s[1][k]);
+      var fill = s[2] === 'bg' ? 'url(#ftrBg)' : s[2] === 'skin' ? 'url(#ftrSkin)' : s[2];
+      el.setAttribute('fill', fill || 'none');
+      if (s[3]) { el.setAttribute('stroke', s[3]); el.setAttribute('stroke-width', s[4]); el.setAttribute('stroke-linecap', 'round'); }
+      g.appendChild(el);
+    });
+
+    var S = 3, cv = document.createElement('canvas');
+    cv.width = 136 * S; cv.height = 170 * S;
+    var ctx = cv.getContext('2d');
+    ctx.scale(S, S);
+    FACE.forEach(function (s) {
+      var a = s[1], fill = s[2];
+      if (fill === 'bg') { fill = ctx.createLinearGradient(0, 0, 0, 170); fill.addColorStop(0, '#E9EEF8'); fill.addColorStop(1, '#C9D6EE'); }
+      if (fill === 'skin') { fill = ctx.createRadialGradient(60, 58, 2, 68, 72, 48); fill.addColorStop(0, '#F3C49E'); fill.addColorStop(1, '#C98A60'); }
+      var path;
+      if (s[0] === 'rect') { path = new Path2D(); path.rect(a.x, a.y, a.width, a.height); }
+      else if (s[0] === 'ellipse') { path = new Path2D(); path.ellipse(a.cx, a.cy, a.rx, a.ry, 0, 0, Math.PI * 2); }
+      else if (s[0] === 'circle') { path = new Path2D(); path.arc(a.cx, a.cy, a.r, 0, Math.PI * 2); }
+      else path = new Path2D(a.d);
+      if (fill) { ctx.fillStyle = fill; ctx.fill(path); }
+      if (s[3]) { ctx.strokeStyle = s[3]; ctx.lineWidth = s[4]; ctx.lineCap = 'round'; ctx.stroke(path); }
+    });
+    var img = ctx.getImageData(0, 0, cv.width, cv.height).data;
+    function lum(px, py) {
+      var x = Math.min(cv.width - 1, Math.round(px * S)), y = Math.min(cv.height - 1, Math.round(py * S)), sum = 0, n = 0;
+      for (var dy = -1; dy <= 1; dy++) for (var dx = -1; dx <= 1; dx++) {
+        var xx = Math.max(0, Math.min(cv.width - 1, x + dx)), yy = Math.max(0, Math.min(cv.height - 1, y + dy)), o = (yy * cv.width + xx) * 4;
+        sum += (0.299 * img[o] + 0.587 * img[o + 1] + 0.114 * img[o + 2]) / 255; n++;
       }
-
-      :root {
-        --bg: #f9f8f5;
-        --bg-warm: #f2f0e8;
-        --surface: #ffffff;
-        --surface-raised: #fdfdfc;
-        --border: #e8e4d9;
-        --border-mid: #ccc8ba;
-        --blue: #1a47c8;
-        --blue-dark: #111f6e;
-        --blue-richer: #0f3bba;
-        --blue-light: #eef3fd;
-        --blue-mid: #b8d0fb;
-        --text-1: #090f22;
-        --text-2: #3a4a60;
-        --text-3: #7a8696;
-        --gold: #c9a84c;
-        --gold-light: #f5ead4;
-
-        --shadow-sm: 0 1px 3px rgba(9, 15, 34, 0.05),
-          0 1px 2px rgba(9, 15, 34, 0.04);
-        --shadow-md: 0 4px 16px rgba(9, 15, 34, 0.07),
-          0 2px 6px rgba(9, 15, 34, 0.04);
-        --shadow-blue: 0 4px 24px rgba(26, 71, 200, 0.18),
-          0 1px 4px rgba(26, 71, 200, 0.12);
-        --shadow-blue-hover: 0 8px 36px rgba(26, 71, 200, 0.26),
-          0 2px 8px rgba(26, 71, 200, 0.14);
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: "DM Sans", sans-serif;
-        background: var(--bg);
-        color: var(--text-1);
-        font-size: 16px;
-        line-height: 1.65;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        z-index: 1000;
-        pointer-events: none;
-        opacity: 0.028;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-        background-size: 200px 200px;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .container {
-        max-width: 940px;
-        margin: 0 auto;
-        padding: 0 44px;
-      }
-
-      /* ─── Header ─── */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: rgba(249, 248, 245, 0.88);
-        backdrop-filter: blur(20px) saturate(1.4);
-        -webkit-backdrop-filter: blur(20px) saturate(1.4);
-        border-bottom: 1px solid var(--border);
-        padding: 15px 0;
-      }
-
-      header .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 11px;
-      }
-
-      .logo-mark {
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      .logo-mark img {
-        width: 30px;
-        height: 30px;
-        object-fit: contain;
-      }
-
-      .logo-name {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--text-1);
-        letter-spacing: -0.015em;
-      }
-
-      nav {
-        display: flex;
-        gap: 2px;
-      }
-
-      nav a {
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--text-2);
-        padding: 6px 15px;
-        border-radius: 100px;
-        border: 1px solid transparent;
-        transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-        letter-spacing: 0.005em;
-      }
-
-      nav a:hover {
-        color: var(--blue);
-        background: var(--blue-light);
-        border-color: var(--blue-mid);
-      }
-
-      .hero-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 48px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero-text {
-        flex: 1;
-        min-width: 0;
-      }
-
-      .hero-logo {
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        animation: fadeUp 0.6s 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
-
-      .hero-logo img {
-        width: 300px;
-        height: 300px;
-        object-fit: contain;
-      }
-
-      @media (max-width: 720px) {
-        .hero-inner {
-          flex-direction: column;
+      return sum / n;
+    }
+    // area the ASCII is printed in, same 0.8 aspect as the photo
+    var AX = 240, AY = 54, AW = 120, AH = 148;
+    var LEVELS = [
+      { cols: 26, ramp: '@%#*+=-:. ' },
+      { cols: 36, ramp: '@%#*+=-:. ' },
+      { cols: 48, ramp: '@#S%?*+;:,. ' }
+    ];
+    LEVELS.forEach(function (L) {
+      var cw = AW / L.cols, lh = cw * 1.7, rows = Math.floor(AH / lh), out = [];
+      for (var r = 0; r < rows; r++) {
+        var line = '';
+        for (var c = 0; c < L.cols; c++) {
+          var l = lum((c + 0.5) / L.cols * 136, (r + 0.5) / rows * 170);
+          l = Math.max(0, Math.min(1, (l - 0.05) / 0.78));
+          line += L.ramp[Math.min(L.ramp.length - 1, Math.floor(l * L.ramp.length))];
         }
-
-        .hero-logo {
-          display: none;
-        }
-      }
-
-      /* ─── Hero ─── */
-      .hero {
-        padding: 80px 0 72px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: -80px;
-        right: -200px;
-        width: 700px;
-        height: 700px;
-        background: radial-gradient(
-          ellipse,
-          rgba(178, 210, 255, 0.18) 0%,
-          transparent 62%
-        );
-        pointer-events: none;
-      }
-
-      .hero::after {
-        content: "";
-        position: absolute;
-        bottom: -120px;
-        left: -120px;
-        width: 480px;
-        height: 480px;
-        background: radial-gradient(
-          ellipse,
-          rgba(255, 243, 190, 0.22) 0%,
-          transparent 60%
-        );
-        pointer-events: none;
-      }
-
-      .hero-grid {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background-image: linear-gradient(
-            rgba(26, 71, 200, 0.03) 1px,
-            transparent 1px
-          ),
-          linear-gradient(90deg, rgba(26, 71, 200, 0.03) 1px, transparent 1px);
-        background-size: 52px 52px;
-        mask-image: radial-gradient(
-          ellipse 70% 80% at 80% 20%,
-          black 0%,
-          transparent 70%
-        );
-        -webkit-mask-image: radial-gradient(
-          ellipse 70% 80% at 80% 20%,
-          black 0%,
-          transparent 70%
-        );
-      }
-
-      .hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.95) 0%,
-          var(--blue-light) 100%
-        );
-        border: 1px solid var(--blue-mid);
-        color: var(--blue);
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 5px 14px 5px 10px;
-        border-radius: 100px;
-        margin-bottom: 24px;
-        position: relative;
-        z-index: 1;
-        box-shadow: 0 1px 6px rgba(26, 71, 200, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-        animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
-
-      .badge-dot {
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: var(--blue);
-        animation: blink 2.4s ease-in-out infinite;
-        box-shadow: 0 0 0 2px rgba(26, 71, 200, 0.15);
-      }
-
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
-          box-shadow: 0 0 0 2px rgba(26, 71, 200, 0.15);
-        }
-        50% {
-          opacity: 0.35;
-          box-shadow: 0 0 0 2px transparent;
-        }
-      }
-
-      .hero h1 {
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: 58px;
-        font-weight: 600;
-        line-height: 1.08;
-        letter-spacing: -0.028em;
-        color: var(--text-1);
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
-        animation: fadeUp 0.55s 0.07s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
-
-      .hero h1 em {
-        font-style: italic;
-        font-weight: 500;
-        color: var(--blue);
-        position: relative;
-      }
-
-      .hero h1 em::after {
-        content: "";
-        position: absolute;
-        bottom: 1px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, var(--blue-mid), transparent);
-        border-radius: 2px;
-        opacity: 0.5;
-      }
-
-      .hero p {
-        font-size: 18px;
-        font-weight: 400;
-        color: var(--text-2);
-        max-width: 490px;
-        line-height: 1.7;
-        margin-bottom: 32px;
-        position: relative;
-        z-index: 1;
-        animation: fadeUp 0.55s 0.14s cubic-bezier(0.22, 1, 0.36, 1) both;
-        letter-spacing: 0.002em;
-      }
-
-      .hero-cta {
-        display: flex;
-        gap: 12px;
-        position: relative;
-        z-index: 1;
-        animation: fadeUp 0.55s 0.21s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        padding: 12px 24px;
-        font-size: 14px;
-        font-weight: 600;
-        border-radius: 9px;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        letter-spacing: 0.01em;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn-primary {
-        background: linear-gradient(160deg, #2756e8 0%, #1230a0 100%);
-        color: #fff;
-        box-shadow: var(--shadow-blue), inset 0 1px 0 rgba(255, 255, 255, 0.14);
-      }
-
-      .btn-primary::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          160deg,
-          rgba(255, 255, 255, 0.1) 0%,
-          transparent 50%
-        );
-        pointer-events: none;
-      }
-
-      .btn-primary:hover {
-        background: linear-gradient(160deg, #2e60f0 0%, #1535b0 100%);
-        box-shadow: var(--shadow-blue-hover);
-        transform: translateY(-1.5px);
-      }
-
-      .btn-ghost {
-        background: var(--surface);
-        color: var(--text-2);
-        border: 1px solid var(--border);
-        box-shadow: var(--shadow-sm);
-      }
-
-      .btn-ghost:hover {
-        border-color: var(--blue-mid);
-        color: var(--blue);
-        transform: translateY(-1.5px);
-        box-shadow: var(--shadow-md);
-      }
-
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* ─── Divider ─── */
-      .rule {
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          var(--border) 12%,
-          var(--border) 88%,
-          transparent
-        );
-      }
-
-      /* ─── Sections ─── */
-      .section {
-        padding: 52px 0;
-      }
-
-      .section-eyebrow {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: var(--blue);
-        margin-bottom: 32px;
-      }
-
-      .section-eyebrow::after {
-        content: "";
-        height: 1px;
-        width: 52px;
-        background: linear-gradient(to right, var(--blue-mid), transparent);
-        border-radius: 1px;
-      }
-
-      /* ─── Pillars ─── */
-      .pillars {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 12px;
-      }
-
-      .pillar {
-        background: var(--surface-raised);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 28px 24px 26px;
-        transition: border-color 0.22s, box-shadow 0.22s,
-          transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        box-shadow: var(--shadow-sm);
-      }
-
-      .pillar::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 20px;
-        right: 20px;
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(255, 255, 255, 0.9),
-          transparent
-        );
-        border-radius: 1px;
-      }
-
-      .pillar:hover {
-        border-color: var(--blue-mid);
-        box-shadow: 0 6px 28px rgba(26, 71, 200, 0.09),
-          0 2px 8px rgba(26, 71, 200, 0.05);
-        transform: translateY(-3px);
-      }
-
-      .pillar-num {
-        font-family: "Playfair Display", Georgia, serif;
-        font-style: italic;
-        font-size: 34px;
-        font-weight: bold;
-        color: var(--blue-mid);
-        line-height: 1;
-        margin-bottom: 14px;
-        letter-spacing: -0.02em;
-      }
-
-      .pillar h3 {
-        font-size: 15px;
-        font-weight: 600;
-        color: var(--text-1);
-        margin-bottom: 8px;
-        letter-spacing: -0.01em;
-      }
-
-      .pillar p {
-        font-size: 14px;
-        color: var(--text-2);
-        line-height: 1.65;
-        font-weight: 400;
-      }
-
-      /* ─── Repos ─── */
-      .repos {
-        display: flex;
-        flex-direction: column;
-        gap: 9px;
-      }
-
-      .repo-card {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 28px;
-        padding: 22px 26px;
-        background: var(--surface-raised);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        box-shadow: var(--shadow-sm);
-      }
-
-      .repo-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 24px;
-        right: 24px;
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(255, 255, 255, 0.9),
-          transparent
-        );
-      }
-
-      .repo-card::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 16px;
-        bottom: 16px;
-        width: 3px;
-        border-radius: 0 2px 2px 0;
-        background: linear-gradient(to bottom, var(--blue), var(--blue-dark));
-        opacity: 0;
-        transition: opacity 0.2s;
-      }
-
-      .repo-card:hover {
-        border-color: var(--blue-mid);
-        box-shadow: 0 6px 28px rgba(26, 71, 200, 0.09),
-          0 2px 8px rgba(26, 71, 200, 0.05);
-        transform: translateX(4px);
-      }
-
-      .repo-card:hover::after {
-        opacity: 1;
-      }
-
-      .repo-card.muted {
-        opacity: 0.38;
-        pointer-events: none;
-        background: var(--bg-warm);
-        box-shadow: none;
-      }
-
-      .repo-card.featured {
-        border-color: var(--blue-mid);
-        background: linear-gradient(
-          160deg,
-          var(--surface-raised) 0%,
-          var(--blue-light) 140%
-        );
-      }
-
-      .repo-name {
-        font-size: 15px;
-        font-weight: 600;
-        color: var(--text-1);
-        margin-bottom: 5px;
-        letter-spacing: -0.012em;
-      }
-
-      .repo-desc {
-        font-size: 14px;
-        color: var(--text-2);
-        line-height: 1.58;
-      }
-
-      .repo-links {
-        display: flex;
-        gap: 8px;
-        margin-top: 10px;
-        flex-wrap: wrap;
-      }
-
-      .repo-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 12px;
-        font-weight: 500;
-        color: var(--blue);
-        background: var(--blue-light);
-        border: 1px solid var(--blue-mid);
-        padding: 3px 10px;
-        border-radius: 100px;
-        transition: all 0.16s;
-        letter-spacing: 0.005em;
-      }
-
-      .repo-link:hover {
-        background: var(--blue);
-        color: #fff;
-        border-color: var(--blue);
-      }
-
-      .repo-link svg {
-        flex-shrink: 0;
-      }
-
-      .repo-meta {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex-shrink: 0;
-      }
-
-      .tag {
-        font-size: 12px;
-        font-weight: 500;
-        padding: 4px 12px;
-        border-radius: 100px;
-        background: var(--bg-warm);
-        color: var(--text-2);
-        border: 1px solid var(--border);
-        white-space: nowrap;
-        letter-spacing: 0.01em;
-      }
-
-      .tag.live {
-        background: #f0fdf5;
-        color: #148038;
-        border-color: #a7f0c4;
-      }
-
-      .tag.ongoing {
-        background: var(--blue-light);
-        color: var(--blue);
-        border-color: var(--blue-mid);
-      }
-
-      .arrow-icon {
-        font-size: 16px;
-        color: var(--text-3);
-        transition: color 0.18s, transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .repo-card:hover .arrow-icon {
-        color: var(--blue);
-        transform: translateX(4px);
-      }
-
-      /* ─── See More ─── */
-      .repos-hidden {
-        display: flex;
-        flex-direction: column;
-        gap: 9px;
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-          opacity 0.35s ease, margin-top 0.35s ease;
-        margin-top: 0;
-      }
-
-      .repos-hidden.open {
-        max-height: 600px;
-        opacity: 1;
-        margin-top: 9px;
-      }
-
-      .see-more-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        margin-top: 16px;
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--blue);
-        background: var(--blue-light);
-        border: 1px solid var(--blue-mid);
-        padding: 8px 18px;
-        border-radius: 100px;
-        cursor: pointer;
-        transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-        letter-spacing: 0.01em;
-        user-select: none;
-      }
-
-      .see-more-btn:hover {
-        background: var(--blue);
-        color: #fff;
-        border-color: var(--blue);
-        transform: translateY(-1px);
-        box-shadow: var(--shadow-blue);
-      }
-
-      .see-more-btn .chevron {
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        display: flex;
-        align-items: center;
-      }
-
-      .see-more-btn.open .chevron {
-        transform: rotate(180deg);
-      }
-
-      /* ─── CTA Banner ─── */
-      .cta-wrap {
-        padding: 0 0 64px;
-      }
-
-      .cta-banner {
-        background: linear-gradient(
-          128deg,
-          #080f28 0%,
-          #132070 48%,
-          #1a47c8 100%
-        );
-        border-radius: 20px;
-        padding: 48px 52px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 36px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 24px 64px rgba(8, 15, 40, 0.3),
-          0 4px 16px rgba(26, 71, 200, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-      }
-
-      .cta-banner::before {
-        content: "";
-        position: absolute;
-        right: -110px;
-        top: -110px;
-        width: 460px;
-        height: 460px;
-        border: 1px solid rgba(255, 255, 255, 0.04);
-        border-radius: 50%;
-      }
-
-      .cta-banner::after {
-        content: "";
-        position: absolute;
-        right: -56px;
-        top: -56px;
-        width: 260px;
-        height: 260px;
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        border-radius: 50%;
-      }
-
-      .cta-glow {
-        position: absolute;
-        top: -60px;
-        right: 80px;
-        width: 320px;
-        height: 320px;
-        background: radial-gradient(
-          circle,
-          rgba(100, 149, 255, 0.18) 0%,
-          transparent 60%
-        );
-        pointer-events: none;
-      }
-
-      .cta-highlight {
-        position: absolute;
-        top: 0;
-        left: 60px;
-        right: 60px;
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(255, 255, 255, 0.15),
-          transparent
-        );
-      }
-
-      .cta-text {
-        position: relative;
-        z-index: 1;
-      }
-
-      .cta-banner h2 {
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: 30px;
-        font-weight: 600;
-        color: #fff;
-        letter-spacing: -0.022em;
-        margin-bottom: 6px;
-      }
-
-      .cta-banner p {
-        font-size: 15px;
-        color: rgba(255, 255, 255, 0.6);
-        font-weight: 400;
-        letter-spacing: 0.01em;
-      }
-
-      .btn-inverse {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(255, 255, 255, 0.97);
-        color: var(--blue-dark);
-        font-size: 14px;
-        font-weight: 600;
-        padding: 12px 24px;
-        border-radius: 10px;
-        white-space: nowrap;
-        flex-shrink: 0;
-        position: relative;
-        z-index: 1;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22), 0 1px 4px rgba(0, 0, 0, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        letter-spacing: 0.01em;
-      }
-
-      .btn-inverse:hover {
-        background: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28),
-          0 2px 8px rgba(0, 0, 0, 0.12);
-      }
-
-      /* ─── Footer ─── */
-      footer {
-        border-top: 1px solid var(--border);
-        padding: 24px 0;
-      }
-
-      footer .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      footer p {
-        font-size: 13px;
-        color: var(--text-3);
-        letter-spacing: 0.01em;
-      }
-
-      footer nav {
-        display: flex;
-        gap: 20px;
-      }
-
-      footer nav a {
-        font-size: 13px;
-        color: var(--text-3);
-        transition: color 0.15s;
-        letter-spacing: 0.005em;
-      }
-
-      footer nav a:hover {
-        color: var(--blue);
-      }
-
-      /* ─── Responsive ─── */
-      @media (max-width: 720px) {
-        .hero h1 {
-          font-size: 36px;
-        }
-        .pillars {
-          grid-template-columns: 1fr;
-        }
-        .cta-banner {
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 36px 28px;
-        }
-        .repo-card {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        header nav {
-          display: none;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <div class="container">
-        <div class="logo">
-          <div class="logo-mark">
-            <img src="Logo/logo-nobg.png" alt="Nyvora Vision Labs logo" />
-          </div>
-          <span class="logo-name">Nyvora Vision Labs</span>
-        </div>
-        <nav>
-          <a href="https://github.com/Nyvora-Vision-Labs" target="_blank"
-            >GitHub</a
-          >
-          <a href="https://discord.gg/GXzFNKpnWr" target="_blank">Discord</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-grid"></div>
-        <div class="container">
-          <div class="hero-inner">
-            <div class="hero-text">
-              <div class="hero-badge">
-                <span class="badge-dot"></span>
-                Open Source
-              </div>
-              <h1>Vision &amp; Language<br /><em>Tooling</em> for Everyone</h1>
-              <p>
-                Free, composable tools for machine learning: Detection
-                Pipelines, Annotation Utilities, NLP Datasets, and Dataset
-                Schemas. No paywalls. No gatekeeping.
-              </p>
-              <div class="hero-cta">
-                <a
-                  href="https://github.com/Nyvora-Vision-Labs"
-                  target="_blank"
-                  class="btn btn-primary"
-                  >View on GitHub →</a
-                >
-                <a
-                  href="https://discord.gg/GXzFNKpnWr"
-                  target="_blank"
-                  class="btn btn-ghost"
-                  >Join Discord</a
-                >
-              </div>
-            </div>
-            <div class="hero-logo">
-              <img
-                src="Logo/logo_with_text_part_2.png"
-                alt="Nyvora Vision Labs"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="rule"></div>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-eyebrow">What we build</div>
-          <div class="pillars">
-            <div class="pillar">
-              <div class="pillar-num">01</div>
-              <h3>Computer Vision</h3>
-              <p>
-                Detection, classification, segmentation, and real-time
-                inference pipelines that work out of the box.
-              </p>
-            </div>
-            <div class="pillar">
-              <div class="pillar-num">02</div>
-              <h3>Language &amp; NLP</h3>
-              <p>
-                Annotated text datasets, annotation apps, and evaluation
-                diagnostics for models that read and judge language.
-              </p>
-            </div>
-            <div class="pillar">
-              <div class="pillar-num">03</div>
-              <h3>Data Collection</h3>
-              <p>
-                Tools and scripts for sourcing and capturing high-quality
-                visual and textual data at scale.
-              </p>
-            </div>
-            <div class="pillar">
-              <div class="pillar-num">04</div>
-              <h3>Data Annotation</h3>
-              <p>
-                Open utilities for labeling, reviewing, and exporting
-                training datasets in any format.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="rule"></div>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-eyebrow">Repositories</div>
-          <div class="repos">
-            <!-- ── 1. NEPSEE (ongoing) ── -->
-            <div class="repo-card featured">
-              <div>
-                <div class="repo-name">NEPSEE</div>
-                <div class="repo-desc">
-                  A Nepali-language sentiment, emotion, and explanation
-                  dataset. Tweets from 20 public figures are scraped,
-                  filtered, split into sentences, and independently labeled
-                  by three annotators through a purpose-built annotation app.
-                  Sentiment labeling is underway; emotion and explanation
-                  layers are next.
-                </div>
-                <div class="repo-links">
-                  <a
-                    href="https://nepsee-a-nepali-sentiment-emotion-and.onrender.com/brief"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      />
-                    </svg>
-                    Annotator Brief
-                  </a>
-                  <a
-                    href="https://github.com/Nyvora-Vision-Labs/NEPSEE-A-Nepali-Sentiment-Emotion-and-Explanation-Dataset"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                      />
-                    </svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag ongoing">Ongoing</span>
-                <span class="tag">Python · Flask · NLP</span>
-                <span class="arrow-icon">→</span>
-              </div>
-            </div>
-
-            <!-- ── 2. LexFlip ── -->
-            <div class="repo-card">
-              <div>
-                <div class="repo-name">LexFlip</div>
-                <div class="repo-desc">
-                  A dissociation diagnostic for legal meaning preservation
-                  metrics. Pulls lexical overlap and legal meaning apart to
-                  test whether embedding-based and LLM-judge metrics actually
-                  track meaning, not just shared words — validated on the
-                  FrJUDGE corpus.
-                </div>
-                <div class="repo-links">
-                  <a
-                    href="https://github.com/Nyvora-Vision-Labs/LexFlip"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                      />
-                    </svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag">Research</span>
-                <span class="tag">Python · LaTeX · NLP</span>
-                <span class="arrow-icon">→</span>
-              </div>
-            </div>
-
-            <!-- ── 3. AI Chip Rack Counter ── -->
-            <div class="repo-card">
-              <div>
-                <div class="repo-name">AI Chip Rack Counter</div>
-                <div class="repo-desc">
-                  High-precision, computer-vision-based chip inventory system.
-                  Upload a rack photo to isolate bags, segment them with a
-                  custom sliding-window algorithm, and classify each one using
-                  CLIP with Global NMS to avoid double-counting.
-                </div>
-                <div class="repo-links">
-                  <a
-                    href="https://huggingface.co/spaces/Gauurab/chips-counter"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      />
-                    </svg>
-                    Live Demo
-                  </a>
-                  <a
-                    href="https://github.com/Nyvora-Vision-Labs"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                      />
-                    </svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag live">Active</span>
-                <span class="tag">Python · Flask · CLIP</span>
-                <span class="arrow-icon">→</span>
-              </div>
-            </div>
-
-            <!-- ── 4. Guess the Miscrit ── -->
-            <div class="repo-card">
-              <div>
-                <div class="repo-name">Guess the Miscrit?!</div>
-                <div class="repo-desc">
-                  A nostalgic, interactive web game where players test their
-                  knowledge by guessing Miscrits based on their silhouettes.
-                  Features multiple game modes and social sharing scorecards.
-                </div>
-                <div class="repo-links">
-                  <a
-                    href="https://nyvora-vision-labs.github.io/Guess_the_Miscrit/"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      />
-                    </svg>
-                    Live Demo
-                  </a>
-                  <a
-                    href="https://github.com/Nyvora-Vision-Labs/Guess_the_Miscrit"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                      />
-                    </svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag live">Active</span>
-                <span class="tag">HTML · JS · Python</span>
-                <span class="arrow-icon">→</span>
-              </div>
-            </div>
-
-            <!-- ── 5. GitSphere ── -->
-            <div class="repo-card">
-              <div>
-                <div class="repo-name">GitSphere</div>
-                <div class="repo-desc">
-                  An immersive 3D architecture visualizer and AI-powered
-                  repository analyzer. Transforms complex codebases into
-                  interactive knowledge graphs using DeepSeek AI to explain
-                  structural patterns and dependencies.
-                </div>
-                <div class="repo-links">
-                  <a
-                    href="https://www.youtube.com/watch?v=52FlQTq3I2Y"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 2.9 2.9 0 0 0-.46-5.33z"
-                      />
-                      <polygon
-                        points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
-                      />
-                    </svg>
-                    Watch Demo
-                  </a>
-                  <a
-                    href="https://github.com/Nyvora-Vision-Labs/GitSphere"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                      />
-                    </svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag live">Prototype</span>
-                <span class="tag">Python · Three.js</span>
-                <span class="arrow-icon">→</span>
-              </div>
-            </div>
-
-            <!-- ── FaceToREADME ── -->
-            <div class="repo-card">
-              <div>
-                <div class="repo-name">FaceToREADME</div>
-                <div class="repo-desc">
-                  Turn a face photo into ASCII art for your GitHub profile.
-                  Crop, tune width, contrast, detail, and character palettes,
-                  then export an animated SVG that draws your portrait line by
-                  line right inside your README. Runs entirely in the browser —
-                  photos are never uploaded.
-                </div>
-                <div class="repo-links">
-                  <a
-                    href="https://nyvora-vision-labs.github.io/FaceToREADME/"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      />
-                    </svg>
-                    Live Demo
-                  </a>
-                  <a
-                    href="https://github.com/Nyvora-Vision-Labs/FaceToREADME"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                      />
-                    </svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag live">Active</span>
-                <span class="tag">React · TypeScript · Canvas</span>
-                <span class="arrow-icon">→</span>
-              </div>
-            </div>
-
-            <!-- ── Stillroom ── -->
-            <div class="repo-card">
-              <div>
-                <div class="repo-name">Stillroom</div>
-                <div class="repo-desc">
-                  An ambient sound mixer for sleep, focus and meditation. Layer
-                  201 sounds: rain built drop by drop, waves, wind, fire,
-                  drones, binaural beats and singing bowls synthesized live in
-                  the browser, plus real field recordings of Tibetan bowls, a
-                  Japanese rin, thunderstorms and surf. Includes a sleep timer
-                  and saved mixes.
-                </div>
-                <div class="repo-links">
-                  <a
-                    href="https://stillroom-sounds.vercel.app"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      />
-                    </svg>
-                    Live Demo
-                  </a>
-                  <a
-                    href="https://github.com/Nyvora-Vision-Labs/Stillroom"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                      />
-                    </svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag live">Active</span>
-                <span class="tag">Web Audio · JavaScript</span>
-                <span class="arrow-icon">→</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ── Hidden repos ── -->
-          <div class="repos-hidden" id="repos-hidden">
-            <!-- ── 6. Miscrits Random Arena Helper ── -->
-            <div class="repo-card">
-              <div>
-                <div class="repo-name">Miscrits Random Arena Helper</div>
-                <div class="repo-desc">
-                  Browser-based draft analyzer for Miscrits. Upload a lobby
-                  screenshot to get instant Miscrit detection and a ranked pick
-                  order.
-                </div>
-                <div class="repo-links">
-                  <a
-                    href="https://nyvora-vision-labs.github.io/Miscrits-Random-Arena-Helper/"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      />
-                    </svg>
-                    Live Demo
-                  </a>
-                  <a
-                    href="https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                      />
-                    </svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag live">Active</span>
-                <span class="tag">HTML · Python</span>
-                <span class="arrow-icon">→</span>
-              </div>
-            </div>
-
-            <!-- ── 7. Miscrits Games (WordleMiscrits) ── -->
-            <div class="repo-card">
-              <div>
-                <div class="repo-name">Miscrits Games</div>
-                <div class="repo-desc">
-                  A dual-game browser experience built around the world of
-                  Miscrits. Play Miscrits Wordle — guess the secret Miscrit name
-                  in 6 tries — or tackle a randomized Word Search with 400+
-                  Miscrit names hidden in a 12×12 grid. Single-file SPA with a
-                  space-themed dark mode UI and full mobile support.
-                </div>
-                <div class="repo-links">
-                  <a
-                    href="https://nyvora-vision-labs.github.io/WordleMiscrits/"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      />
-                    </svg>
-                    Live Demo
-                  </a>
-                  <a
-                    href="https://github.com/Nyvora-Vision-Labs/WordleMiscrits"
-                    target="_blank"
-                    class="repo-link"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                      />
-                    </svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag live">Active</span>
-                <span class="tag">HTML · JS · JSON</span>
-                <span class="arrow-icon">→</span>
-              </div>
-            </div>
-
-            <!-- ── Coming soon ── -->
-            <div class="repo-card muted">
-              <div>
-                <div class="repo-name">More repositories coming soon</div>
-                <div class="repo-desc">
-                  Watch the org for upcoming releases.
-                </div>
-              </div>
-              <div class="repo-meta">
-                <span class="tag">In development</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ── Toggle button ── -->
-          <button
-            class="see-more-btn"
-            id="see-more-btn"
-            onclick="toggleRepos()"
-          >
-            <span id="see-more-label">See more</span>
-            <span class="chevron">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </span>
-          </button>
-        </div>
-      </section>
-
-      <div class="rule"></div>
-
-      <div class="cta-wrap">
-        <div class="container">
-          <div class="cta-banner">
-            <div class="cta-highlight"></div>
-            <div class="cta-glow"></div>
-            <div class="cta-text">
-              <h2>Join the community</h2>
-              <p>Questions, ideas, or contributions — we're in Discord.</p>
-            </div>
-            <a
-              href="https://discord.gg/GXzFNKpnWr"
-              target="_blank"
-              class="btn-inverse"
-              >Join Discord →</a
-            >
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="container">
-        <p>
-          © 2026 Nyvora Vision Labs — Smarter models start with better data.
-        </p>
-        <nav>
-          <a href="https://github.com/Nyvora-Vision-Labs" target="_blank"
-            >GitHub</a
-          >
-          <a href="https://discord.gg/GXzFNKpnWr" target="_blank">Discord</a>
-        </nav>
-      </div>
-    </footer>
-
-    <script>
-      function toggleRepos() {
-        const hidden = document.getElementById("repos-hidden");
-        const btn = document.getElementById("see-more-btn");
-        const label = document.getElementById("see-more-label");
-        const isOpen = hidden.classList.contains("open");
-
-        hidden.classList.toggle("open");
-        btn.classList.toggle("open");
-        label.textContent = isOpen ? "See more" : "See less";
-      }
-    </script>
-  </body>
+        out.push(line.replace(/ /g, ' '));
+      }
+      L.rows = out; L.lh = lh; L.fs = cw / 0.6;
+    });
+    var asciiG = document.getElementById('ftrAscii'), pool = [];
+    for (var q = 0; q < 60; q++) {
+      var tx = document.createElementNS(SVGNS, 'text');
+      tx.setAttribute('x', AX);
+      tx.setAttribute('textLength', AW);
+      tx.setAttribute('lengthAdjust', 'spacingAndGlyphs');
+      asciiG.appendChild(tx); pool.push(tx);
+    }
+    var el = function (id) { return document.getElementById(id); };
+    var det = el('ftrDet'), scan = el('ftrScan'), knob = el('ftrKnob'), fillBar = el('ftrFill'),
+        colsLbl = el('ftrCols'), setLbl = el('ftrSet'), copied = el('ftrCopied');
+    var lastKey = '';
+    var drawFace = function (t) {
+      var f = t % 8000;
+      det.setAttribute('opacity', f < 300 ? 0 : f < 800 ? (f - 300) / 500 : f < 7400 ? 1 : 0);
+      if (f > 1000 && f < 3000) { scan.setAttribute('opacity', 1); scan.setAttribute('x', 22 + 136 * (f - 1000) / 2000); }
+      else scan.setAttribute('opacity', 0);
+      var p = Math.max(0, Math.min(1, (f - 3200) / 1800));
+      var lvl = p >= 1 ? 2 : p >= 0.5 ? 1 : 0, L = LEVELS[lvl];
+      knob.setAttribute('cx', 160 + 64 * p);
+      fillBar.setAttribute('width', 2 + 64 * p);
+      var shown = f < 1000 ? 0 : f < 3000 ? Math.ceil(L.rows.length * (f - 1000) / 2000) : L.rows.length;
+      if (f >= 7400) shown = 0;
+      var key = lvl + ':' + shown;
+      if (key !== lastKey) {
+        lastKey = key;
+        colsLbl.textContent = shown ? L.cols + ' COLS' : '';
+        setLbl.textContent = L.ramp.trim();
+        pool.forEach(function (tx, i) {
+          if (i < shown) {
+            tx.textContent = L.rows[i];
+            tx.setAttribute('y', (AY + L.lh * (i + 0.8)).toFixed(2));
+            tx.setAttribute('font-size', L.fs.toFixed(2));
+          } else tx.textContent = '';
+        });
+      }
+      copied.setAttribute('opacity', f > 6000 && f < 7400 ? 1 : 0);
+    };
+  }
+
+  // ---- one loop drives every scripted snippet ----
+  var start = performance.now(), last = 0;
+  function frame(now) {
+    if (now - last > 33) {
+      last = now;
+      var t = Math.max(0, now - start);
+      apply(t);
+      if (drawFace) drawFace(t);
+    }
+    requestAnimationFrame(frame);
+  }
+  if (reduce) { apply(3500); if (drawFace) drawFace(5600); }
+  else requestAnimationFrame(frame);
+})();
+</script>
+</body>
 </html>
