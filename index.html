@@ -97,6 +97,16 @@ a{color:#0E1530;text-decoration:none}a:hover{color:#1A4FA0}
 @keyframes lxNot{0%,6%{fill:#FFFFFF}10%,46%{fill:#F08A90}50%,100%{fill:#FFFFFF}}
 .lxbar{transform-box:fill-box;transform-origin:0 50%;animation:lxbar 4s ease-out infinite}
 @keyframes lxbar{0%,4%{transform:scaleX(0)}30%,100%{transform:scaleX(1)}}
+/* an odd card out at the end of the grid spans the row, laid out like the featured card */
+.pgrid>article:last-child:nth-child(odd){grid-column:1/-1;flex-direction:row !important;flex-wrap:wrap}
+.pgrid>article:last-child:nth-child(odd)>.snip{flex:999 1 560px;min-width:0}
+.pgrid>article:last-child:nth-child(odd)>div:last-child{flex:1 1 340px;min-width:0;justify-content:center}
+.pgrid>article:last-child:nth-child(odd)>div:last-child>div.mono{margin-top:0 !important}
+/* fireplace */
+.fpf{transform-box:fill-box;transform-origin:50% 100%;animation:fpf 0.9s ease-in-out infinite alternate}
+@keyframes fpf{0%{transform:scale(1,1) skewX(0deg)}50%{transform:scale(0.93,1.09) skewX(-3deg)}100%{transform:scale(1.05,0.92) skewX(3deg)}}
+.fpcoal{animation:fpcoal 1.6s ease-in-out infinite alternate}
+@keyframes fpcoal{0%{opacity:0.7}100%{opacity:1}}
 @media (prefers-reduced-motion: reduce){.ns2,.lxB,.na2,.nv4,.nv5,.nv6{opacity:0 !important}.nv1,.nv2,.nv3,.na1{opacity:1}.lxbar{transform:none}}
 </style>
 </head>
@@ -213,7 +223,7 @@ GitHub
 <section id="projects" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 96px; display: flex; flex-direction: column; gap: 28px">
 <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; border-top: 1px solid #DEDED7; padding-top: 28px">
 <h2 style="margin: 0; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">Projects</h2>
-<span class="mono" style="font-size: 13px; color: #4A5068">09 repositories · all open source</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">10 repositories · all open source</span>
 </div>
 
 <!-- 01 featured: AI Chip Rack Counter -->
@@ -287,9 +297,92 @@ GitHub
 </div>
 </article>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 28px">
+<div class="pgrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 28px">
 
-<!-- 02 Stillroom -->
+<!-- 02 Fireplace -->
+<article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
+<svg id="fp" role="img" aria-label="Animation: two logs are dragged from a woodpile onto a fire, each adding 15 minutes to a focus timer as the flames grow; then time fast-forwards and at every 15-minute mark a log burns down and the fire gets smaller" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<defs>
+<radialGradient id="fpGlow" cx="150" cy="192" r="175" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF8A3D" stop-opacity="0.34"></stop><stop offset="0.45" stop-color="#E8622E" stop-opacity="0.1"></stop><stop offset="1" stop-color="#E8622E" stop-opacity="0"></stop></radialGradient>
+<radialGradient id="fpInnerGlow" cx="150" cy="214" r="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF9A45" stop-opacity="0.95"></stop><stop offset="0.5" stop-color="#C2410C" stop-opacity="0.38"></stop><stop offset="1" stop-color="#7C2D12" stop-opacity="0"></stop></radialGradient>
+<linearGradient id="fpFlame" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FFB347"></stop><stop offset="0.55" stop-color="#F28C28"></stop><stop offset="1" stop-color="#D9481C"></stop></linearGradient>
+<pattern id="fpStone" width="40" height="30" patternUnits="userSpaceOnUse"><rect width="40" height="30" fill="#101836"></rect><rect x="1" y="1" width="18" height="13" rx="2" fill="#1C2852"></rect><rect x="21" y="1" width="18" height="13" rx="2" fill="#19244C"></rect><rect x="-9" y="16" width="18" height="13" rx="2" fill="#19244C"></rect><rect x="11" y="16" width="18" height="13" rx="2" fill="#1E2B58"></rect><rect x="31" y="16" width="18" height="13" rx="2" fill="#19244C"></rect></pattern>
+<clipPath id="fpOpen"><path d="M106 217V124A44 24 0 0 1 194 124V217Z"></path></clipPath>
+<symbol id="fpLogS" viewBox="-28 -7 56 14"><rect x="-26" y="-5.5" width="52" height="11" rx="5.5" fill="#6B4A31"></rect><path d="M-21 -2.2h17M-9 2.2h21M4 -3.4h12" stroke="#4A2F1D" stroke-width="1" stroke-linecap="round"></path><ellipse cx="22.6" cy="0" rx="3.3" ry="5.5" fill="#D9A96C"></ellipse><ellipse cx="22.6" cy="0" rx="1.7" ry="2.9" fill="none" stroke="#A5743F" stroke-width="0.7"></ellipse></symbol>
+<symbol id="fpEnd" viewBox="-10 -10 20 20"><circle r="9.6" fill="#5C3A22"></circle><circle r="7.8" fill="#D9A96C"></circle><circle r="5.5" fill="none" stroke="#A5743F" stroke-width="0.7"></circle><circle r="3.2" fill="none" stroke="#A5743F" stroke-width="0.7"></circle><circle r="1" fill="#A5743F"></circle><path d="M0 0L5 -5.2" stroke="#7A4E2A" stroke-width="0.8"></path></symbol>
+<symbol id="fpEndB" viewBox="-10 -10 20 20"><circle r="9.6" fill="#E6DFD1"></circle><path d="M-8.6 -3.6l2 0.8M6 6.4l2 -1M-3 8.6l2 -0.4" stroke="#2A2522" stroke-width="1.2" stroke-linecap="round"></path><circle r="7.8" fill="#E2BD85"></circle><circle r="5.5" fill="none" stroke="#B48A55" stroke-width="0.7"></circle><circle r="3.2" fill="none" stroke="#B48A55" stroke-width="0.7"></circle><circle r="1" fill="#B48A55"></circle></symbol>
+</defs>
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<rect x="68" y="54" width="164" height="163" fill="url(#fpStone)"></rect>
+<path d="M102.5 217V124A47.5 27.5 0 0 1 197.5 124V217" fill="none" stroke="#24315E" stroke-width="7" stroke-dasharray="10 1.6"></path>
+<path d="M106 217V124A44 24 0 0 1 194 124V217Z" fill="#060A17"></path>
+<path d="M114 217V130A36 17 0 0 1 186 130V217Z" fill="#0B1126"></path>
+<path d="M74 54h12l-2 12h-8zM214 54h12l-2 12h-8z" fill="#4A2F1D"></path>
+<rect x="58" y="44" width="184" height="11" rx="2" fill="#5C3A22"></rect>
+<rect x="58" y="44" width="184" height="2.2" rx="1" fill="#8A6040"></rect>
+<rect x="50" y="217" width="200" height="8" rx="1.5" fill="#24315E"></rect>
+<rect x="50" y="217" width="200" height="1.5" fill="#5466A3"></rect>
+<ellipse cx="315" cy="225" rx="44" ry="3" fill="#000000" fill-opacity="0.35"></ellipse>
+<path d="M278 223V171M352 223V171" stroke="#24315E" stroke-width="3" stroke-linecap="round"></path>
+<circle cx="278" cy="169" r="3" fill="#2E3D70"></circle><circle cx="352" cy="169" r="3" fill="#2E3D70"></circle>
+<use href="#fpEnd" x="279" y="203" width="18" height="18" transform="rotate(20 288 212)"></use>
+<use href="#fpEndB" x="297" y="203" width="18" height="18" transform="rotate(140 306 212)"></use>
+<use href="#fpEnd" x="315" y="203" width="18" height="18" transform="rotate(250 324 212)"></use>
+<use href="#fpEnd" x="333" y="203" width="18" height="18" transform="rotate(75 342 212)"></use>
+<use href="#fpEnd" x="288" y="187.4" width="18" height="18" transform="rotate(200 297 196.4)"></use>
+<use href="#fpEnd" x="306" y="187.4" width="18" height="18" transform="rotate(320 315 196.4)"></use>
+<use href="#fpEndB" x="324" y="187.4" width="18" height="18" transform="rotate(30 333 196.4)"></use>
+<use href="#fpEnd" x="297" y="171.8" width="18" height="18" transform="rotate(110 306 180.8)"></use>
+<use href="#fpEnd" x="315" y="171.8" width="18" height="18" transform="rotate(280 324 180.8)"></use>
+<g id="fpPileTop"><use href="#fpEnd" x="306" y="156" width="18" height="18" transform="rotate(-40 315 165)"></use></g>
+<path d="M276 221Q315 229 354 221" stroke="#2E3D70" stroke-width="3" fill="none" stroke-linecap="round"></path>
+<rect id="fpLight" width="400" height="250" fill="url(#fpGlow)"></rect>
+<g clip-path="url(#fpOpen)">
+<rect id="fpInner" x="100" y="96" width="100" height="125" fill="url(#fpInnerGlow)"></rect>
+<ellipse class="fpcoal" cx="150" cy="213" rx="30" ry="3.6" fill="#FF7A2A"></ellipse>
+<ellipse class="fpcoal" cx="150" cy="213" rx="16" ry="1.8" fill="#FFD66B" style="animation-duration: 1.1s"></ellipse>
+<g id="fpFlames" transform="translate(150 210) scale(1.2)">
+<g transform="translate(-22 2) scale(0.55)"><g class="fpf" style="animation-duration: 0.7s; animation-delay: -0.1s"><path d="M0 0C-10 0-12.5-8.5-10.5-15.5C-8.5-22.5-2.5-26-3-36C2.5-30.5 4-27 4.5-31C8.5-25 11.5-18.5 10.5-11C9.5-4 5.5 0 0 0Z" fill="url(#fpFlame)"></path></g></g>
+<g transform="translate(22 2) scale(0.5)"><g class="fpf" style="animation-duration: 0.8s; animation-delay: -0.6s"><path d="M0 0C-10 0-12.5-8.5-10.5-15.5C-8.5-22.5-2.5-26-3-36C2.5-30.5 4-27 4.5-31C8.5-25 11.5-18.5 10.5-11C9.5-4 5.5 0 0 0Z" fill="url(#fpFlame)"></path></g></g>
+<g transform="translate(-12 1) scale(0.82)"><g class="fpf" style="animation-duration: 0.75s; animation-delay: -0.3s"><path d="M0 0C-10 0-12.5-8.5-10.5-15.5C-8.5-22.5-2.5-26-3-36C2.5-30.5 4-27 4.5-31C8.5-25 11.5-18.5 10.5-11C9.5-4 5.5 0 0 0Z" fill="url(#fpFlame)"></path><path d="M0 0C-5 0-6.5-4.5-5.5-8.5C-4.5-12.5-1.5-14-1.5-19C1.5-15.5 2.5-13.5 2.5-16C5-12 6-9 5.5-5.5C5-2 3 0 0 0Z" fill="#FFE29A"></path></g></g>
+<g transform="translate(13 1) scale(0.78)"><g class="fpf" style="animation-duration: 0.85s; animation-delay: -0.5s"><path d="M0 0C-10 0-12.5-8.5-10.5-15.5C-8.5-22.5-2.5-26-3-36C2.5-30.5 4-27 4.5-31C8.5-25 11.5-18.5 10.5-11C9.5-4 5.5 0 0 0Z" fill="url(#fpFlame)"></path><path d="M0 0C-5 0-6.5-4.5-5.5-8.5C-4.5-12.5-1.5-14-1.5-19C1.5-15.5 2.5-13.5 2.5-16C5-12 6-9 5.5-5.5C5-2 3 0 0 0Z" fill="#FFE29A"></path></g></g>
+<g transform="scale(1.15)"><g class="fpf"><path d="M0 0C-10 0-12.5-8.5-10.5-15.5C-8.5-22.5-2.5-26-3-36C2.5-30.5 4-27 4.5-31C8.5-25 11.5-18.5 10.5-11C9.5-4 5.5 0 0 0Z" fill="url(#fpFlame)"></path><path d="M0 0C-5 0-6.5-4.5-5.5-8.5C-4.5-12.5-1.5-14-1.5-19C1.5-15.5 2.5-13.5 2.5-16C5-12 6-9 5.5-5.5C5-2 3 0 0 0Z" fill="#FFF1C2"></path></g></g>
+</g>
+<g id="fpLog0" transform="translate(150 205)"><use href="#fpLogS" x="-28" y="-7" width="56" height="14"></use><rect x="-26" y="0" width="52" height="5.5" rx="2.75" fill="#FF7A2A" fill-opacity="0.45"></rect><rect id="fpChar0" x="-26" y="-5.5" width="52" height="11" rx="5.5" fill="#160D08" opacity="0.25"></rect><path id="fpCrack0" d="M-19 -5l1 2.5-1 2.5 1 2.5-1 2.5M-9 -5l-1 2.5 1 2.5-1 2.5 1 2.5M1 -5l1 2.5-1 2.5 1 2.5-1 2.5M11 -5l-1 2.5 1 2.5-1 2.5 1 2.5M-23 0.5h44" stroke="#FF9A45" stroke-width="0.9" fill="none" opacity="0"></path></g>
+<g id="fpLog1" opacity="0"><use href="#fpLogS" x="-28" y="-7" width="56" height="14"></use><rect x="-26" y="0" width="52" height="5.5" rx="2.75" fill="#FF7A2A" fill-opacity="0.45"></rect><rect id="fpChar1" x="-26" y="-5.5" width="52" height="11" rx="5.5" fill="#160D08" opacity="0"></rect><path id="fpCrack1" d="M-19 -5l1 2.5-1 2.5 1 2.5-1 2.5M-9 -5l-1 2.5 1 2.5-1 2.5 1 2.5M1 -5l1 2.5-1 2.5 1 2.5-1 2.5M11 -5l-1 2.5 1 2.5-1 2.5 1 2.5M-23 0.5h44" stroke="#FF9A45" stroke-width="0.9" fill="none" opacity="0"></path></g>
+<g id="fpLog2" opacity="0"><use href="#fpLogS" x="-28" y="-7" width="56" height="14"></use><rect x="-26" y="0" width="52" height="5.5" rx="2.75" fill="#FF7A2A" fill-opacity="0.45"></rect><rect id="fpChar2" x="-26" y="-5.5" width="52" height="11" rx="5.5" fill="#160D08" opacity="0"></rect><path id="fpCrack2" d="M-19 -5l1 2.5-1 2.5 1 2.5-1 2.5M-9 -5l-1 2.5 1 2.5-1 2.5 1 2.5M1 -5l1 2.5-1 2.5 1 2.5-1 2.5M11 -5l-1 2.5 1 2.5-1 2.5 1 2.5M-23 0.5h44" stroke="#FF9A45" stroke-width="0.9" fill="none" opacity="0"></path></g>
+<g stroke="#2A3560" stroke-linecap="round" fill="none"><path d="M122 213.5H178" stroke-width="2"></path><path d="M128 207V219M138 207V219M148 207V219M158 207V219M168 207V219" stroke-width="1.4"></path><path d="M121 200V219M179 200V219" stroke-width="2.4"></path></g>
+<circle cx="121" cy="199" r="2.6" fill="#2A3560"></circle><circle cx="179" cy="199" r="2.6" fill="#2A3560"></circle>
+<g id="fpSparks" fill="#FFD66B"><circle r="1.1" opacity="0"></circle><circle r="1" opacity="0"></circle><circle r="1.2" opacity="0"></circle><circle r="0.9" opacity="0"></circle><circle r="1.1" opacity="0"></circle><circle r="1" opacity="0"></circle><circle r="1.2" opacity="0"></circle><circle r="0.9" opacity="0"></circle><circle r="1" opacity="0"></circle><circle r="1.1" opacity="0"></circle></g>
+</g>
+<g id="fpDrag" opacity="0"><use href="#fpLogS" x="-28" y="-7" width="56" height="14"></use></g>
+<path id="fpCursor" d="M0 0V13.5L3.4 10.3L5.9 15.6L8.2 14.6L5.8 9.4H10.4Z" fill="#FFFFFF" stroke="#0B1430" stroke-width="1.2" stroke-linejoin="round" opacity="0"></path>
+<text x="38" y="24" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">FIREPLACE · FOCUS TIMER</text>
+<path id="fpFF" d="M281 16.5l5.5 4.5-5.5 4.5zM287.5 16.5l5.5 4.5-5.5 4.5z" fill="#9FB3D9" opacity="0"></path>
+<rect id="fpPill" x="298" y="9" width="78" height="23" rx="6" fill="#111C3F" stroke="#E8822E" stroke-opacity="0.45"></rect>
+<path d="M311 13.5c3.5 3 4.5 5.5 3.5 8a3.5 3.5 0 0 1 -7 0c-0.5 -2 1 -3.5 1.5 -5c0.5 1.5 1 2 1.5 2c0 -2 -0.5 -3.5 0.5 -5z" fill="#F28C28"></path>
+<text id="fpTime" x="368" y="25" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="11.5" font-weight="500" text-anchor="end">15:00</text>
+<text id="fpPlus" x="337" y="46" fill="#FFB347" font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle" opacity="0">+15:00</text>
+<text id="fpCap" x="24" y="238" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7.5">DRAG A LOG ONTO THE FIRE · +15 MIN EACH</text>
+</svg>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="mono" style="font-size: 13px; color: #4A5068">02 · New</span>
+<span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
+</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Fireplace</h3>
+<p style="margin: 0; color: #3C4260">A pomodoro timer you keep alive by feeding a fire. Each log you drag onto it adds 15 minutes of focus, and at every 15-minute mark a log burns down and the fire gets a little smaller.</p>
+<div class="mono" style="font-size: 13px; color: #4A5068; margin-top: auto; padding-top: 4px">JavaScript · WebGL · Web Audio</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://nyvora-vision-labs.github.io/fireplace/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500; font-size: 15px">Light the fire</a>
+<a href="https://github.com/Nyvora-Vision-Labs/fireplace" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #CFCFC7; font-weight: 500; font-size: 15px">GitHub</a>
+</div>
+</div>
+</article>
+
+<!-- 03 Stillroom -->
 <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
 <div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
 <svg role="img" aria-label="Animation: an ambient sound mixer with a live waveform and six channels (rain, singing bowl, waves, fire, birds, wind) whose level meters move with the sound" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
@@ -339,7 +432,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">02 · New</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">03 · New</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Stillroom</h3>
@@ -352,7 +445,7 @@ GitHub
 </div>
 </article>
 
-<!-- 03 FaceToREADME -->
+<!-- 04 FaceToREADME -->
 <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
 <div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
 <svg id="ftr" role="img" aria-label="Animation: a selfie gets a face-detection box, then is converted into an ASCII portrait at increasing detail and copied as Markdown" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
@@ -392,7 +485,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">03 · New</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">04 · New</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">FaceToREADME</h3>
@@ -405,7 +498,7 @@ GitHub
 </div>
 </article>
 
-<!-- 04 NEPSEE -->
+<!-- 05 NEPSEE -->
 <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
 <div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
 <svg role="img" aria-label="Animation: a Nepali tweet sentence is labeled by three annotators; they agree on positive, then a second sentence gets two negative votes and one neutral" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
@@ -455,7 +548,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">04 · Language</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">05 · Language</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #7A4A0E; background: #F7EDDC; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B9781F"></span>Ongoing</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">NEPSEE</h3>
@@ -469,7 +562,7 @@ GitHub
 </div>
 </article>
 
-<!-- 05 LexFlip -->
+<!-- 06 LexFlip -->
 <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
 <div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
 <svg role="img" aria-label="Animation: a legal sentence is compared to two simplifications; the one that drops the word not scores high on word overlap but flips the meaning, while a reworded one scores low but keeps the meaning" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
@@ -505,7 +598,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">05 · Language</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">06 · Language</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #3B3F8F; background: #E8E9F7; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #5B5FC7"></span>Research</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">LexFlip</h3>
@@ -517,7 +610,7 @@ GitHub
 </div>
 </article>
 
-<!-- 06 Miscrits Games -->
+<!-- 07 Miscrits Games -->
 <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
 <div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
 <svg role="img" aria-label="Animation: a Wordle board flips a guess with an on-screen keyboard, next to a word search where three words get circled" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
@@ -577,7 +670,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">06</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">07</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Miscrits Games</h3>
@@ -590,7 +683,7 @@ GitHub
 </div>
 </article>
 
-<!-- 03 Arena Helper -->
+<!-- 08 Arena Helper -->
 <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
 <div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
 <svg role="img" aria-label="Animation: a lobby screenshot is scanned, six Miscrits are detected one by one, then a ranked pick order fills in with scores" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
@@ -655,7 +748,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">07</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">08</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Miscrits Random Arena Helper</h3>
@@ -668,7 +761,7 @@ GitHub
 </div>
 </article>
 
-<!-- 04 Guess the Miscrit -->
+<!-- 09 Guess the Miscrit -->
 <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
 <div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
 <svg role="img" aria-label="Animation: a creature silhouette under a spotlight; after two wrong guesses and one right one it is revealed as a fire fox Miscrit with sparkles" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
@@ -720,7 +813,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">08</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">09</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Guess the Miscrit?!</h3>
@@ -733,7 +826,7 @@ GitHub
 </div>
 </article>
 
-<!-- 05 GitSphere -->
+<!-- 10 GitSphere -->
 <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
 <div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
 <svg role="img" aria-label="Animation: a 3D graph of repository modules rotates while each folder is highlighted and analyzed in turn" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
@@ -765,7 +858,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">09</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">10</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #7A4A0E; background: #F7EDDC; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B9781F"></span>Prototype</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">GitSphere</h3>
@@ -1016,6 +1109,143 @@ GitHub
     };
   }
 
+  // ---- Fireplace: two logs go on the fire, then time fast-forwards and they burn down ----
+  var fp = document.getElementById('fp');
+  if (fp) {
+    var fq = function (id) { return document.getElementById(id); };
+    var fpTime = fq('fpTime'), fpPlus = fq('fpPlus'), fpFF = fq('fpFF'), fpCap = fq('fpCap'), fpPill = fq('fpPill'),
+        fpFlames = fq('fpFlames'), fpLight = fq('fpLight'), fpInner = fq('fpInner'),
+        fpDrag = fq('fpDrag'), fpCursor = fq('fpCursor'), fpTop = fq('fpPileTop'),
+        fpSparks = fq('fpSparks').getElementsByTagName('circle'),
+        fpLogs = [0, 1, 2].map(function (i) { return [fq('fpLog' + i), fq('fpChar' + i), fq('fpCrack' + i)]; });
+    // where logs rest on the grate, the top of the woodpile, and where the cursor waits
+    var SLOT = [[150, 205, 0], [139, 196, -8], [161, 188, 7]], PILE = [315, 165], REST = [374, 128];
+    // 10 s loop at 15:00: drag a log on (+15:00), drag another (+15:00),
+    // then fast-forward through two 15-minute marks back to 15:00
+    var DRAGS = [[600, 1400, 1], [2050, 2850, 2]], MARKS = [6400, 8800], FF = [3700, 8800];
+    var BURSTS = [[1400, 1], [2850, 2], [6400, 0], [8800, 0]];
+    var LEVEL = [[0, .55], [1400, .55], [1900, .78], [2850, .78], [3350, 1], [3700, 1], [6300, .9], [6800, .72], [8700, .66], [9200, .55], [10000, .55]];
+    var clamp01 = function (x) { return Math.max(0, Math.min(1, x)); };
+    var ease = function (x) { x = clamp01(x); return x * x * (3 - 2 * x); };
+    var mix = function (a, b, k) { return a + (b - a) * k; };
+    var span = function (f, a, b) { return clamp01((f - a) / (b - a)); };
+    var between = function (a, b, k) { return [mix(SLOT[a][0], SLOT[b][0], k), mix(SLOT[a][1], SLOT[b][1], k), mix(SLOT[a][2], SLOT[b][2], k)]; };
+    var fireLevel = function (f) {
+      for (var i = 1; i < LEVEL.length; i++) {
+        if (f <= LEVEL[i][0]) return mix(LEVEL[i - 1][1], LEVEL[i][1], ease((f - LEVEL[i - 1][0]) / (LEVEL[i][0] - LEVEL[i - 1][0])));
+      }
+      return LEVEL[0][1];
+    };
+    var secondsLeft = function (f) {
+      if (f < 1400) return 900 - f / 1000;
+      if (f < 2850) return 898.6 - (f - 1400) / 1000 + 900 * ease((f - 1400) / 400);
+      if (f < 3700) return 1797.15 - (f - 2850) / 1000 + 900 * ease((f - 2850) / 400);
+      if (f < 6400) return mix(2696.3, 1800, ease(span(f, 3700, 6400)));
+      if (f < 8800) return mix(1800, 900, ease(span(f, 6400, 8800)));
+      return 900;
+    };
+    // each log on the grate: [position, how burnt, opacity, squash]. The oldest log chars as it
+    // burns, collapses at the mark, and the logs above it drop into its place.
+    var logState = function (i, f) {
+      if (i === 0) {
+        if (f < 6400) return [SLOT[0], f < 3700 ? .3 : mix(.3, 1, span(f, 3700, 6400)), 1, 1 - .3 * ease(span(f, 5400, 6400))];
+        if (f < 6800) return [SLOT[0], 1, 1 - span(f, 6400, 6800), .7 * (1 - .7 * span(f, 6400, 6800))];
+        return [SLOT[0], 1, 0, 1];
+      }
+      if (i === 1) {
+        if (f < 1400) return [SLOT[1], 0, 0, 1];
+        if (f < 6400) return [SLOT[1], .12 + .1 * span(f, 1400, 6400), 1, 1];
+        if (f < 8800) return [between(1, 0, ease(span(f, 6400, 6900))), mix(.3, 1, span(f, 6400, 8800)), 1, 1 - .3 * ease(span(f, 7900, 8800))];
+        if (f < 9200) return [SLOT[0], 1, 1 - span(f, 8800, 9200), .7 * (1 - .7 * span(f, 8800, 9200))];
+        return [SLOT[0], 1, 0, 1];
+      }
+      if (f < 2850) return [SLOT[2], 0, 0, 1];
+      if (f < 6400) return [SLOT[2], .12, 1, 1];
+      if (f < 8800) return [between(2, 1, ease(span(f, 6400, 6900))), .14, 1, 1];
+      return [between(1, 0, ease(span(f, 8800, 9300))), mix(.14, .3, span(f, 8800, 9300)), 1, 1];
+    };
+    var place = function (el, p, sx, sy, o) {
+      el.setAttribute('transform', 'translate(' + p[0].toFixed(1) + ' ' + p[1].toFixed(1) + ') rotate(' + p[2].toFixed(1) + ') scale(' + sx.toFixed(3) + ' ' + sy.toFixed(3) + ')');
+      el.setAttribute('opacity', o.toFixed(2));
+    };
+    var lastCap = '';
+    var drawHearth = function (t) {
+      var f = t % 10000, lv = fireLevel(f), flick = 0.9 + 0.1 * Math.sin(t * 0.013) * Math.sin(t * 0.0071 + 1);
+      var s = Math.ceil(secondsLeft(f)), mm = Math.floor(s / 60), ss = s % 60;
+      fpTime.textContent = (mm < 10 ? '0' : '') + mm + ':' + (ss < 10 ? '0' : '') + ss;
+
+      fpFlames.setAttribute('transform', 'translate(150 210) scale(' + (0.6 + 1.1 * lv).toFixed(3) + ')');
+      fpLight.setAttribute('opacity', (0.35 + 0.65 * lv * flick).toFixed(2));
+      fpInner.setAttribute('opacity', (0.4 + 0.6 * lv * flick).toFixed(2));
+
+      for (var i = 0; i < 3; i++) {
+        var st = logState(i, f), burnt = st[1], log = fpLogs[i];
+        place(log[0], st[0], 1 - (1 - st[3]) * 0.25, st[3], st[2]);
+        log[1].setAttribute('opacity', (burnt * 0.85).toFixed(2));
+        log[2].setAttribute('opacity', (ease((burnt - 0.35) / 0.55) * (0.55 + 0.45 * flick) * Math.min(1, lv * 1.3)).toFixed(2));
+      }
+
+      // the cursor glides to the woodpile and carries a log along an arc onto the grate
+      var d = null, cur = REST, curO = 0, held = false;
+      for (var j = 0; j < DRAGS.length; j++) if (f >= DRAGS[j][0] - 400 && f < DRAGS[j][1] + 250) d = DRAGS[j];
+      if (d) {
+        var pick = d[0], land = d[1], to = SLOT[d[2]];
+        if (f < pick) {
+          var k0 = ease(span(f, pick - 400, pick));
+          cur = [mix(REST[0], PILE[0], k0), mix(REST[1], PILE[1], k0)];
+          curO = span(f, pick - 400, pick - 250);
+        } else if (f < land) {
+          var k = ease(span(f, pick + 60, land)), u = 1 - k, k1 = ease(span(f, pick, pick + 320));
+          var mx = (PILE[0] + to[0]) / 2, my = Math.min(PILE[1], to[1]) - 70;
+          var lx = u * u * PILE[0] + 2 * u * k * mx + k * k * to[0], ly = u * u * PILE[1] + 2 * u * k * my + k * k * to[1];
+          place(fpDrag, [lx, ly, mix(75, to[2] - 14, k1) + 14 * k], mix(0.3, 1.08, k1) - 0.08 * k, mix(0.9, 1.08, k1) - 0.08 * k, 1);
+          held = true;
+          cur = [lx + 2, ly + 1];
+          curO = 1;
+        } else {
+          var k2 = ease(span(f, land, land + 250));
+          cur = [mix(to[0] + 2, REST[0], k2), mix(to[1] + 1, REST[1], k2)];
+          curO = 1 - span(f, land + 60, land + 250);
+        }
+      }
+      if (!held) fpDrag.setAttribute('opacity', 0);
+      fpCursor.setAttribute('transform', 'translate(' + cur[0].toFixed(1) + ' ' + cur[1].toFixed(1) + ')');
+      fpCursor.setAttribute('opacity', curO.toFixed(2));
+
+      // the woodpile never runs out: its top log is gone while carried, then rolls back in
+      var top = 1;
+      DRAGS.forEach(function (dd) { if (f >= dd[0] && f < dd[1] + 600) top = f < dd[1] + 380 ? 0 : ease(span(f, dd[1] + 380, dd[1] + 600)); });
+      fpTop.setAttribute('opacity', top.toFixed(2));
+      fpTop.setAttribute('transform', 'translate(315 165) scale(' + (0.6 + 0.4 * top).toFixed(3) + ') translate(-315 -165)');
+
+      // sparks when a log lands and when one collapses at a mark
+      var burst = null;
+      BURSTS.forEach(function (b) { if (f >= b[0] && f < b[0] + 900) burst = b; });
+      for (var n = 0; n < fpSparks.length; n++) {
+        var sp = fpSparks[n];
+        if (!burst) { sp.setAttribute('opacity', 0); continue; }
+        var dt = (f - burst[0]) / 1000, o = SLOT[burst[1]];
+        var a = -1.5708 + ((n * 0.618) % 1 - 0.5) * 1.7, v = 24 + ((n * 0.377) % 1) * 36, life = 0.5 + ((n * 0.531) % 1) * 0.4;
+        sp.setAttribute('cx', (o[0] + Math.cos(a) * v * dt + Math.sin(dt * 10 + n) * 1.5).toFixed(1));
+        sp.setAttribute('cy', (o[1] - 5 + Math.sin(a) * v * dt).toFixed(1));
+        sp.setAttribute('opacity', Math.max(0, 1 - dt / life).toFixed(2));
+      }
+
+      var plus = 0, rise = 0;
+      [DRAGS[0][1], DRAGS[1][1]].forEach(function (te) { if (f >= te && f < te + 800) { var kp = (f - te) / 800; plus = 1 - kp * kp; rise = -9 * ease(kp); } });
+      fpPlus.setAttribute('opacity', plus.toFixed(2));
+      fpPlus.setAttribute('transform', 'translate(0 ' + rise.toFixed(1) + ')');
+
+      var ff = f >= FF[0] && f < FF[1], pulse = 0;
+      MARKS.forEach(function (m) { pulse = Math.max(pulse, 1 - Math.abs(f - m) / 350); });
+      fpFF.setAttribute('opacity', ff ? 0.85 : 0);
+      fpPill.setAttribute('stroke-opacity', (0.45 + 0.55 * pulse).toFixed(2));
+
+      var cap = f < FF[0] ? 'DRAG A LOG ONTO THE FIRE · +15 MIN EACH' : ff ? 'FAST-FORWARD · A LOG BURNS DOWN EVERY 15 MIN' : 'KEEP FEEDING IT AND IT KEEPS BURNING';
+      if (cap !== lastCap) { fpCap.textContent = cap; lastCap = cap; }
+    };
+  }
+
   // ---- one loop drives every scripted snippet ----
   var start = performance.now(), last = 0;
   function frame(now) {
@@ -1024,10 +1254,11 @@ GitHub
       var t = Math.max(0, now - start);
       apply(t);
       if (drawFace) drawFace(t);
+      if (drawHearth) drawHearth(t);
     }
     requestAnimationFrame(frame);
   }
-  if (reduce) { apply(3500); if (drawFace) drawFace(5600); }
+  if (reduce) { apply(3500); if (drawFace) drawFace(5600); if (drawHearth) drawHearth(3690); }
   else requestAnimationFrame(frame);
 })();
 </script>
