@@ -297,34 +297,100 @@ GitHub
 <!-- 02 Roblox-LearnNLP -->
 <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
 <div class="snip" style="aspect-ratio: 16 / 10; background: #0B1020">
-<svg role="img" aria-label="Five learning milestones: Naive Bayes, Hidden Markov Models, RNNs and LSTMs, Attention, and Transformers" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<svg id="rb" role="img" aria-label="Animation: a player walks along a path past five portals, one per sequence model from Naive Bayes to Transformers; each time they enter an open portal and pass its quiz, the next portal unlocks, until all five are lit" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<defs>
+<linearGradient id="rbBeamG0" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#2DD4BF" stop-opacity="0.55"></stop><stop offset="1" stop-color="#2DD4BF" stop-opacity="0"></stop></linearGradient>
+<linearGradient id="rbBeamG1" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#A78BFA" stop-opacity="0.55"></stop><stop offset="1" stop-color="#A78BFA" stop-opacity="0"></stop></linearGradient>
+<linearGradient id="rbBeamG2" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FBBF24" stop-opacity="0.55"></stop><stop offset="1" stop-color="#FBBF24" stop-opacity="0"></stop></linearGradient>
+<linearGradient id="rbBeamG3" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F472B6" stop-opacity="0.55"></stop><stop offset="1" stop-color="#F472B6" stop-opacity="0"></stop></linearGradient>
+<linearGradient id="rbBeamG4" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#38BDF8" stop-opacity="0.55"></stop><stop offset="1" stop-color="#38BDF8" stop-opacity="0"></stop></linearGradient>
+<linearGradient id="rbSegG0" x1="52" y1="0" x2="126" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2DD4BF"></stop><stop offset="1" stop-color="#A78BFA"></stop></linearGradient>
+<linearGradient id="rbSegG1" x1="126" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#A78BFA"></stop><stop offset="1" stop-color="#FBBF24"></stop></linearGradient>
+<linearGradient id="rbSegG2" x1="200" y1="0" x2="274" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FBBF24"></stop><stop offset="1" stop-color="#F472B6"></stop></linearGradient>
+<linearGradient id="rbSegG3" x1="274" y1="0" x2="348" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F472B6"></stop><stop offset="1" stop-color="#38BDF8"></stop></linearGradient>
+</defs>
 <text x="24" y="34" fill="#A7B1CC" font-family="Geist Mono, monospace" font-size="9">A SHORT HISTORY OF SEQUENCE MODELS</text>
-<path d="M52 119H348" stroke="#2A3658" stroke-width="2"></path>
-<path d="M52 119H348" stroke="#2A3658" stroke-width="1" stroke-dasharray="3 7"></path>
+<rect x="290" y="20" width="86" height="20" rx="6" fill="#121A2E" stroke="#2A3658"></rect>
+<circle cx="301" cy="30" r="3" fill="#3DD68C"></circle>
+<text id="rbCount" x="368" y="33.5" fill="#F4F6FB" font-family="Geist Mono, monospace" font-size="9" font-weight="500" text-anchor="end">0/5 DONE</text>
+<path d="M14 151H386" stroke="#2A3658" stroke-width="2"></path>
+<path d="M14 151H386" stroke="#0B1020" stroke-width="1" stroke-dasharray="3 7"></path>
+<path id="rbSeg0" d="M52 151H126" stroke="url(#rbSegG0)" stroke-width="2.5" stroke-dasharray="74" stroke-dashoffset="74"></path>
+<path id="rbSeg1" d="M126 151H200" stroke="url(#rbSegG1)" stroke-width="2.5" stroke-dasharray="74" stroke-dashoffset="74"></path>
+<path id="rbSeg2" d="M200 151H274" stroke="url(#rbSegG2)" stroke-width="2.5" stroke-dasharray="74" stroke-dashoffset="74"></path>
+<path id="rbSeg3" d="M274 151H348" stroke="url(#rbSegG3)" stroke-width="2.5" stroke-dasharray="74" stroke-dashoffset="74"></path>
 <g font-family="Geist Mono, monospace" text-anchor="middle">
-<circle cx="52" cy="119" r="15" fill="#121A2E" stroke="#2DD4BF" stroke-width="3"></circle>
-<text x="52" y="123" fill="#F4F6FB" font-size="10">01</text>
-<text x="52" y="157" fill="#F4F6FB" font-size="8">BAYES</text>
-<text x="52" y="171" fill="#7C88A8" font-size="7">1950s–60s</text>
-<circle cx="126" cy="119" r="15" fill="#121A2E" stroke="#A78BFA" stroke-width="3"></circle>
-<text x="126" y="123" fill="#F4F6FB" font-size="10">02</text>
-<text x="126" y="157" fill="#F4F6FB" font-size="8">HMMs</text>
-<text x="126" y="171" fill="#7C88A8" font-size="7">1960s–80s</text>
-<circle cx="200" cy="119" r="15" fill="#121A2E" stroke="#FBBF24" stroke-width="3"></circle>
-<text x="200" y="123" fill="#F4F6FB" font-size="10">03</text>
-<text x="200" y="157" fill="#F4F6FB" font-size="8">RNNs / LSTMs</text>
-<text x="200" y="171" fill="#7C88A8" font-size="7">1986–97</text>
-<circle cx="274" cy="119" r="15" fill="#121A2E" stroke="#F472B6" stroke-width="3"></circle>
-<text x="274" y="123" fill="#F4F6FB" font-size="10">04</text>
-<text x="274" y="157" fill="#F4F6FB" font-size="8">ATTENTION</text>
-<text x="274" y="171" fill="#7C88A8" font-size="7">2014</text>
-<circle cx="348" cy="119" r="15" fill="#121A2E" stroke="#38BDF8" stroke-width="3"></circle>
-<text x="348" y="123" fill="#F4F6FB" font-size="10">05</text>
-<text x="348" y="157" fill="#F4F6FB" font-size="8">TRANSFORMERS</text>
-<text x="348" y="171" fill="#7C88A8" font-size="7">2017</text>
+<rect id="rbBeam0" x="36" y="24" width="32" height="100" fill="url(#rbBeamG0)" opacity="0"></rect>
+<ellipse id="rbGlow0" cx="52" cy="151" rx="24" ry="4" fill="#2DD4BF" opacity="0"></ellipse>
+<path d="M36 150V124A16 16 0 0 1 68 124V150Z" fill="#121A2E"></path>
+<path id="rbSurf0" d="M36 150V124A16 16 0 0 1 68 124V150Z" fill="#2DD4BF" opacity="0"></path>
+<path d="M36 150V124A16 16 0 0 1 68 124V150" fill="none" stroke="#2A3658" stroke-width="3"></path>
+<path id="rbFrame0" d="M36 150V124A16 16 0 0 1 68 124V150" fill="none" stroke="#2DD4BF" stroke-width="3" opacity="0"></path>
+<text id="rbNum0" x="52" y="139" fill="#F4F6FB" font-size="10" opacity="0">01</text>
+<g id="rbLock0"><path d="M48.5 135v-3a3.5 3.5 0 0 1 7 0v3" fill="none" stroke="#7C88A8" stroke-width="1.6"></path><rect x="47" y="134.5" width="10" height="8" rx="1.5" fill="#7C88A8"></rect></g>
+<g id="rbChk0" opacity="0"><circle cx="67" cy="111" r="5.5" fill="#3DD68C"></circle><path d="M64.4 111.2l1.8 1.8 3.4-3.6" fill="none" stroke="#0B1020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="52" y="169" fill="#F4F6FB" font-size="8">BAYES</text>
+<text x="52" y="182" fill="#7C88A8" font-size="7">1950s–60s</text>
 </g>
+<g font-family="Geist Mono, monospace" text-anchor="middle">
+<rect id="rbBeam1" x="110" y="24" width="32" height="100" fill="url(#rbBeamG1)" opacity="0"></rect>
+<ellipse id="rbGlow1" cx="126" cy="151" rx="24" ry="4" fill="#A78BFA" opacity="0"></ellipse>
+<path d="M110 150V124A16 16 0 0 1 142 124V150Z" fill="#121A2E"></path>
+<path id="rbSurf1" d="M110 150V124A16 16 0 0 1 142 124V150Z" fill="#A78BFA" opacity="0"></path>
+<path d="M110 150V124A16 16 0 0 1 142 124V150" fill="none" stroke="#2A3658" stroke-width="3"></path>
+<path id="rbFrame1" d="M110 150V124A16 16 0 0 1 142 124V150" fill="none" stroke="#A78BFA" stroke-width="3" opacity="0"></path>
+<text id="rbNum1" x="126" y="139" fill="#F4F6FB" font-size="10" opacity="0">02</text>
+<g id="rbLock1"><path d="M122.5 135v-3a3.5 3.5 0 0 1 7 0v3" fill="none" stroke="#7C88A8" stroke-width="1.6"></path><rect x="121" y="134.5" width="10" height="8" rx="1.5" fill="#7C88A8"></rect></g>
+<g id="rbChk1" opacity="0"><circle cx="141" cy="111" r="5.5" fill="#3DD68C"></circle><path d="M138.4 111.2l1.8 1.8 3.4-3.6" fill="none" stroke="#0B1020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="126" y="169" fill="#F4F6FB" font-size="8">HMMs</text>
+<text x="126" y="182" fill="#7C88A8" font-size="7">1960s–80s</text>
+</g>
+<g font-family="Geist Mono, monospace" text-anchor="middle">
+<rect id="rbBeam2" x="184" y="24" width="32" height="100" fill="url(#rbBeamG2)" opacity="0"></rect>
+<ellipse id="rbGlow2" cx="200" cy="151" rx="24" ry="4" fill="#FBBF24" opacity="0"></ellipse>
+<path d="M184 150V124A16 16 0 0 1 216 124V150Z" fill="#121A2E"></path>
+<path id="rbSurf2" d="M184 150V124A16 16 0 0 1 216 124V150Z" fill="#FBBF24" opacity="0"></path>
+<path d="M184 150V124A16 16 0 0 1 216 124V150" fill="none" stroke="#2A3658" stroke-width="3"></path>
+<path id="rbFrame2" d="M184 150V124A16 16 0 0 1 216 124V150" fill="none" stroke="#FBBF24" stroke-width="3" opacity="0"></path>
+<text id="rbNum2" x="200" y="139" fill="#F4F6FB" font-size="10" opacity="0">03</text>
+<g id="rbLock2"><path d="M196.5 135v-3a3.5 3.5 0 0 1 7 0v3" fill="none" stroke="#7C88A8" stroke-width="1.6"></path><rect x="195" y="134.5" width="10" height="8" rx="1.5" fill="#7C88A8"></rect></g>
+<g id="rbChk2" opacity="0"><circle cx="215" cy="111" r="5.5" fill="#3DD68C"></circle><path d="M212.4 111.2l1.8 1.8 3.4-3.6" fill="none" stroke="#0B1020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="200" y="169" fill="#F4F6FB" font-size="8">RNNs / LSTMs</text>
+<text x="200" y="182" fill="#7C88A8" font-size="7">1986–97</text>
+</g>
+<g font-family="Geist Mono, monospace" text-anchor="middle">
+<rect id="rbBeam3" x="258" y="24" width="32" height="100" fill="url(#rbBeamG3)" opacity="0"></rect>
+<ellipse id="rbGlow3" cx="274" cy="151" rx="24" ry="4" fill="#F472B6" opacity="0"></ellipse>
+<path d="M258 150V124A16 16 0 0 1 290 124V150Z" fill="#121A2E"></path>
+<path id="rbSurf3" d="M258 150V124A16 16 0 0 1 290 124V150Z" fill="#F472B6" opacity="0"></path>
+<path d="M258 150V124A16 16 0 0 1 290 124V150" fill="none" stroke="#2A3658" stroke-width="3"></path>
+<path id="rbFrame3" d="M258 150V124A16 16 0 0 1 290 124V150" fill="none" stroke="#F472B6" stroke-width="3" opacity="0"></path>
+<text id="rbNum3" x="274" y="139" fill="#F4F6FB" font-size="10" opacity="0">04</text>
+<g id="rbLock3"><path d="M270.5 135v-3a3.5 3.5 0 0 1 7 0v3" fill="none" stroke="#7C88A8" stroke-width="1.6"></path><rect x="269" y="134.5" width="10" height="8" rx="1.5" fill="#7C88A8"></rect></g>
+<g id="rbChk3" opacity="0"><circle cx="289" cy="111" r="5.5" fill="#3DD68C"></circle><path d="M286.4 111.2l1.8 1.8 3.4-3.6" fill="none" stroke="#0B1020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="274" y="169" fill="#F4F6FB" font-size="8">ATTENTION</text>
+<text x="274" y="182" fill="#7C88A8" font-size="7">2014</text>
+</g>
+<g font-family="Geist Mono, monospace" text-anchor="middle">
+<rect id="rbBeam4" x="332" y="24" width="32" height="100" fill="url(#rbBeamG4)" opacity="0"></rect>
+<ellipse id="rbGlow4" cx="348" cy="151" rx="24" ry="4" fill="#38BDF8" opacity="0"></ellipse>
+<path d="M332 150V124A16 16 0 0 1 364 124V150Z" fill="#121A2E"></path>
+<path id="rbSurf4" d="M332 150V124A16 16 0 0 1 364 124V150Z" fill="#38BDF8" opacity="0"></path>
+<path d="M332 150V124A16 16 0 0 1 364 124V150" fill="none" stroke="#2A3658" stroke-width="3"></path>
+<path id="rbFrame4" d="M332 150V124A16 16 0 0 1 364 124V150" fill="none" stroke="#38BDF8" stroke-width="3" opacity="0"></path>
+<text id="rbNum4" x="348" y="139" fill="#F4F6FB" font-size="10" opacity="0">05</text>
+<g id="rbLock4"><path d="M344.5 135v-3a3.5 3.5 0 0 1 7 0v3" fill="none" stroke="#7C88A8" stroke-width="1.6"></path><rect x="343" y="134.5" width="10" height="8" rx="1.5" fill="#7C88A8"></rect></g>
+<g id="rbChk4" opacity="0"><circle cx="363" cy="111" r="5.5" fill="#3DD68C"></circle><path d="M360.4 111.2l1.8 1.8 3.4-3.6" fill="none" stroke="#0B1020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="348" y="169" fill="#F4F6FB" font-size="8">TRANSFORMERS</text>
+<text x="348" y="182" fill="#7C88A8" font-size="7">2017</text>
+</g>
+<g id="rbAv"><ellipse cx="0" cy="0.5" rx="5" ry="1.2" fill="#000000" fill-opacity="0.4"></ellipse><g id="rbBody"><rect id="rbL1" x="-3.2" y="-6.5" width="3" height="6.5" fill="#2A3658"></rect><rect id="rbL2" x="0.2" y="-6.5" width="3" height="6.5" fill="#2A3658"></rect><rect x="-6" y="-13.5" width="2" height="6.5" rx="0.8" fill="#FFC857"></rect><rect x="4" y="-13.5" width="2" height="6.5" rx="0.8" fill="#FFC857"></rect><rect x="-4" y="-13.5" width="8" height="7.5" rx="0.8" fill="#60A5FA"></rect><rect x="-3" y="-20" width="6" height="6" rx="1.2" fill="#FFC857"></rect><rect x="-1.6" y="-18.2" width="1" height="1.4" fill="#0B1020"></rect><rect x="0.6" y="-18.2" width="1" height="1.4" fill="#0B1020"></rect></g></g>
+<g id="rbQuiz" opacity="0" font-family="Geist Mono, monospace"><rect id="rbQuizBox" x="-37" y="-16" width="74" height="29" rx="5" fill="#121A2E" stroke="#2DD4BF"></rect><path d="M-4 13l4 4 4-4" fill="#121A2E"></path><text x="-30" y="-4" fill="#A7B1CC" font-size="7">QUIZ</text>
+<g id="rbDots"><circle cx="2.0" cy="-6.5" r="2.4" fill="#2A3658"></circle><circle cx="9.5" cy="-6.5" r="2.4" fill="#2A3658"></circle><circle cx="17.0" cy="-6.5" r="2.4" fill="#2A3658"></circle><circle cx="24.5" cy="-6.5" r="2.4" fill="#2A3658"></circle><circle cx="32.0" cy="-6.5" r="2.4" fill="#2A3658"></circle></g>
+<text id="rbRes" x="0" y="7.5" fill="#3DD68C" font-size="7.5" font-weight="500" text-anchor="middle"></text></g>
 <rect x="24" y="204" width="352" height="24" rx="6" fill="#121A2E" stroke="#2A3658"></rect>
-<text x="200" y="219" fill="#A7B1CC" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">EXPLORE · EXPERIMENT · UNLOCK THE NEXT LESSON</text>
+<text id="rbCap" x="200" y="219" fill="#A7B1CC" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">EXPLORE · EXPERIMENT · UNLOCK THE NEXT LESSON</text>
+<rect id="rbFade" width="400" height="250" fill="#0B1020" opacity="0"></rect>
 </svg>
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
@@ -1290,6 +1356,86 @@ GitHub
     };
   }
 
+  // ---- Roblox-LearnNLP: walk the Atrium, pass each portal's quiz, unlock the next ----
+  var rb = document.getElementById('rb');
+  if (rb) {
+    var rq = function (id) { return document.getElementById(id); };
+    var RX = [52, 126, 200, 274, 348], SCORE = [5, 4, 5, 5, 4],
+        RNAMES = ['NAIVE BAYES', 'HIDDEN MARKOV MODELS', 'RNNs & LSTMs', 'ATTENTION', 'TRANSFORMERS'];
+    var rbParts = [0, 1, 2, 3, 4].map(function (i) {
+      return { beam: rq('rbBeam' + i), glow: rq('rbGlow' + i), surf: rq('rbSurf' + i), frame: rq('rbFrame' + i),
+               num: rq('rbNum' + i), lock: rq('rbLock' + i), chk: rq('rbChk' + i), seg: rq('rbSeg' + i) };
+    });
+    var rbAv = rq('rbAv'), rbBody = rq('rbBody'), rbL1 = rq('rbL1'), rbL2 = rq('rbL2'), rbQuiz = rq('rbQuiz'),
+        rbQuizBox = rq('rbQuizBox'), rbDots = rq('rbDots').getElementsByTagName('circle'), rbRes = rq('rbRes'),
+        rbCount = rq('rbCount'), rbCap = rq('rbCap'), rbFade = rq('rbFade');
+    var RACC = ['#2DD4BF', '#A78BFA', '#FBBF24', '#F472B6', '#38BDF8'];
+    // 12.5 s loop: one 1.9 s beat per portal (walk in, quiz, unlock the next), then graduation
+    var R0 = 500, STEP = 1900, GRAD = R0 + 5 * STEP, RLOOP = 12500, DONE = 1550;
+    var rc = function (x) { return Math.max(0, Math.min(1, x)); };
+    var re = function (x) { x = rc(x); return x * x * (3 - 2 * x); };
+    var rs = function (f, a, b) { return rc((f - a) / (b - a)); };
+    var lastRbCap = '', lastRbCount = '';
+    var drawRb = function (t) {
+      var f = t % RLOOP, m = Math.max(0, Math.min(5, Math.floor((f - R0) / STEP))), loc = f - R0 - m * STEP;
+      var grad = f >= GRAD, done = 0;
+
+      for (var i = 0; i < 5; i++) {
+        var p = rbParts[i], dt = R0 + i * STEP + DONE;
+        var u = i === 0 ? 1 : re(rs(f, dt - STEP, dt - STEP + 300)), isDone = f >= dt;
+        if (isDone) done++;
+        var pulse = 0.5 + 0.5 * Math.sin(t * 0.004 + i), flash = 0;
+        if (m === i && loc >= 800 && loc < 1300) flash = 1 - Math.abs(loc - 950) / 350;
+        var surf = grad ? 0.3 + 0.12 * pulse : isDone ? 0.22 : u * (0.14 + 0.12 * pulse);
+        surf = Math.min(0.85, surf + 0.5 * rc(flash));
+        p.surf.setAttribute('opacity', surf.toFixed(2));
+        p.glow.setAttribute('opacity', Math.min(1, surf * 1.6).toFixed(2));
+        p.beam.setAttribute('opacity', (grad ? 0.5 + 0.3 * pulse : isDone ? 0.12 : u * (0.25 + 0.25 * pulse)).toFixed(2));
+        p.frame.setAttribute('opacity', u.toFixed(2));
+        p.num.setAttribute('opacity', u.toFixed(2));
+        p.lock.setAttribute('opacity', (1 - u).toFixed(2));
+        var ck = re(rs(f, dt, dt + 220));
+        p.chk.setAttribute('opacity', ck.toFixed(2));
+        p.chk.setAttribute('transform', 'translate(' + (RX[i] + 15) + ' 111) scale(' + (0.4 + 0.6 * ck).toFixed(3) + ') translate(' + -(RX[i] + 15) + ' -111)');
+        if (p.seg) p.seg.setAttribute('stroke-dashoffset', (74 * (1 - re(rs(f, dt, dt + 300)))).toFixed(1));
+      }
+
+      // the player walks to the open portal, steps in, and comes back out once the quiz is passed
+      var ax = 14, ao = 1, as = 1, walking = false;
+      if (f < R0) ax = 14;
+      else if (m < 5) {
+        var from = m === 0 ? 14 : RX[m - 1];
+        if (loc < 800) { ax = from + (RX[m] - from) * re(loc / 800); walking = true; }
+        else { ax = RX[m]; ao = loc < 1000 ? 1 - rs(loc, 800, 1000) : rs(loc, 1600, 1800); as = loc < 1000 ? 1 - 0.4 * rs(loc, 800, 1000) : 1; }
+      } else ax = RX[4];
+      var hop = walking ? -1.4 * Math.abs(Math.sin(loc * 0.022)) : grad ? -4 * Math.abs(Math.sin((f - GRAD) * 0.006)) : 0;
+      rbAv.setAttribute('transform', 'translate(' + ax.toFixed(1) + ' 150) scale(' + as.toFixed(3) + ')');
+      rbAv.setAttribute('opacity', ao.toFixed(2));
+      rbBody.setAttribute('transform', 'translate(0 ' + hop.toFixed(2) + ')');
+      var sw = walking ? 22 * Math.sin(loc * 0.022) : 0;
+      rbL1.setAttribute('transform', 'rotate(' + sw.toFixed(1) + ' -1.7 -6.5)');
+      rbL2.setAttribute('transform', 'rotate(' + (-sw).toFixed(1) + ' 1.7 -6.5)');
+
+      // the quiz card: five answers come in one by one, then the pass mark
+      if (m < 5 && loc >= 950 && loc < 1800) {
+        var qx = Math.max(41, Math.min(359, RX[m]));
+        rbQuiz.setAttribute('opacity', Math.min(rs(loc, 950, 1100), 1 - rs(loc, 1650, 1800)).toFixed(2));
+        rbQuiz.setAttribute('transform', 'translate(' + qx + ' ' + (88 - 4 * re(rs(loc, 950, 1150))).toFixed(1) + ')');
+        rbQuizBox.setAttribute('stroke', RACC[m]);
+        for (var k = 0; k < 5; k++) rbDots[k].setAttribute('fill', loc < 1050 + k * 85 ? '#2A3658' : SCORE[m] === 4 && k === 2 ? '#FF6B6B' : '#3DD68C');
+        rbRes.textContent = loc >= 1480 ? 'PASSED ' + SCORE[m] + '/5' : '';
+      } else rbQuiz.setAttribute('opacity', 0);
+
+      var cnt = done + '/5 DONE';
+      if (cnt !== lastRbCount) { rbCount.textContent = cnt; lastRbCount = cnt; }
+      var cap = grad ? 'GRADUATED · BAYES → TRANSFORMERS'
+              : f < R0 || loc < 800 ? 'WALK INTO PORTAL 0' + (m + 1) + ' · ' + RNAMES[m]
+              : m === 4 ? 'PASS THE QUIZ TO FINISH THE JOURNEY' : 'PASS THE QUIZ TO UNLOCK THE NEXT PORTAL';
+      if (cap !== lastRbCap) { rbCap.textContent = cap; lastRbCap = cap; }
+      rbFade.setAttribute('opacity', (f < 300 ? 1 - f / 300 : f > 12000 ? rs(f, 12000, RLOOP) : 0).toFixed(2));
+    };
+  }
+
   // ---- one loop drives every scripted snippet ----
   var start = performance.now(), last = 0;
   function frame(now) {
@@ -1299,10 +1445,11 @@ GitHub
       apply(t);
       if (drawFace) drawFace(t);
       if (drawHearth) drawHearth(t);
+      if (drawRb) drawRb(t);
     }
     requestAnimationFrame(frame);
   }
-  if (reduce) { apply(3500); if (drawFace) drawFace(5600); if (drawHearth) drawHearth(3690); }
+  if (reduce) { apply(3500); if (drawFace) drawFace(5600); if (drawHearth) drawHearth(3690); if (drawRb) drawRb(5800); }
   else requestAnimationFrame(frame);
 })();
 </script>
