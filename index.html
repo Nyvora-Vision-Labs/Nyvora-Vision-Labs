@@ -97,11 +97,6 @@ a{color:#0E1530;text-decoration:none}a:hover{color:#1A4FA0}
 @keyframes lxNot{0%,6%{fill:#FFFFFF}10%,46%{fill:#F08A90}50%,100%{fill:#FFFFFF}}
 .lxbar{transform-box:fill-box;transform-origin:0 50%;animation:lxbar 4s ease-out infinite}
 @keyframes lxbar{0%,4%{transform:scaleX(0)}30%,100%{transform:scaleX(1)}}
-/* an odd card out at the end of the grid spans the row, laid out like the featured card */
-.pgrid>article:last-child:nth-child(odd){grid-column:1/-1;flex-direction:row !important;flex-wrap:wrap}
-.pgrid>article:last-child:nth-child(odd)>.snip{flex:999 1 560px;min-width:0}
-.pgrid>article:last-child:nth-child(odd)>div:last-child{flex:1 1 340px;min-width:0;justify-content:center}
-.pgrid>article:last-child:nth-child(odd)>div:last-child>div.mono{margin-top:0 !important}
 /* fireplace */
 .fpf{transform-box:fill-box;transform-origin:50% 100%;animation:fpf 0.9s ease-in-out infinite alternate}
 @keyframes fpf{0%{transform:scale(1,1) skewX(0deg)}50%{transform:scale(0.93,1.09) skewX(-3deg)}100%{transform:scale(1.05,0.92) skewX(3deg)}}
@@ -297,9 +292,11 @@ GitHub
 </div>
 </article>
 
+<div class="pgrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 28px">
+
 <!-- 02 Roblox-LearnNLP -->
-<article style="display: flex; flex-wrap: wrap; gap: 0; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
-<div class="snip" style="flex: 999 1 560px; min-width: 0; aspect-ratio: 16 / 10; background: #0B1020">
+<article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="aspect-ratio: 16 / 10; background: #0B1020">
 <svg role="img" aria-label="Five learning milestones: Naive Bayes, Hidden Markov Models, RNNs and LSTMs, Attention, and Transformers" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
 <text x="24" y="34" fill="#A7B1CC" font-family="Geist Mono, monospace" font-size="9">A SHORT HISTORY OF SEQUENCE MODELS</text>
 <path d="M52 119H348" stroke="#2A3658" stroke-width="2"></path>
@@ -330,12 +327,12 @@ GitHub
 <text x="200" y="219" fill="#A7B1CC" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">EXPLORE · EXPERIMENT · UNLOCK THE NEXT LESSON</text>
 </svg>
 </div>
-<div style="flex: 1 1 340px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px; justify-content: center">
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">02 · Roblox experience</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">02</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Live</span>
 </div>
-<h3 style="margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15">Roblox-LearnNLP</h3>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Roblox-LearnNLP</h3>
 <p style="margin: 0; color: #3C4260">Explore how sequence models evolved, from Naive Bayes and Hidden Markov Models to RNNs, attention, and Transformers. Walk through a 3D hub and learn with interactive lessons and quizzes.</p>
 <div class="mono" style="font-size: 13px; color: #4A5068">Roblox Studio · Luau</div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 4px">
@@ -344,8 +341,6 @@ GitHub
 </div>
 </div>
 </article>
-
-<div class="pgrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 28px">
 
 <!-- 03 Fireplace -->
 <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
@@ -596,7 +591,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">05 · Language</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">06 · Language</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #7A4A0E; background: #F7EDDC; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B9781F"></span>Ongoing</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">NEPSEE</h3>
@@ -646,7 +641,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">06 · Language</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">07 · Language</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #3B3F8F; background: #E8E9F7; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #5B5FC7"></span>Research</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">LexFlip</h3>
@@ -719,7 +714,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">07</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">08</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Miscrits Games</h3>
@@ -797,7 +792,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">08</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">09</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Miscrits Random Arena Helper</h3>
@@ -862,7 +857,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">09</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">10</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Guess the Miscrit?!</h3>
@@ -907,7 +902,7 @@ GitHub
 </div>
 <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span class="mono" style="font-size: 13px; color: #4A5068">10</span>
+<span class="mono" style="font-size: 13px; color: #4A5068">11</span>
 <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #7A4A0E; background: #F7EDDC; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B9781F"></span>Prototype</span>
 </div>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">GitSphere</h3>
