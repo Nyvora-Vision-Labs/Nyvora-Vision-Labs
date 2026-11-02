@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation: a legal sentence is compared to two simplifications; the one that drops the word not scores high on word overlap but flips the meaning, while a reworded one scores low but keeps the meaning" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<title>a legal sentence is compared to two simplifications; the one that drops the word not scores high on word overlap but flips the meaning, while a reworded one scores low but keeps the meaning</title>
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500&display=swap');
+svg{display:block;width:100%;height:100%;background:#0B1430}
+.lxA{animation:lxA 8s linear infinite}.lxB{opacity:0;animation:lxB 8s linear infinite}
+@keyframes lxA{0%,46%{opacity:1}50%,96%{opacity:0}100%{opacity:1}}
+@keyframes lxB{0%,46%{opacity:0}50%,96%{opacity:1}100%{opacity:0}}
+.lxNot{animation:lxNot 8s linear infinite}
+@keyframes lxNot{0%,6%{fill:#FFFFFF}10%,46%{fill:#F08A90}50%,100%{fill:#FFFFFF}}
+.lxbar{transform-box:fill-box;transform-origin:0 50%;animation:lxbar 4s ease-out infinite}
+@keyframes lxbar{0%,4%{transform:scaleX(0)}30%,100%{transform:scaleX(1)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}.spark{transform:none}.rank{transform:none}.det,.i1,.i2,.i3,.rfade{opacity:1}}
+@media (prefers-reduced-motion: reduce){.ns2,.lxB,.na2,.nv4,.nv5,.nv6{opacity:0 !important}.nv1,.nv2,.nv3,.na1{opacity:1}.lxbar{transform:none}}
+]]></style>
+
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<text x="38" y="24" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">LEXFLIP · METRIC DIAGNOSTIC</text>
+<text x="24" y="44" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7">SOURCE</text>
+<rect x="24" y="50" width="352" height="30" rx="6" fill="#111C3F" stroke="#22305E"></rect>
+<text x="34" y="69" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="11">The tenant shall <tspan class="lxNot" font-weight="600">not</tspan> sublet the premises without consent.</text>
+<text x="24" y="98" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7">SIMPLIFIED</text>
+<rect x="24" y="104" width="352" height="30" rx="6" fill="#111C3F" stroke="#22305E"></rect>
+<g class="lxA"><text x="34" y="123" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="11">The tenant shall sublet the premises without consent.</text><text x="370" y="98" fill="#F08A90" font-family="Geist Mono, monospace" font-size="7" text-anchor="end">"NOT" DROPPED</text></g>
+<g class="lxB"><text x="34" y="123" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="11">Renters need permission before renting the place out.</text><text x="370" y="98" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7" text-anchor="end">REWORDED</text></g>
+<g font-family="Geist Mono, monospace" font-size="7.5" fill="#C9D2EA">
+<text x="24" y="160">WORD OVERLAP</text><text x="24" y="182">METRIC SCORE</text><text x="24" y="204">MEANING KEPT</text>
+</g>
+<g fill="#1B2650"><rect x="110" y="153" width="220" height="9" rx="4.5"></rect><rect x="110" y="175" width="220" height="9" rx="4.5"></rect></g>
+<g class="lxA">
+<rect class="lxbar" x="110" y="153" width="202" height="9" rx="4.5" fill="#3BB3E8"></rect>
+<rect class="lxbar" x="110" y="175" width="196" height="9" rx="4.5" fill="#C9A227"></rect>
+<g font-family="Geist Mono, monospace" font-size="8" fill="#FFFFFF" text-anchor="end"><text x="376" y="161">0.92</text><text x="376" y="183">0.89</text></g>
+<circle cx="116" cy="200" r="7" fill="#B8434B"></circle><path d="M113 197 l6 6 M119 197 l-6 6" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"></path>
+<text x="130" y="203" fill="#F08A90" font-family="Geist Mono, monospace" font-size="7.5">NO: MEANING FLIPPED, METRIC STILL HIGH</text>
+</g>
+<g class="lxB">
+<rect class="lxbar" x="110" y="153" width="40" height="9" rx="4.5" fill="#3BB3E8"></rect>
+<rect class="lxbar" x="110" y="175" width="68" height="9" rx="4.5" fill="#C9A227"></rect>
+<g font-family="Geist Mono, monospace" font-size="8" fill="#FFFFFF" text-anchor="end"><text x="376" y="161">0.18</text><text x="376" y="183">0.31</text></g>
+<circle cx="116" cy="200" r="7" fill="#3E9A5A"></circle><path d="M112.5 200 l2.5 2.5 l5 -5" stroke="#FFFFFF" stroke-width="1.6" fill="none" stroke-linecap="round"></path>
+<text x="130" y="203" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7.5">YES: SAME MEANING, METRIC STILL LOW</text>
+</g>
+<text x="24" y="238" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7.5">DOES THE METRIC TRACK MEANING, OR JUST WORDS?</text>
+</svg>

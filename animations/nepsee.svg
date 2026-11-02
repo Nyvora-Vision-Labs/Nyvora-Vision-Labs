@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation: a Nepali tweet sentence is labeled by three annotators; they agree on positive, then a second sentence gets two negative votes and one neutral" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<title>a Nepali tweet sentence is labeled by three annotators; they agree on positive, then a second sentence gets two negative votes and one neutral</title>
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500&display=swap');
+svg{display:block;width:100%;height:100%;background:#0B1430}
+.ns1{animation:ns1 8s linear infinite}.ns2{opacity:0;animation:ns2 8s linear infinite}
+@keyframes ns1{0%,46%{opacity:1}50%,96%{opacity:0}100%{opacity:1}}
+@keyframes ns2{0%,46%{opacity:0}50%,96%{opacity:1}100%{opacity:0}}
+.nv1,.nv2,.nv3,.nv4,.nv5,.nv6,.na1,.na2{opacity:0}
+.nv1{animation:nv1 8s linear infinite}.nv2{animation:nv2 8s linear infinite}.nv3{animation:nv3 8s linear infinite}
+.nv4{animation:nv4 8s linear infinite}.nv5{animation:nv5 8s linear infinite}.nv6{animation:nv6 8s linear infinite}
+.na1{animation:na1 8s linear infinite}.na2{animation:na2 8s linear infinite}
+@keyframes nv1{0%,10%{opacity:0}12%,46%{opacity:1}48%,100%{opacity:0}}
+@keyframes nv2{0%,18%{opacity:0}20%,46%{opacity:1}48%,100%{opacity:0}}
+@keyframes nv3{0%,26%{opacity:0}28%,46%{opacity:1}48%,100%{opacity:0}}
+@keyframes nv4{0%,60%{opacity:0}62%,96%{opacity:1}98%,100%{opacity:0}}
+@keyframes nv5{0%,68%{opacity:0}70%,96%{opacity:1}98%,100%{opacity:0}}
+@keyframes nv6{0%,76%{opacity:0}78%,96%{opacity:1}98%,100%{opacity:0}}
+@keyframes na1{0%,31%{opacity:0}33%,46%{opacity:1}48%,100%{opacity:0}}
+@keyframes na2{0%,81%{opacity:0}83%,96%{opacity:1}98%,100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}.spark{transform:none}.rank{transform:none}.det,.i1,.i2,.i3,.rfade{opacity:1}}
+@media (prefers-reduced-motion: reduce){.ns2,.lxB,.na2,.nv4,.nv5,.nv6{opacity:0 !important}.nv1,.nv2,.nv3,.na1{opacity:1}.lxbar{transform:none}}
+]]></style>
+
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<text x="38" y="24" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">NEPSEE ANNOTATOR · SENTIMENT</text>
+<text x="376" y="24" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="8" text-anchor="end">LAYER 1 / 3</text>
+<rect x="24" y="34" width="352" height="66" rx="8" fill="#111C3F" stroke="#22305E"></rect>
+<g class="ns1">
+<text x="38" y="62" fill="#FFFFFF" font-family="'Noto Sans Devanagari', sans-serif" font-size="17" font-weight="500">आजको दिन साँच्चै राम्रो छ ।</text>
+<text x="38" y="80" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="8">“Today is truly a good day.”</text>
+<text x="362" y="91" fill="#5C6B99" font-family="Geist Mono, monospace" font-size="7" text-anchor="end">TWEET 1204 · SENT 1</text>
+</g>
+<g class="ns2">
+<text x="38" y="62" fill="#FFFFFF" font-family="'Noto Sans Devanagari', sans-serif" font-size="17" font-weight="500">यो निर्णयले जनता निराश भए ।</text>
+<text x="38" y="80" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="8">“People were let down by this decision.”</text>
+<text x="362" y="91" fill="#5C6B99" font-family="Geist Mono, monospace" font-size="7" text-anchor="end">TWEET 1204 · SENT 2</text>
+</g>
+<g font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle">
+<circle cx="44" cy="127" r="11" fill="#8A6FD1"></circle><text x="44" y="130" fill="#FFFFFF">A1</text>
+<circle cx="44" cy="161" r="11" fill="#E8822E"></circle><text x="44" y="164" fill="#FFFFFF">A2</text>
+<circle cx="44" cy="195" r="11" fill="#2F7FC1"></circle><text x="44" y="198" fill="#FFFFFF">A3</text>
+</g>
+<g fill="#1B2650" stroke="#2A3866">
+<rect x="68" y="116" width="66" height="22" rx="11"></rect><rect x="140" y="116" width="66" height="22" rx="11"></rect><rect x="212" y="116" width="66" height="22" rx="11"></rect>
+<rect x="68" y="150" width="66" height="22" rx="11"></rect><rect x="140" y="150" width="66" height="22" rx="11"></rect><rect x="212" y="150" width="66" height="22" rx="11"></rect>
+<rect x="68" y="184" width="66" height="22" rx="11"></rect><rect x="140" y="184" width="66" height="22" rx="11"></rect><rect x="212" y="184" width="66" height="22" rx="11"></rect>
+</g>
+<g>
+<rect class="nv1" x="68" y="116" width="66" height="22" rx="11" fill="#3E9A5A"></rect>
+<rect class="nv2" x="68" y="150" width="66" height="22" rx="11" fill="#3E9A5A"></rect>
+<rect class="nv3" x="68" y="184" width="66" height="22" rx="11" fill="#3E9A5A"></rect>
+<rect class="nv4" x="212" y="116" width="66" height="22" rx="11" fill="#B8434B"></rect>
+<rect class="nv5" x="212" y="150" width="66" height="22" rx="11" fill="#B8434B"></rect>
+<rect class="nv6" x="140" y="184" width="66" height="22" rx="11" fill="#5C6B99"></rect>
+</g>
+<g font-family="Geist Mono, monospace" font-size="7.5" fill="#E6EBF7" text-anchor="middle">
+<text x="101" y="130">POSITIVE</text><text x="173" y="130">NEUTRAL</text><text x="245" y="130">NEGATIVE</text>
+<text x="101" y="164">POSITIVE</text><text x="173" y="164">NEUTRAL</text><text x="245" y="164">NEGATIVE</text>
+<text x="101" y="198">POSITIVE</text><text x="173" y="198">NEUTRAL</text><text x="245" y="198">NEGATIVE</text>
+</g>
+<rect x="290" y="116" width="86" height="90" rx="8" fill="#111C3F" stroke="#22305E"></rect>
+<text x="333" y="132" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7" text-anchor="middle">AGREEMENT</text>
+<g class="na1" text-anchor="middle"><text x="333" y="166" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="24" font-weight="600">3/3</text><text x="333" y="186" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7.5">POSITIVE</text></g>
+<g class="na2" text-anchor="middle"><text x="333" y="166" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="24" font-weight="600">2/3</text><text x="333" y="186" fill="#F08A90" font-family="Geist Mono, monospace" font-size="7.5">NEGATIVE</text></g>
+<text x="24" y="238" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7.5">20 PUBLIC FIGURES · 3 ANNOTATORS PER SENTENCE</text>
+</svg>

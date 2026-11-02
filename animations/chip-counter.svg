@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation: a scan line sweeps a store rack of chip bags, boxing each bag while the count climbs to 18" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<title>a scan line sweeps a store rack of chip bags, boxing each bag while the count climbs to 18</title>
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500&display=swap');
+svg{display:block;width:100%;height:100%;background:#0B1430}
+.scan{animation:scan 4s linear infinite}
+@keyframes scan{0%{transform:translateY(0);opacity:1}85%{transform:translateY(192px);opacity:1}100%{transform:translateY(192px);opacity:0}}
+.bxA{animation:bxA 4s linear infinite}.bxB{animation:bxB 4s linear infinite}.bxC{animation:bxC 4s linear infinite}
+@keyframes bxA{0%,25%{opacity:0}27%,95%{opacity:1}100%{opacity:0}}
+@keyframes bxB{0%,54%{opacity:0}56%,95%{opacity:1}100%{opacity:0}}
+@keyframes bxC{0%,83%{opacity:0}85%,95%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}.spark{transform:none}.rank{transform:none}.det,.i1,.i2,.i3,.rfade{opacity:1}}
+@media (prefers-reduced-motion: reduce){.ns2,.lxB,.na2,.nv4,.nv5,.nv6{opacity:0 !important}.nv1,.nv2,.nv3,.na1{opacity:1}.lxbar{transform:none}}
+]]></style>
+<defs>
+<linearGradient id="bagShade" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#000000" stop-opacity="0.35"></stop>
+<stop offset="0.22" stop-color="#000000" stop-opacity="0"></stop>
+<stop offset="0.38" stop-color="#FFFFFF" stop-opacity="0.32"></stop>
+<stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"></stop>
+<stop offset="0.8" stop-color="#000000" stop-opacity="0.05"></stop>
+<stop offset="1" stop-color="#000000" stop-opacity="0.4"></stop>
+</linearGradient>
+<pattern id="peg" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="#1D2A57"></circle></pattern>
+<symbol id="cbag" viewBox="0 0 40 52">
+<path d="M2 7 Q-0.6 26 2 45 L38 45 Q40.6 26 38 7 Z" fill="currentColor"></path>
+<path d="M1 2 L3 0 L5 2 L7 0 L9 2 L11 0 L13 2 L15 0 L17 2 L19 0 L21 2 L23 0 L25 2 L27 0 L29 2 L31 0 L33 2 L35 0 L37 2 L39 0 L39 7.5 L1 7.5 Z" fill="currentColor"></path>
+<path d="M1 44.5 L39 44.5 L39 50 L37 52 L35 50 L33 52 L31 50 L29 52 L27 50 L25 52 L23 50 L21 52 L19 50 L17 52 L15 50 L13 52 L11 50 L9 52 L7 50 L5 52 L3 50 L1 52 Z" fill="currentColor"></path>
+<path d="M2 7 Q-0.6 26 2 45 L38 45 Q40.6 26 38 7 Z" fill="url(#bagShade)"></path>
+<g stroke="#000000" stroke-opacity="0.28" stroke-width="0.8"><path d="M4 1.5v6M8 1.5v6M12 1.5v6M16 1.5v6M20 1.5v6M24 1.5v6M28 1.5v6M32 1.5v6M36 1.5v6M4 45v5.5M8 45v5.5M12 45v5.5M16 45v5.5M20 45v5.5M24 45v5.5M28 45v5.5M32 45v5.5M36 45v5.5"></path></g>
+<path d="M1 7.5 H39 M1 44.5 H39" stroke="#000000" stroke-opacity="0.35" stroke-width="0.8"></path>
+<path d="M2 32 Q12 28 20 33 T38 31 L38 38 Q28 35 20 39 T2 37 Z" fill="#FFFFFF" fill-opacity="0.22"></path>
+<ellipse cx="20" cy="21" rx="12.5" ry="8.5" fill="#FFFFFF" fill-opacity="0.94"></ellipse>
+<ellipse cx="20" cy="21" rx="12.5" ry="8.5" fill="none" stroke="currentColor" stroke-width="1.2"></ellipse>
+<g transform="rotate(-18 20 22)">
+<ellipse cx="20" cy="22.5" rx="7" ry="4.6" fill="#E9B23E"></ellipse>
+<ellipse cx="19" cy="21.6" rx="5" ry="2.8" fill="#F6D27A"></ellipse>
+<circle cx="17" cy="22.4" r="0.6" fill="#B07A1E"></circle><circle cx="21" cy="21.4" r="0.6" fill="#B07A1E"></circle><circle cx="23" cy="23.6" r="0.6" fill="#B07A1E"></circle><circle cx="19" cy="24.4" r="0.5" fill="#B07A1E"></circle>
+</g>
+<text x="20" y="42" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="5.6" font-weight="600" text-anchor="middle" letter-spacing="0.4">CRISPS</text>
+<path d="M6 10 Q5 26 6 42" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.4" fill="none" stroke-linecap="round"></path>
+</symbol>
+<symbol id="cbox" viewBox="0 0 46 58">
+<rect x="1" y="1" width="44" height="56" rx="2" fill="#3BB3E8" fill-opacity="0.08" stroke="#3BB3E8" stroke-width="1.4"></rect>
+<path d="M1 9V1h8M37 1h8v8M45 49v8h-8M9 57H1v-8" fill="none" stroke="#FFFFFF" stroke-width="2"></path>
+<rect x="1" y="1" width="20" height="8" fill="#3BB3E8"></rect>
+<text x="3" y="7" fill="#0B1430" font-family="Geist Mono, monospace" font-size="5.6" font-weight="500">bag</text>
+</symbol>
+</defs>
+<path d="M10 30V10h20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<rect x="32" y="38" width="336" height="196" fill="#101B3F"></rect>
+<rect x="32" y="38" width="336" height="196" fill="url(#peg)"></rect>
+<rect x="24" y="34" width="8" height="204" rx="2" fill="#24315E"></rect><rect x="368" y="34" width="8" height="204" rx="2" fill="#24315E"></rect>
+<path d="M28 40V234M372 40V234" stroke="#0B1430" stroke-width="2" stroke-dasharray="3 6"></path>
+<g>
+<use href="#cbag" x="48" y="44" width="40" height="52" style="color: #E07B39"></use>
+<use href="#cbag" x="100" y="44" width="40" height="52" style="color: #D8B032"></use>
+<use href="#cbag" x="152" y="44" width="40" height="52" style="color: #C23B3B" transform="rotate(-3 172 70)"></use>
+<use href="#cbag" x="204" y="44" width="40" height="52" style="color: #2F7FC1"></use>
+<use href="#cbag" x="256" y="44" width="40" height="52" style="color: #3E9A5A" transform="rotate(2 276 70)"></use>
+<use href="#cbag" x="308" y="44" width="40" height="52" style="color: #7B4FB8"></use>
+<use href="#cbag" x="48" y="110" width="40" height="52" style="color: #3E9A5A"></use>
+<use href="#cbag" x="100" y="110" width="40" height="52" style="color: #C23B3B"></use>
+<use href="#cbag" x="152" y="110" width="40" height="52" style="color: #D8B032" transform="rotate(3 172 136)"></use>
+<use href="#cbag" x="204" y="110" width="40" height="52" style="color: #E07B39"></use>
+<use href="#cbag" x="256" y="110" width="40" height="52" style="color: #7B4FB8"></use>
+<use href="#cbag" x="308" y="110" width="40" height="52" style="color: #2F7FC1" transform="rotate(-2 328 136)"></use>
+<use href="#cbag" x="48" y="176" width="40" height="52" style="color: #D8B032" transform="rotate(-2 68 202)"></use>
+<use href="#cbag" x="100" y="176" width="40" height="52" style="color: #2F7FC1"></use>
+<use href="#cbag" x="152" y="176" width="40" height="52" style="color: #E07B39"></use>
+<use href="#cbag" x="204" y="176" width="40" height="52" style="color: #C23B3B"></use>
+<use href="#cbag" x="256" y="176" width="40" height="52" style="color: #D8B032" transform="rotate(3 276 202)"></use>
+<use href="#cbag" x="308" y="176" width="40" height="52" style="color: #3E9A5A"></use>
+</g>
+<g>
+<rect x="30" y="96" width="340" height="8" fill="#2E3D70"></rect><rect x="30" y="96" width="340" height="1.5" fill="#5466A3"></rect>
+<rect x="30" y="162" width="340" height="8" fill="#2E3D70"></rect><rect x="30" y="162" width="340" height="1.5" fill="#5466A3"></rect>
+<rect x="30" y="228" width="340" height="8" fill="#2E3D70"></rect><rect x="30" y="228" width="340" height="1.5" fill="#5466A3"></rect>
+</g>
+<g font-family="Geist Mono, monospace" font-size="4.6" fill="#3A2E0A">
+<rect x="58" y="97.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="61" y="101.8">2.49</text>
+<rect x="162" y="97.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="165" y="101.8">3.19</text>
+<rect x="266" y="97.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="269" y="101.8">2.99</text>
+<rect x="110" y="163.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="113" y="167.8">1.99</text>
+<rect x="214" y="163.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="217" y="167.8">2.49</text>
+<rect x="318" y="163.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="321" y="167.8">3.49</text>
+<rect x="58" y="229.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="61" y="233.8">2.79</text>
+<rect x="162" y="229.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="165" y="233.8">2.49</text>
+<rect x="266" y="229.5" width="20" height="5.5" rx="1" fill="#F2E6A0"></rect><text x="269" y="233.8">1.99</text>
+</g>
+<g class="bxA"><use href="#cbox" x="45" y="41" width="46" height="58"></use><use href="#cbox" x="97" y="41" width="46" height="58"></use><use href="#cbox" x="149" y="41" width="46" height="58"></use><use href="#cbox" x="201" y="41" width="46" height="58"></use><use href="#cbox" x="253" y="41" width="46" height="58"></use><use href="#cbox" x="305" y="41" width="46" height="58"></use></g>
+<g class="bxB"><use href="#cbox" x="45" y="107" width="46" height="58"></use><use href="#cbox" x="97" y="107" width="46" height="58"></use><use href="#cbox" x="149" y="107" width="46" height="58"></use><use href="#cbox" x="201" y="107" width="46" height="58"></use><use href="#cbox" x="253" y="107" width="46" height="58"></use><use href="#cbox" x="305" y="107" width="46" height="58"></use></g>
+<g class="bxC"><use href="#cbox" x="45" y="173" width="46" height="58"></use><use href="#cbox" x="97" y="173" width="46" height="58"></use><use href="#cbox" x="149" y="173" width="46" height="58"></use><use href="#cbox" x="201" y="173" width="46" height="58"></use><use href="#cbox" x="253" y="173" width="46" height="58"></use><use href="#cbox" x="305" y="173" width="46" height="58"></use></g>
+<g class="scan"><rect x="30" y="16" width="340" height="24" fill="#3BB3E8" fill-opacity="0.12"></rect><rect x="30" y="39" width="340" height="2" fill="#3BB3E8"></rect><circle cx="30" cy="40" r="3" fill="#FFFFFF"></circle><circle cx="370" cy="40" r="3" fill="#FFFFFF"></circle></g>
+<rect x="250" y="6" width="118" height="24" rx="6" fill="#0E1A3D" stroke="#3BB3E8" stroke-opacity="0.7"></rect>
+<circle cx="261" cy="18" r="3" fill="#E5484D"></circle>
+<text x="269" y="21.5" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="9.5">BAGS COUNTED</text>
+<text x="360" y="22" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="13" font-weight="500" text-anchor="end" data-bind-text="chipCount"></text>
+<text x="34" y="27" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="9">CLIP · GLOBAL NMS</text>
+<script><![CDATA[
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bound = [];
+  document.querySelectorAll('*').forEach(function (el) {
+    var b = [];
+    for (var i = 0; i < el.attributes.length; i++) {
+      var a = el.attributes[i];
+      if (a.name.indexOf('data-bind-') === 0) b.push([a.name.slice(10), a.value]);
+    }
+    if (b.length) bound.push([el, b]);
+  });
+  function vals(t) {
+    var ct = t % 4000;
+    return { chipCount: String(ct >= 3880 ? 0 : ct >= 3320 ? 18 : ct >= 2160 ? 12 : ct >= 1000 ? 6 : 0) };
+  }
+  function apply(t) {
+    var v = vals(t);
+    bound.forEach(function (pair) {
+      pair[1].forEach(function (b) {
+        if (b[0] === 'text') pair[0].textContent = v[b[1]];
+        else pair[0].setAttribute(b[0], v[b[1]]);
+      });
+    });
+  }
+  var start = performance.now(), last = 0;
+  function frame(now) {
+    if (now - last > 33) { last = now; apply(Math.max(0, now - start)); }
+    requestAnimationFrame(frame);
+  }
+  if (reduce) apply(3500); else requestAnimationFrame(frame);
+})();
+]]></script>
+</svg>

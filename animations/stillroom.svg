@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation: an ambient sound mixer with a live waveform and six channels (rain, singing bowl, waves, fire, birds, wind) whose level meters move with the sound" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<title>an ambient sound mixer with a live waveform and six channels (rain, singing bowl, waves, fire, birds, wind) whose level meters move with the sound</title>
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500&display=swap');
+svg{display:block;width:100%;height:100%;background:#0B1430}
+.ripple{transform-box:fill-box;transform-origin:50% 50%;animation:ripple 3s ease-out infinite}
+@keyframes ripple{0%{transform:scale(0.5);opacity:0.9}100%{transform:scale(2);opacity:0}}
+.drop{animation:drop 1s linear infinite}
+@keyframes drop{0%{transform:translateY(-3px);opacity:0}30%{opacity:1}100%{transform:translateY(5px);opacity:0}}
+.flicker{transform-box:fill-box;transform-origin:50% 100%;animation:flicker 0.8s ease-in-out infinite alternate}
+@keyframes flicker{0%{transform:scale(1,1)}100%{transform:scale(0.92,1.1)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}.spark{transform:none}.rank{transform:none}.det,.i1,.i2,.i3,.rfade{opacity:1}}
+@media (prefers-reduced-motion: reduce){.ns2,.lxB,.na2,.nv4,.nv5,.nv6{opacity:0 !important}.nv1,.nv2,.nv3,.na1{opacity:1}.lxbar{transform:none}}
+]]></style>
+
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<text x="38" y="24" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">STILLROOM · FOCUS MIX</text>
+<circle cx="300" cy="21" r="6" fill="#3BB3E8"></circle><path d="M298 18 v6 M302 18 v6" stroke="#0B1430" stroke-width="1.6"></path>
+<text x="376" y="24" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="8" text-anchor="end">45:00</text>
+<rect x="24" y="32" width="352" height="46" rx="6" fill="#111C3F"></rect>
+<line x1="28" y1="55" x2="372" y2="55" stroke="#22305E"></line>
+<path d="M0 0" data-bind-d="sr.wave2" stroke="#8A6FD1" stroke-opacity="0.7" stroke-width="1.2" fill="none"></path>
+<path d="M0 0" data-bind-d="sr.wave" stroke="#3BB3E8" stroke-width="1.6" fill="none"></path>
+<g>
+<circle cx="52" cy="94" r="5" fill="#C9D2EA"></circle><circle cx="59" cy="90" r="7" fill="#C9D2EA"></circle><circle cx="65.5" cy="95" r="4.5" fill="#C9D2EA"></circle><rect x="47" y="94" width="23" height="5.5" rx="2.75" fill="#C9D2EA"></rect>
+<g stroke="#3BB3E8" stroke-width="1.5" stroke-linecap="round"><path class="drop" d="M52 104 l-1.5 4"></path><path class="drop" d="M59 104 l-1.5 4" style="animation-delay: 0.35s"></path><path class="drop" d="M66 104 l-1.5 4" style="animation-delay: 0.7s"></path></g>
+</g>
+<g>
+<ellipse class="ripple" cx="115" cy="95" rx="13" ry="4" fill="none" stroke="#F2D27A" stroke-width="1"></ellipse>
+<ellipse class="ripple" cx="115" cy="95" rx="13" ry="4" fill="none" stroke="#F2D27A" stroke-width="1" style="animation-delay: 1.5s"></ellipse>
+<path d="M103 95 h24 a12 10 0 0 1 -24 0 z" fill="#D8B032"></path>
+<path d="M106 99 a10 7 0 0 0 6 5" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1.4" fill="none" stroke-linecap="round"></path>
+<ellipse cx="115" cy="95" rx="12" ry="2.6" fill="#F2D27A"></ellipse>
+<path d="M124 84 l8 -6" stroke="#B9781F" stroke-width="2.4" stroke-linecap="round"></path>
+</g>
+<g stroke="#3BB3E8" stroke-width="2" fill="none" stroke-linecap="round"><path d="M160 92 q4 -4 8 0 t8 0 t8 0"></path><path d="M160 99 q4 -4 8 0 t8 0 t8 0" stroke-opacity="0.7"></path><path d="M160 106 q4 -4 8 0 t8 0 t8 0" stroke-opacity="0.4"></path></g>
+<g class="flicker"><path d="M229 84 c7 6 9 11 7 16 a7 7 0 0 1 -14 0 c-1 -4 2 -7 3 -10 c1 3 2 4 3 4 c0 -4 -1 -7 1 -10 z" fill="#E8822E"></path><path d="M229 95 c3 3 4 6 1 9 a3 3 0 0 1 -4 -1 c0 -3 2 -5 3 -8 z" fill="#FFD66B"></path></g>
+<path d="M219 108 h20" stroke="#8A5A2E" stroke-width="2.4" stroke-linecap="round"></path>
+<g stroke="#C9D2EA" stroke-width="1.6" fill="none" stroke-linecap="round"><path d="M275 93 q4 -4 7 0 q3 -4 7 0"></path><path d="M285 102 q3 -3 5 0 q2 -3 5 0"></path><path d="M290 88 q2 -2 4 0 q2 -2 4 0" stroke-opacity="0.6"></path></g>
+<g stroke="#9FB3D9" stroke-width="1.6" fill="none" stroke-linecap="round"><path d="M332 92 h14 a3 3 0 1 0 -3 -3"></path><path d="M332 98 h19 a3 3 0 1 1 -3 3"></path><path d="M332 104 h9"></path></g>
+<g fill="#1B2650">
+<rect x="50" y="116" width="3" height="84" rx="1.5"></rect><rect x="107" y="116" width="3" height="84" rx="1.5"></rect><rect x="164" y="116" width="3" height="84" rx="1.5"></rect><rect x="221" y="116" width="3" height="84" rx="1.5"></rect><rect x="278" y="116" width="3" height="84" rx="1.5"></rect><rect x="335" y="116" width="3" height="84" rx="1.5"></rect>
+<rect x="62" y="116" width="6" height="84" rx="1"></rect><rect x="119" y="116" width="6" height="84" rx="1"></rect><rect x="176" y="116" width="6" height="84" rx="1"></rect><rect x="233" y="116" width="6" height="84" rx="1"></rect><rect x="290" y="116" width="6" height="84" rx="1"></rect><rect x="347" y="116" width="6" height="84" rx="1"></rect>
+</g>
+<g fill="#3BB3E8">
+<rect x="50" y="132.8" width="3" height="67.2" rx="1.5"></rect><rect x="107" y="149.6" width="3" height="50.4" rx="1.5"></rect><rect x="164" y="162.2" width="3" height="37.8" rx="1.5"></rect><rect x="221" y="174.8" width="3" height="25.2" rx="1.5"></rect><rect x="278" y="153.8" width="3" height="46.2" rx="1.5"></rect><rect x="335" y="170.6" width="3" height="29.4" rx="1.5"></rect>
+</g>
+<g fill="#5CC27A">
+<rect x="62" y="0" data-bind-y="sr.y0" width="6" height="0" data-bind-height="sr.h0" rx="1"></rect><rect x="119" y="0" data-bind-y="sr.y1" width="6" height="0" data-bind-height="sr.h1" rx="1"></rect><rect x="176" y="0" data-bind-y="sr.y2" width="6" height="0" data-bind-height="sr.h2" rx="1"></rect><rect x="233" y="0" data-bind-y="sr.y3" width="6" height="0" data-bind-height="sr.h3" rx="1"></rect><rect x="290" y="0" data-bind-y="sr.y4" width="6" height="0" data-bind-height="sr.h4" rx="1"></rect><rect x="347" y="0" data-bind-y="sr.y5" width="6" height="0" data-bind-height="sr.h5" rx="1"></rect>
+</g>
+<g fill="#FFFFFF">
+<rect x="44.5" y="129.8" width="14" height="6" rx="3"></rect><rect x="101.5" y="146.6" width="14" height="6" rx="3"></rect><rect x="158.5" y="159.2" width="14" height="6" rx="3"></rect><rect x="215.5" y="171.8" width="14" height="6" rx="3"></rect><rect x="272.5" y="150.8" width="14" height="6" rx="3"></rect><rect x="329.5" y="167.6" width="14" height="6" rx="3"></rect>
+</g>
+<g font-family="Geist Mono, monospace" font-size="7" fill="#C9D2EA" text-anchor="middle">
+<text x="58" y="214">RAIN</text><text x="115" y="214">BOWL</text><text x="172" y="214">WAVES</text><text x="229" y="214">FIRE</text><text x="286" y="214">BIRDS</text><text x="343" y="214">WIND</text>
+</g>
+<text x="24" y="238" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7.5">173 SYNTHESIZED · 28 FIELD RECORDINGS</text>
+<script><![CDATA[
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bound = [];
+  document.querySelectorAll('*').forEach(function (el) {
+    var b = [];
+    for (var i = 0; i < el.attributes.length; i++) {
+      var a = el.attributes[i];
+      if (a.name.indexOf('data-bind-') === 0) b.push([a.name.slice(10), a.value]);
+    }
+    if (b.length) bound.push([el, b]);
+  });
+  function vals(t) {
+    var v = {};
+    var vols = [0.8, 0.6, 0.45, 0.3, 0.55, 0.35];
+    vols.forEach(function (vo, i) {
+      var lv = vo * (0.72 + 0.28 * Math.sin(t * 0.006 + i * 1.7)) * (0.86 + 0.14 * Math.sin(t * 0.017 + i));
+      var hh = +(84 * lv).toFixed(1);
+      v['sr.h' + i] = hh; v['sr.y' + i] = +(200 - hh).toFixed(1);
+    });
+    var w1 = '', w2 = '';
+    for (var s = 0; s <= 86; s++) {
+      var x = 28 + s * 4, env = Math.sin(Math.PI * (x - 28) / 344);
+      var y1 = 55 + 16 * env * (0.6 * Math.sin(x * 0.08 + t * 0.004) + 0.3 * Math.sin(x * 0.21 - t * 0.007) + 0.1 * Math.sin(x * 0.5 + t * 0.013));
+      var yb = 55 + 9 * env * (0.7 * Math.sin(x * 0.05 - t * 0.003) + 0.3 * Math.sin(x * 0.17 + t * 0.009));
+      w1 += (s ? 'L' : 'M') + x + ' ' + y1.toFixed(1);
+      w2 += (s ? 'L' : 'M') + x + ' ' + yb.toFixed(1);
+    }
+    v['sr.wave'] = w1; v['sr.wave2'] = w2;
+    return v;
+  }
+  function apply(t) {
+    var v = vals(t);
+    bound.forEach(function (pair) {
+      pair[1].forEach(function (b) {
+        if (b[0] === 'text') pair[0].textContent = v[b[1]];
+        else pair[0].setAttribute(b[0], v[b[1]]);
+      });
+    });
+  }
+  var start = performance.now(), last = 0;
+  function frame(now) {
+    if (now - last > 33) { last = now; apply(Math.max(0, now - start)); }
+    requestAnimationFrame(frame);
+  }
+  if (reduce) apply(3500); else requestAnimationFrame(frame);
+})();
+]]></script>
+</svg>

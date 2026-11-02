@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation: a 3D graph of repository modules rotates while each folder is highlighted and analyzed in turn" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<title>a 3D graph of repository modules rotates while each folder is highlighted and analyzed in turn</title>
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500&display=swap');
+svg{display:block;width:100%;height:100%;background:#0B1430}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}.spark{transform:none}.rank{transform:none}.det,.i1,.i2,.i3,.rfade{opacity:1}}
+@media (prefers-reduced-motion: reduce){.ns2,.lxB,.na2,.nv4,.nv5,.nv6{opacity:0 !important}.nv1,.nv2,.nv3,.na1{opacity:1}.lxbar{transform:none}}
+]]></style>
+
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<circle cx="150" cy="125" r="88" fill="#101B3F"></circle>
+<circle cx="150" cy="125" r="88" fill="none" stroke="#3BB3E8" stroke-opacity="0.3"></circle>
+<ellipse cx="150" cy="125" rx="88" ry="22" fill="none" stroke="#3BB3E8" stroke-opacity="0.12"></ellipse>
+<path d="M0 0" data-bind-d="gsEdgesBack" stroke="#3BB3E8" stroke-opacity="0.18" stroke-width="1" fill="none"></path>
+<path d="M0 0" data-bind-d="gsNodesBack" fill="#3BB3E8" fill-opacity="0.3"></path>
+<path d="M0 0" data-bind-d="gsEdgesFront" stroke="#3BB3E8" stroke-opacity="0.65" stroke-width="1.2" fill="none"></path>
+<path d="M0 0" data-bind-d="gsNodesFront" fill="#9FD8F5"></path>
+<path d="M0 0" data-bind-d="gsHubs" fill="#FFFFFF"></path>
+<path d="M0 0" data-bind-d="gsLeader" stroke="#E8822E" stroke-width="1" stroke-dasharray="3 3" fill="none"></path>
+<circle cx="0" data-bind-cx="gsRingX" cy="0" data-bind-cy="gsRingY" r="10" fill="none" stroke="#E8822E" stroke-width="1.8"></circle>
+<circle cx="0" data-bind-cx="gsRingX" cy="0" data-bind-cy="gsRingY" r="4" fill="#E8822E"></circle>
+<rect x="252" y="36" width="132" height="182" rx="8" fill="#111C3F" stroke="#22305E"></rect>
+<text x="262" y="54" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">REPO/</text>
+<rect x="256" y="0" data-bind-y="gsHlY" width="124" height="18" rx="4" fill="#E8822E" fill-opacity="0.2"></rect>
+<g fill="#3BB3E8"><path d="M262 70h5l1.5 1.5h5.5v6h-12z"></path><path d="M262 92h5l1.5 1.5h5.5v6h-12z"></path><path d="M262 114h5l1.5 1.5h5.5v6h-12z"></path><path d="M262 136h5l1.5 1.5h5.5v6h-12z"></path><path d="M262 158h5l1.5 1.5h5.5v6h-12z"></path></g>
+<g font-family="Geist Mono, monospace" font-size="8.5" fill="#C9D2EA">
+<text x="280" y="77">src/</text><text x="280" y="99">api/</text><text x="280" y="121">models/</text><text x="280" y="143">utils/</text><text x="280" y="165">tests/</text>
+</g>
+<g fill="#22305E"><rect x="330" y="72" width="44" height="5" rx="2.5"></rect><rect x="330" y="94" width="32" height="5" rx="2.5"></rect><rect x="330" y="116" width="40" height="5" rx="2.5"></rect><rect x="330" y="138" width="24" height="5" rx="2.5"></rect><rect x="330" y="160" width="36" height="5" rx="2.5"></rect></g>
+<text x="262" y="190" font-family="Geist Mono, monospace" font-size="7.5" fill="#9FB3D9">DEEPSEEK · ANALYZING</text>
+<rect x="262" y="198" width="112" height="4" rx="2" fill="#22305E"></rect>
+<rect x="262" y="198" width="0" data-bind-width="gsProg" height="4" rx="2" fill="#E8822E"></rect>
+<text x="36" y="236" font-family="Geist Mono, monospace" font-size="8" fill="#9FB3D9" data-bind-text="gsStats"></text>
+<script><![CDATA[
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bound = [];
+  document.querySelectorAll('*').forEach(function (el) {
+    var b = [];
+    for (var i = 0; i < el.attributes.length; i++) {
+      var a = el.attributes[i];
+      if (a.name.indexOf('data-bind-') === 0) b.push([a.name.slice(10), a.value]);
+    }
+    if (b.length) bound.push([el, b]);
+  });
+  // GitSphere: points on a sphere joined to their nearest neighbours
+  var N = 22, pts = [], edges = [], hubs = [3, 8, 11, 15, 19];
+  for (var i = 0; i < N; i++) {
+    var y = 1 - 2 * (i + 0.5) / N, r = Math.sqrt(1 - y * y), p = i * 2.39996;
+    pts.push([Math.cos(p) * r, y, Math.sin(p) * r]);
+  }
+  var seen = {};
+  pts.forEach(function (a, i) {
+    pts.map(function (b, j) { return [j, Math.pow(a[0] - b[0], 2) + Math.pow(a[1] - b[1], 2) + Math.pow(a[2] - b[2], 2)]; })
+      .filter(function (d) { return d[0] !== i; })
+      .sort(function (u, v) { return u[1] - v[1]; }).slice(0, 3)
+      .forEach(function (d) { var j = d[0], k = i < j ? i + '-' + j : j + '-' + i; if (!seen[k]) { seen[k] = 1; edges.push([i, j]); } });
+  });
+
+  function vals(t) {
+    var v = {};
+    var a = t * 0.00045, b = 0.42, R = 80, cx = 150, cy = 125;
+    var P = pts.map(function (q) {
+      var x1 = q[0] * Math.cos(a) + q[2] * Math.sin(a), z1 = -q[0] * Math.sin(a) + q[2] * Math.cos(a);
+      var y2 = q[1] * Math.cos(b) - z1 * Math.sin(b), z2 = q[1] * Math.sin(b) + z1 * Math.cos(b);
+      return { x: +(cx + R * x1).toFixed(1), y: +(cy + R * y2).toFixed(1), z: z2 };
+    });
+    function circ(p, r) { return 'M' + (p.x - r).toFixed(1) + ' ' + p.y + 'a' + r + ' ' + r + ' 0 1 0 ' + 2 * r + ' 0a' + r + ' ' + r + ' 0 1 0 ' + -2 * r + ' 0'; }
+    var eF = '', eB = '', nF = '', nB = '', hb = '';
+    edges.forEach(function (e) {
+      var s = 'M' + P[e[0]].x + ' ' + P[e[0]].y + 'L' + P[e[1]].x + ' ' + P[e[1]].y;
+      if (P[e[0]].z < 0 && P[e[1]].z < 0) eF += s; else eB += s;
+    });
+    P.forEach(function (p, i) {
+      var hub = hubs.indexOf(i) >= 0;
+      if (p.z < 0) { if (hub) hb += circ(p, 5); else nF += circ(p, 3); } else nB += circ(p, hub ? 3 : 2);
+    });
+    var k = Math.floor((t % 5000) / 1000), h = P[hubs[k]];
+    v.gsEdgesFront = eF || 'M0 0'; v.gsEdgesBack = eB || 'M0 0';
+    v.gsNodesFront = nF || 'M0 0'; v.gsNodesBack = nB || 'M0 0'; v.gsHubs = hb || 'M0 0';
+    v.gsRingX = h.x; v.gsRingY = h.y;
+    v.gsLeader = 'M' + h.x + ' ' + h.y + 'L256 ' + (74 + 22 * k);
+    v.gsHlY = 65 + 22 * k;
+    v.gsProg = +(((t % 5000) / 5000) * 112).toFixed(1);
+    v.gsStats = N + ' MODULES · ' + edges.length + ' LINKS';
+
+    return v;
+  }
+  function apply(t) {
+    var v = vals(t);
+    bound.forEach(function (pair) {
+      pair[1].forEach(function (b) {
+        if (b[0] === 'text') pair[0].textContent = v[b[1]];
+        else pair[0].setAttribute(b[0], v[b[1]]);
+      });
+    });
+  }
+  var start = performance.now(), last = 0;
+  function frame(now) {
+    if (now - last > 33) { last = now; apply(Math.max(0, now - start)); }
+    requestAnimationFrame(frame);
+  }
+  if (reduce) apply(3500); else requestAnimationFrame(frame);
+})();
+]]></script>
+</svg>

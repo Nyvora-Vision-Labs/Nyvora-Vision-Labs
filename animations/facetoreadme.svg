@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ftr" role="img" aria-label="Animation: a selfie gets a face-detection box, then is converted into an ASCII portrait at increasing detail and copied as Markdown" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<title>a selfie gets a face-detection box, then is converted into an ASCII portrait at increasing detail and copied as Markdown</title>
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500&display=swap');
+svg{display:block;width:100%;height:100%;background:#0B1430}
+.cover{transform-box:fill-box;transform-origin:100% 50%;animation:cover 6s ease-in-out infinite}
+@keyframes cover{0%,8%{transform:scaleX(1)}45%,90%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.aline{animation:aline 6s ease-in-out infinite}
+@keyframes aline{0%,8%{transform:translateX(0);opacity:1}45%{transform:translateX(150px);opacity:1}46%,100%{transform:translateX(150px);opacity:0}}
+.copied{opacity:0;animation:copied 6s linear infinite}
+@keyframes copied{0%,60%{opacity:0}63%,90%{opacity:1}93%,100%{opacity:0}}
+.knob{animation:knob 6s ease-in-out infinite}
+@keyframes knob{0%,8%{transform:translateX(0)}30%,100%{transform:translateX(34px)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}.spark{transform:none}.rank{transform:none}.det,.i1,.i2,.i3,.rfade{opacity:1}}
+@media (prefers-reduced-motion: reduce){.ns2,.lxB,.na2,.nv4,.nv5,.nv6{opacity:0 !important}.nv1,.nv2,.nv3,.na1{opacity:1}.lxbar{transform:none}}
+]]></style>
+
+<defs>
+<clipPath id="ftrClip"><rect x="0" y="0" width="136" height="170" rx="8"></rect></clipPath>
+<linearGradient id="ftrBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9EEF8"></stop><stop offset="1" stop-color="#C9D6EE"></stop></linearGradient>
+<radialGradient id="ftrSkin" cx="0.42" cy="0.36" r="0.75"><stop offset="0" stop-color="#F3C49E"></stop><stop offset="1" stop-color="#C98A60"></stop></radialGradient>
+</defs>
+<path d="M10 30V10h20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<text x="36" y="26" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="8">SELFIE.JPG</text>
+<g id="ftrPortrait" transform="translate(22 34)" clip-path="url(#ftrClip)"></g>
+<g id="ftrDet" opacity="0" transform="translate(22 34)">
+<path d="M30 34V24h10M96 24h10v10M106 108v10H96M40 118H30V108" fill="none" stroke="#1A8FD0" stroke-width="2"></path>
+<rect x="30" y="16" width="38" height="8" fill="#1A8FD0"></rect>
+<text x="32" y="22" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="5.6">face 0.99</text>
+<g fill="#1A8FD0"><circle cx="56" cy="70" r="1.8"></circle><circle cx="80" cy="70" r="1.8"></circle><circle cx="68" cy="84" r="1.8"></circle><circle cx="58" cy="96" r="1.8"></circle><circle cx="78" cy="96" r="1.8"></circle></g>
+</g>
+<rect id="ftrScan" x="22" y="34" width="2" height="170" fill="#3BB3E8" opacity="0"></rect>
+<text x="190" y="110" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7" text-anchor="middle">ASCII</text>
+<path d="M172 120h34M199 113l7 7 -7 7" stroke="#3BB3E8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+<rect x="218" y="34" width="160" height="170" rx="8" fill="#FFFFFF"></rect>
+<path d="M218 42 a8 8 0 0 1 8 -8 h144 a8 8 0 0 1 8 8 v8 h-160 z" fill="#F0F2F5"></path>
+<line x1="218" y1="50" x2="378" y2="50" stroke="#D8DEE4"></line>
+<text x="226" y="45" fill="#57606A" font-family="Geist Mono, monospace" font-size="7">README.md</text>
+<text id="ftrCols" x="370" y="45" fill="#57606A" font-family="Geist Mono, monospace" font-size="7" text-anchor="end"></text>
+<g id="ftrAscii" font-family="Geist Mono, ui-monospace, monospace" fill="#1F2328"></g>
+<rect x="22" y="214" width="92" height="20" rx="5" fill="#111C3F" stroke="#2A3866"></rect>
+<text id="ftrSet" x="68" y="227.5" fill="#C9D2EA" font-family="Geist Mono, monospace" font-size="7.5" text-anchor="middle">@%#*+=-:.</text>
+<text x="124" y="227.5" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7">DETAIL</text>
+<rect x="158" y="223" width="68" height="3" rx="1.5" fill="#22305E"></rect>
+<rect id="ftrFill" x="158" y="223" width="0" height="3" rx="1.5" fill="#3BB3E8"></rect>
+<circle id="ftrKnob" cx="160" cy="224.5" r="5" fill="#FFFFFF"></circle>
+<rect x="290" y="214" width="88" height="20" rx="5" fill="#3BB3E8"></rect>
+<text x="334" y="227.5" fill="#0B1430" font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle">COPY MARKDOWN</text>
+<g id="ftrCopied" opacity="0"><rect x="290" y="214" width="88" height="20" rx="5" fill="#3E9A5A"></rect><path d="M310 224 l3 3 l6 -6" stroke="#FFFFFF" stroke-width="1.6" fill="none" stroke-linecap="round"></path><text x="342" y="227.5" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle">COPIED</text></g>
+<script><![CDATA[
+(function () {
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var drawFace;
+  // ---- FaceToREADME: draw the selfie, sample its pixels, print ASCII ----
+  var FACE = [
+    ['rect', { x: 0, y: 0, width: 136, height: 170 }, 'bg'],
+    ['circle', { cx: 112, cy: 28, r: 22 }, 'rgba(255,255,255,0.55)'],
+    ['path', { d: 'M6 170 C10 136 38 125 68 125 C98 125 126 136 130 170 Z' }, '#2F7FC1'],
+    ['path', { d: 'M40 170 C42 152 47 142 53 135 M96 170 C94 152 89 142 83 135' }, null, '#1F5E95', 2],
+    ['path', { d: 'M58 96 L58 128 Q68 136 78 128 L78 96 Z' }, '#B9805B'],
+    ['path', { d: 'M52 127 Q68 143 84 127 L86 132 Q68 151 50 132 Z' }, '#1F5E95'],
+    ['ellipse', { cx: 34, cy: 76, rx: 6, ry: 10 }, '#D29A72'],
+    ['ellipse', { cx: 102, cy: 76, rx: 6, ry: 10 }, '#D29A72'],
+    ['ellipse', { cx: 68, cy: 72, rx: 34, ry: 42 }, 'skin'],
+    ['path', { d: 'M33 72 C27 32 50 15 70 15 C97 15 111 36 103 72 C101 54 94 44 82 40 C72 50 52 50 42 44 C37 52 34 62 33 72 Z' }, '#2B1B12'],
+    ['path', { d: 'M50 28 C60 21 80 21 92 31' }, null, '#5A3A22', 2],
+    ['path', { d: 'M46 62 q9 -5 17 -1 M73 61 q8 -4 17 1' }, null, '#2B1B12', 3.2],
+    ['ellipse', { cx: 56, cy: 70, rx: 6.2, ry: 3.8 }, '#F7F1EA'],
+    ['ellipse', { cx: 80, cy: 70, rx: 6.2, ry: 3.8 }, '#F7F1EA'],
+    ['circle', { cx: 56.5, cy: 70.3, r: 3 }, '#2A1A0E'],
+    ['circle', { cx: 80.5, cy: 70.3, r: 3 }, '#2A1A0E'],
+    ['circle', { cx: 57.6, cy: 69.1, r: 1 }, '#FFFFFF'],
+    ['circle', { cx: 81.6, cy: 69.1, r: 1 }, '#FFFFFF'],
+    ['path', { d: 'M68 72 q-5 12 -1 15 q4 2 7 -1' }, null, '#9C6440', 2],
+    ['ellipse', { cx: 47, cy: 86, rx: 6, ry: 3.5 }, 'rgba(220,110,100,0.28)'],
+    ['ellipse', { cx: 89, cy: 86, rx: 6, ry: 3.5 }, 'rgba(220,110,100,0.28)'],
+    ['path', { d: 'M56 96 q12 9 24 0 q-12 4 -24 0 Z' }, '#8E3F32'],
+    ['path', { d: 'M56 96 q12 9 24 0' }, null, '#6E2C22', 1.8]
+  ];
+
+  var ftr = document.getElementById('ftr');
+  if (ftr) {
+    var g = document.getElementById('ftrPortrait');
+    FACE.forEach(function (s) {
+      var el = document.createElementNS(SVGNS, s[0]);
+      for (var k in s[1]) el.setAttribute(k, s[1][k]);
+      var fill = s[2] === 'bg' ? 'url(#ftrBg)' : s[2] === 'skin' ? 'url(#ftrSkin)' : s[2];
+      el.setAttribute('fill', fill || 'none');
+      if (s[3]) { el.setAttribute('stroke', s[3]); el.setAttribute('stroke-width', s[4]); el.setAttribute('stroke-linecap', 'round'); }
+      g.appendChild(el);
+    });
+
+    var S = 3, cv = document.createElementNS('http://www.w3.org/1999/xhtml', 'canvas');
+    cv.width = 136 * S; cv.height = 170 * S;
+    var ctx = cv.getContext('2d');
+    ctx.scale(S, S);
+    FACE.forEach(function (s) {
+      var a = s[1], fill = s[2];
+      if (fill === 'bg') { fill = ctx.createLinearGradient(0, 0, 0, 170); fill.addColorStop(0, '#E9EEF8'); fill.addColorStop(1, '#C9D6EE'); }
+      if (fill === 'skin') { fill = ctx.createRadialGradient(60, 58, 2, 68, 72, 48); fill.addColorStop(0, '#F3C49E'); fill.addColorStop(1, '#C98A60'); }
+      var path;
+      if (s[0] === 'rect') { path = new Path2D(); path.rect(a.x, a.y, a.width, a.height); }
+      else if (s[0] === 'ellipse') { path = new Path2D(); path.ellipse(a.cx, a.cy, a.rx, a.ry, 0, 0, Math.PI * 2); }
+      else if (s[0] === 'circle') { path = new Path2D(); path.arc(a.cx, a.cy, a.r, 0, Math.PI * 2); }
+      else path = new Path2D(a.d);
+      if (fill) { ctx.fillStyle = fill; ctx.fill(path); }
+      if (s[3]) { ctx.strokeStyle = s[3]; ctx.lineWidth = s[4]; ctx.lineCap = 'round'; ctx.stroke(path); }
+    });
+    var img = ctx.getImageData(0, 0, cv.width, cv.height).data;
+    function lum(px, py) {
+      var x = Math.min(cv.width - 1, Math.round(px * S)), y = Math.min(cv.height - 1, Math.round(py * S)), sum = 0, n = 0;
+      for (var dy = -1; dy <= 1; dy++) for (var dx = -1; dx <= 1; dx++) {
+        var xx = Math.max(0, Math.min(cv.width - 1, x + dx)), yy = Math.max(0, Math.min(cv.height - 1, y + dy)), o = (yy * cv.width + xx) * 4;
+        sum += (0.299 * img[o] + 0.587 * img[o + 1] + 0.114 * img[o + 2]) / 255; n++;
+      }
+      return sum / n;
+    }
+    // area the ASCII is printed in, same 0.8 aspect as the photo
+    var AX = 240, AY = 54, AW = 120, AH = 148;
+    var LEVELS = [
+      { cols: 26, ramp: '@%#*+=-:. ' },
+      { cols: 36, ramp: '@%#*+=-:. ' },
+      { cols: 48, ramp: '@#S%?*+;:,. ' }
+    ];
+    LEVELS.forEach(function (L) {
+      var cw = AW / L.cols, lh = cw * 1.7, rows = Math.floor(AH / lh), out = [];
+      for (var r = 0; r < rows; r++) {
+        var line = '';
+        for (var c = 0; c < L.cols; c++) {
+          var l = lum((c + 0.5) / L.cols * 136, (r + 0.5) / rows * 170);
+          l = Math.max(0, Math.min(1, (l - 0.05) / 0.78));
+          line += L.ramp[Math.min(L.ramp.length - 1, Math.floor(l * L.ramp.length))];
+        }
+        out.push(line.replace(/ /g, ' '));
+      }
+      L.rows = out; L.lh = lh; L.fs = cw / 0.6;
+    });
+    var asciiG = document.getElementById('ftrAscii'), pool = [];
+    for (var q = 0; q < 60; q++) {
+      var tx = document.createElementNS(SVGNS, 'text');
+      tx.setAttribute('x', AX);
+      tx.setAttribute('textLength', AW);
+      tx.setAttribute('lengthAdjust', 'spacingAndGlyphs');
+      asciiG.appendChild(tx); pool.push(tx);
+    }
+    var el = function (id) { return document.getElementById(id); };
+    var det = el('ftrDet'), scan = el('ftrScan'), knob = el('ftrKnob'), fillBar = el('ftrFill'),
+        colsLbl = el('ftrCols'), setLbl = el('ftrSet'), copied = el('ftrCopied');
+    var lastKey = '';
+    var drawFace = function (t) {
+      var f = t % 8000;
+      det.setAttribute('opacity', f < 300 ? 0 : f < 800 ? (f - 300) / 500 : f < 7400 ? 1 : 0);
+      if (f > 1000 && f < 3000) { scan.setAttribute('opacity', 1); scan.setAttribute('x', 22 + 136 * (f - 1000) / 2000); }
+      else scan.setAttribute('opacity', 0);
+      var p = Math.max(0, Math.min(1, (f - 3200) / 1800));
+      var lvl = p >= 1 ? 2 : p >= 0.5 ? 1 : 0, L = LEVELS[lvl];
+      knob.setAttribute('cx', 160 + 64 * p);
+      fillBar.setAttribute('width', 2 + 64 * p);
+      var shown = f < 1000 ? 0 : f < 3000 ? Math.ceil(L.rows.length * (f - 1000) / 2000) : L.rows.length;
+      if (f >= 7400) shown = 0;
+      var key = lvl + ':' + shown;
+      if (key !== lastKey) {
+        lastKey = key;
+        colsLbl.textContent = shown ? L.cols + ' COLS' : '';
+        setLbl.textContent = L.ramp.trim();
+        pool.forEach(function (tx, i) {
+          if (i < shown) {
+            tx.textContent = L.rows[i];
+            tx.setAttribute('y', (AY + L.lh * (i + 0.8)).toFixed(2));
+            tx.setAttribute('font-size', L.fs.toFixed(2));
+          } else tx.textContent = '';
+        });
+      }
+      copied.setAttribute('opacity', f > 6000 && f < 7400 ? 1 : 0);
+    };
+  }
+
+  if (!drawFace) return;
+  var start = performance.now(), last = 0;
+  function frame(now) {
+    if (now - last > 33) { last = now; drawFace(Math.max(0, now - start)); }
+    requestAnimationFrame(frame);
+  }
+  if (reduce) drawFace(5600); else requestAnimationFrame(frame);
+})();
+]]></script>
+</svg>
