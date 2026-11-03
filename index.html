@@ -288,10 +288,30 @@ GitHub
 </div>
 </article>
 
+<!-- 12 RDT Animations -->
+<article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E3DE; border-radius: 16px; overflow: hidden">
+<div class="snip" style="aspect-ratio: 16 / 10; background: #0B1430">
+<object type="image/svg+xml" data="animations/rdt-animations.svg" role="img" aria-label="Animation: a sender and receiver timeline for the rdt 3.0 protocol; pkt0 is delivered and acknowledged, pkt1 is lost in the channel, the sender's timer runs out, pkt1 is retransmitted and delivered, and ACK1 returns"></object>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="mono" style="font-size: 13px; color: #4A5068">12 · Networking</span>
+<span class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1F6B3A; background: #E6F2E9; padding: 4px 10px; border-radius: 999px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E8B4E"></span>Active</span>
+</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">RDT Animations</h3>
+<p style="margin: 0; color: #3C4260">Interactive animations of the reliable data transfer protocols, rdt 1.0 to 3.0. You watch the sender and receiver state machines and a live timeline. Click any packet in flight to corrupt, lose or delay it, then rewind to try something else.</p>
+<div class="mono" style="font-size: 13px; color: #4A5068; margin-top: auto; padding-top: 4px">HTML · JS · SVG</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://nyvora-vision-labs.github.io/rdt-animations/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: var(--accent); color: #FFFFFF; font-weight: 500; font-size: 15px">Live demo</a>
+<a href="https://github.com/Nyvora-Vision-Labs/rdt-animations" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #CFCFC7; font-weight: 500; font-size: 15px">GitHub</a>
+</div>
+</div>
+</article>
+
 </div>
 
 <div style="display: flex; justify-content: center">
-<button type="button" id="more-toggle" class="mono" aria-expanded="false" aria-controls="more-projects">More projects (6)</button>
+<button type="button" id="more-toggle" class="mono" aria-expanded="false" aria-controls="more-projects">More projects (7)</button>
 </div>
 </section>
 
@@ -325,7 +345,7 @@ GitHub
     var open = more.hidden;
     more.hidden = !open;
     btn.setAttribute('aria-expanded', String(open));
-    btn.textContent = open ? 'Show fewer projects' : 'More projects (6)';
+    btn.textContent = open ? 'Show fewer projects' : 'More projects (7)';
     if (!open) btn.scrollIntoView({ block: 'center' });
   });
 })();

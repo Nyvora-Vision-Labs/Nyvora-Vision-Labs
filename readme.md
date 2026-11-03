@@ -40,6 +40,7 @@ Everything here is open source. Use it in your research, your projects, your pro
 | **[Miscrits Random Arena Helper](https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper)** | Browser-based draft analyzer for Miscrits. Upload a lobby screenshot to get instant Miscrit detection and a ranked pick order. | [Live Demo](https://nyvora-vision-labs.github.io/Miscrits-Random-Arena-Helper/) | Active (HTML, Python) |
 | **[Guess the Miscrit?!](https://github.com/Nyvora-Vision-Labs/Guess_the_Miscrit)** | A nostalgic, interactive web game where players test their knowledge by guessing Miscrits based on their silhouettes. | [Live Demo](https://nyvora-vision-labs.github.io/Guess_the_Miscrit/) | Active (HTML, JS, Python) |
 | **[GitSphere](https://github.com/Nyvora-Vision-Labs/GitSphere)** | An immersive 3D architecture visualizer and AI-powered repository analyzer using DeepSeek AI. | [Watch Demo](https://www.youtube.com/watch?v=52FlQTq3I2Y) | Prototype (Python, Three.js) |
+| **[RDT Animations](https://github.com/Nyvora-Vision-Labs/rdt-animations)** | Interactive animations of the reliable data transfer protocols rdt 1.0, 2.0, 2.1, 2.2 and 3.0. Sender and receiver state machines run next to a live timeline. Click any packet in flight to corrupt, lose or delay it, rewind to branch a new history, and step through scripted cases such as rdt 2.0's fatal flaw and rdt 3.0's premature timeout. | [Live Demo](https://nyvora-vision-labs.github.io/rdt-animations/) | Active (HTML, JS, SVG) |
 
 ---
 

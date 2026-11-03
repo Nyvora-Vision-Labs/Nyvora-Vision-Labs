@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation: a sender and receiver timeline for the rdt 3.0 protocol; pkt0 is delivered and acknowledged, pkt1 is lost in the channel, the sender's timer runs out, pkt1 is retransmitted and delivered, and ACK1 returns" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<title>a sender and receiver timeline for the rdt 3.0 protocol; pkt0 is delivered and acknowledged, pkt1 is lost in the channel, the sender's timer runs out, pkt1 is retransmitted and delivered, and ACK1 returns</title>
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap');
+svg{display:block;width:100%;height:100%;background:#0B1430}
+#seq{animation:seq 10s linear infinite}@keyframes seq{0%{opacity:0}3%,94%{opacity:1}99%,100%{opacity:0}}
+.t0{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:t0 10s linear infinite}@keyframes t0{0%,4%{transform:scaleY(0)}24%,100%{transform:scaleY(1)}}
+.t1{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:t1 10s linear infinite}@keyframes t1{0%,29%{transform:scaleY(0)}59%,100%{transform:scaleY(1)}}
+.t2{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:t2 10s linear infinite}@keyframes t2{0%,61%{transform:scaleY(0)}83%,100%{transform:scaleY(1)}}
+.a0{stroke-dasharray:1;stroke-dashoffset:1;animation:a0 10s linear infinite}@keyframes a0{0%,4%{stroke-dashoffset:1}14%,100%{stroke-dashoffset:0}}
+.a0h{opacity:0;animation:a0h 10s linear infinite}@keyframes a0h{0%,14%{opacity:0}15.5%,100%{opacity:1}}
+.a0l{opacity:0;animation:a0l 10s linear infinite}@keyframes a0l{0%,9.0%{opacity:0}10.5%,100%{opacity:1}}
+.n0{opacity:0;animation:n0 10s linear infinite}@keyframes n0{0%,14%{opacity:0}15.5%,100%{opacity:1}}
+.a1{stroke-dasharray:1;stroke-dashoffset:1;animation:a1 10s linear infinite}@keyframes a1{0%,15%{stroke-dashoffset:1}24%,100%{stroke-dashoffset:0}}
+.a1h{opacity:0;animation:a1h 10s linear infinite}@keyframes a1h{0%,24%{opacity:0}25.5%,100%{opacity:1}}
+.a1l{opacity:0;animation:a1l 10s linear infinite}@keyframes a1l{0%,19.5%{opacity:0}21.0%,100%{opacity:1}}
+.n1{opacity:0;animation:n1 10s linear infinite}@keyframes n1{0%,24%{opacity:0}25.5%,100%{opacity:1}}
+.a2{stroke-dasharray:1;stroke-dashoffset:1;animation:a2 10s linear infinite}@keyframes a2{0%,29%{stroke-dashoffset:1}35%,100%{stroke-dashoffset:0}}
+.a2l{opacity:0;animation:a2l 10s linear infinite}@keyframes a2l{0%,33.2%{opacity:0}34.7%,100%{opacity:1}}
+.x2{opacity:0;animation:x2 10s linear infinite}@keyframes x2{0%,35%{opacity:0}36.5%,100%{opacity:1}}
+.n2{opacity:0;animation:n2 10s linear infinite}@keyframes n2{0%,59%{opacity:0}60.5%,100%{opacity:1}}
+.a3{stroke-dasharray:1;stroke-dashoffset:1;animation:a3 10s linear infinite}@keyframes a3{0%,61%{stroke-dashoffset:1}71%,100%{stroke-dashoffset:0}}
+.a3h{opacity:0;animation:a3h 10s linear infinite}@keyframes a3h{0%,71%{opacity:0}72.5%,100%{opacity:1}}
+.a3l{opacity:0;animation:a3l 10s linear infinite}@keyframes a3l{0%,66.0%{opacity:0}67.5%,100%{opacity:1}}
+.n3{opacity:0;animation:n3 10s linear infinite}@keyframes n3{0%,71%{opacity:0}72.5%,100%{opacity:1}}
+.a4{stroke-dasharray:1;stroke-dashoffset:1;animation:a4 10s linear infinite}@keyframes a4{0%,72%{stroke-dashoffset:1}82%,100%{stroke-dashoffset:0}}
+.a4h{opacity:0;animation:a4h 10s linear infinite}@keyframes a4h{0%,82%{opacity:0}83.5%,100%{opacity:1}}
+.a4l{opacity:0;animation:a4l 10s linear infinite}@keyframes a4l{0%,77.0%{opacity:0}78.5%,100%{opacity:1}}
+.n4{opacity:0;animation:n4 10s linear infinite}@keyframes n4{0%,82%{opacity:0}83.5%,100%{opacity:1}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}[class]{opacity:1 !important;stroke-dashoffset:0 !important;transform:none !important}}
+]]></style>
+
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<text x="38" y="24" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">RDT · STOP-AND-WAIT</text>
+<g font-family="Geist Mono, monospace" font-size="7" text-anchor="middle"><rect x="208" y="15" width="28" height="13" rx="6.5" fill="#111C3F" stroke="#22305E"/><text x="222" y="24.5" fill="#9FB3D9">1.0</text><rect x="241" y="15" width="28" height="13" rx="6.5" fill="#111C3F" stroke="#22305E"/><text x="255" y="24.5" fill="#9FB3D9">2.0</text><rect x="274" y="15" width="28" height="13" rx="6.5" fill="#111C3F" stroke="#22305E"/><text x="288" y="24.5" fill="#9FB3D9">2.1</text><rect x="307" y="15" width="28" height="13" rx="6.5" fill="#111C3F" stroke="#22305E"/><text x="321" y="24.5" fill="#9FB3D9">2.2</text><rect x="340" y="15" width="28" height="13" rx="6.5" fill="#1A4FA0" stroke="#3BB3E8"/><text x="354" y="24.5" fill="#FFFFFF">3.0</text></g>
+<g id="seq">
+<g font-family="Geist Mono, monospace" font-size="7.5" fill="#C9D2EA" text-anchor="middle"><text x="122" y="46">SENDER</text><text x="300" y="46">RECEIVER</text></g>
+<g stroke="#2A3A6B" stroke-width="2"><line x1="122" y1="52" x2="122" y2="222"/><line x1="300" y1="52" x2="300" y2="222"/></g>
+<rect class="t0" x="113" y="58" width="4" height="46" rx="2" fill="#A98BEB" opacity="0.8"/>
+<rect class="t1" x="113" y="110" width="4" height="60" rx="2" fill="#F08A90" opacity="0.8"/>
+<rect class="t2" x="113" y="172" width="4" height="46" rx="2" fill="#A98BEB" opacity="0.8"/>
+<line class="a0" pathLength="1" x1="122" y1="58" x2="300" y2="82" stroke="#3BB3E8" stroke-width="2" stroke-linecap="round"/>
+<polygon class="a0h" points="300.0,82.0 293.3,84.2 294.2,78.1" fill="#3BB3E8"/>
+<g class="a0l"><rect x="186.3" y="61.3" width="31.6" height="13" rx="3" fill="#0B1430"/><text x="202.1" y="71.4" fill="#3BB3E8" font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle">pkt0</text></g>
+<text class="n0" x="308" y="85" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7" text-anchor="start">deliver D1</text>
+<line class="a1" pathLength="1" x1="300" y1="82" x2="122" y2="106" stroke="#5CC27A" stroke-width="2" stroke-linecap="round"/>
+<polygon class="a1h" points="122.0,106.0 127.8,102.1 128.7,108.2" fill="#5CC27A"/>
+<g class="a1l"><rect x="204.1" y="85.3" width="31.6" height="13" rx="3" fill="#0B1430"/><text x="219.9" y="95.4" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle">ACK0</text></g>
+<text class="n1" x="108" y="108" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7" text-anchor="end">ACK0 ✓</text>
+<line class="a2" pathLength="1" x1="122" y1="110" x2="211.0" y2="122" stroke="#3BB3E8" stroke-width="2" stroke-linecap="round"/>
+<g class="a2l"><rect x="150.7" y="108.5" width="31.6" height="13" rx="3" fill="#0B1430"/><text x="166.5" y="118.6" fill="#3BB3E8" font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle">pkt1</text></g>
+<g class="x2"><path d="M206.0 117 l10 10 M216.0 117 l-10 10" stroke="#F08A90" stroke-width="2.2" stroke-linecap="round"/><text x="211.0" y="138" fill="#F08A90" font-family="Geist Mono, monospace" font-size="7" text-anchor="middle">LOST</text></g>
+<text class="n2" x="108" y="173" fill="#F08A90" font-family="Geist Mono, monospace" font-size="7" text-anchor="end">TIMEOUT</text>
+<line class="a3" pathLength="1" x1="122" y1="172" x2="300" y2="196" stroke="#3BB3E8" stroke-width="2" stroke-linecap="round"/>
+<polygon class="a3h" points="300.0,196.0 293.3,198.2 294.2,192.1" fill="#3BB3E8"/>
+<g class="a3l"><rect x="180.9" y="175.3" width="42.4" height="13" rx="3" fill="#0B1430"/><text x="202.1" y="185.4" fill="#3BB3E8" font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle">↻ pkt1</text></g>
+<text class="n3" x="308" y="199" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7" text-anchor="start">deliver D2</text>
+<line class="a4" pathLength="1" x1="300" y1="196" x2="122" y2="220" stroke="#5CC27A" stroke-width="2" stroke-linecap="round"/>
+<polygon class="a4h" points="122.0,220.0 127.8,216.1 128.7,222.2" fill="#5CC27A"/>
+<g class="a4l"><rect x="204.1" y="199.3" width="31.6" height="13" rx="3" fill="#0B1430"/><text x="219.9" y="209.4" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="8" font-weight="500" text-anchor="middle">ACK1</text></g>
+<text class="n4" x="108" y="222" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7" text-anchor="end">ACK1 ✓</text>
+</g>
+<text x="24" y="240" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7.5">TIMEOUT → RETRANSMIT · SEQ #s CATCH DUPLICATES</text>
+</svg>
