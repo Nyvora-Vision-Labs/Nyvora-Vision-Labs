@@ -1,6 +1,7 @@
 # Nyvora Vision Labs : **Smarter models start with better data.**
 
-🌐 **Website:** [nyvora-vision-labs.github.io/Nyvora-Vision-Labs](https://nyvora-vision-labs.github.io/Nyvora-Vision-Labs/)
+🌐 **Website:** [nyvora-vision-labs.github.io/Nyvora-Vision-Labs](https://nyvora-vision-labs.github.io/Nyvora-Vision-Labs/)  
+🎥 **Video:** [Watch on YouTube](https://www.youtube.com/watch?v=NhIIXaMN8pY)
 
 ---
 
