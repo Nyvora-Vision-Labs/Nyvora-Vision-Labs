@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="title desc">
+<title id="title">TikaTogether · a Bhai Tika keepsake</title>
+<desc id="desc">Two portraits come together. Seven-color tika appears on their foreheads, followed by marigold and makhamali garlands and a ready-to-download keepsake.</desc>
+<style>
+svg{display:block;width:100%;height:100%;background:#0B1430}
+text{font-family:ui-monospace,monospace}
+.left{animation:left 10s ease-in-out infinite}.right{animation:right 10s ease-in-out infinite}
+@keyframes left{0%,5%{opacity:0;transform:translateX(-22px)}15%,90%{opacity:1;transform:translateX(0)}100%{opacity:0}}
+@keyframes right{0%,8%{opacity:0;transform:translateX(22px)}18%,90%{opacity:1;transform:translateX(0)}100%{opacity:0}}
+.tika{animation:tika 10s ease-in-out infinite}
+@keyframes tika{0%,24%{opacity:0}32%,90%{opacity:1}100%{opacity:0}}
+.garland{animation:garland 10s ease-in-out infinite}
+@keyframes garland{0%,50%{opacity:0;transform:translateY(-8px)}64%,90%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.ready{animation:ready 10s ease-in-out infinite}
+@keyframes ready{0%,65%{opacity:0}73%,90%{opacity:1}100%{opacity:0}}
+.scan{animation:scan 10s ease-in-out infinite}
+@keyframes scan{0%,17%{opacity:0;transform:translateY(0)}20%{opacity:.7}48%{opacity:.7;transform:translateY(62px)}52%,100%{opacity:0;transform:translateY(62px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.scan{display:none}}
+</style>
+<defs>
+<radialGradient id="glow"><stop stop-color="#A94D6C" stop-opacity=".28"/><stop offset="1" stop-color="#0B1430" stop-opacity="0"/></radialGradient>
+<symbol id="flower" viewBox="-6 -6 12 12"><path d="M0-5C2-7 3-3 4-3C7-3 6 0 4 1C7 4 3 6 1 4C0 7-3 6-3 3C-7 4-6 0-4-1C-7-4-3-6-1-4Z" fill="currentColor"/><circle r="1.7" fill="#FFD779"/></symbol>
+</defs>
+<rect width="400" height="250" fill="#0B1430"/>
+<ellipse cx="200" cy="130" rx="200" ry="135" fill="url(#glow)"/>
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity=".5" stroke-width="1.5"/>
+<text x="24" y="26" fill="#FFF" font-size="10">TIKA TOGETHER</text>
+<text x="376" y="26" text-anchor="end" fill="#F5BC73" font-size="8">BHAI TIKA</text>
+<rect x="38" y="43" width="324" height="164" rx="12" fill="#111C3F" stroke="#435078"/>
+<path d="M200 58v134" stroke="#435078" stroke-dasharray="2 5"/>
+<g class="left">
+<rect x="55" y="56" width="130" height="138" rx="8" fill="#1C284B"/>
+<path d="M75 194v-20q0-34 45-34t45 34v20" fill="#AE4566"/>
+<path d="M89 119v-22q0-34 31-34t31 34v30" fill="#131526"/>
+<rect x="111" y="128" width="18" height="22" rx="7" fill="#C58D71"/>
+<ellipse cx="120" cy="108" rx="25" ry="31" fill="#E0AF8D"/>
+<path d="M95 96q-2-30 27-28q28 0 25 29q-16-4-22-15q-10 14-30 14" fill="#17182A"/>
+<path d="M106 108h5m18 0h5" stroke="#3F2E31" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M113 123q7 6 14 0" fill="none" stroke="#925956" stroke-width="1.5" stroke-linecap="round"/>
+<circle class="tika" style="animation-delay:0.0s" cx="120" cy="87.0" r="1.75" fill="#E94B64"/>
+<circle class="tika" style="animation-delay:0.16s" cx="120" cy="89.5" r="1.75" fill="#F49538"/>
+<circle class="tika" style="animation-delay:0.32s" cx="120" cy="92.0" r="1.75" fill="#F8D85C"/>
+<circle class="tika" style="animation-delay:0.48s" cx="120" cy="94.5" r="1.75" fill="#6CC681"/>
+<circle class="tika" style="animation-delay:0.64s" cx="120" cy="97.0" r="1.75" fill="#62BDE5"/>
+<circle class="tika" style="animation-delay:0.8s" cx="120" cy="99.5" r="1.75" fill="#6279E9"/>
+<circle class="tika" style="animation-delay:0.96s" cx="120" cy="102.0" r="1.75" fill="#C77BDF"/>
+<g class="garland"><path d="M97 141Q120 226 143 141" fill="none" stroke="#E4AB57" stroke-width="3"/><use href="#flower" x="92.00" y="136.00" width="10" height="10" style="color:#B95396"/><use href="#flower" x="94.56" y="144.92" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="97.11" y="152.79" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="99.67" y="159.61" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="102.22" y="165.38" width="10" height="10" style="color:#B95396"/><use href="#flower" x="104.78" y="170.10" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="107.33" y="173.78" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="109.89" y="176.40" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="112.44" y="177.98" width="10" height="10" style="color:#B95396"/><use href="#flower" x="115.00" y="178.50" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="117.56" y="177.98" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="120.11" y="176.40" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="122.67" y="173.78" width="10" height="10" style="color:#B95396"/><use href="#flower" x="125.22" y="170.10" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="127.78" y="165.38" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="130.33" y="159.61" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="132.89" y="152.79" width="10" height="10" style="color:#B95396"/><use href="#flower" x="135.44" y="144.92" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="138.00" y="136.00" width="10" height="10" style="color:#F6A23B"/></g></g>
+<g class="right">
+<rect x="215" y="56" width="130" height="138" rx="8" fill="#1C284B"/>
+<path d="M235 194v-20q0-34 45-34t45 34v20" fill="#426E91"/>
+<path d="M249 119v-22q0-34 31-34t31 34v30" fill="#131526"/>
+<rect x="271" y="128" width="18" height="22" rx="7" fill="#C58D71"/>
+<ellipse cx="280" cy="108" rx="25" ry="31" fill="#E0AF8D"/>
+<path d="M255 96q-2-30 27-28q28 0 25 29q-16-4-22-15q-10 14-30 14" fill="#17182A"/>
+<path d="M266 108h5m18 0h5" stroke="#3F2E31" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M273 123q7 6 14 0" fill="none" stroke="#925956" stroke-width="1.5" stroke-linecap="round"/>
+<circle class="tika" style="animation-delay:0.0s" cx="280" cy="87.0" r="1.75" fill="#E94B64"/>
+<circle class="tika" style="animation-delay:0.16s" cx="280" cy="89.5" r="1.75" fill="#F49538"/>
+<circle class="tika" style="animation-delay:0.32s" cx="280" cy="92.0" r="1.75" fill="#F8D85C"/>
+<circle class="tika" style="animation-delay:0.48s" cx="280" cy="94.5" r="1.75" fill="#6CC681"/>
+<circle class="tika" style="animation-delay:0.64s" cx="280" cy="97.0" r="1.75" fill="#62BDE5"/>
+<circle class="tika" style="animation-delay:0.8s" cx="280" cy="99.5" r="1.75" fill="#6279E9"/>
+<circle class="tika" style="animation-delay:0.96s" cx="280" cy="102.0" r="1.75" fill="#C77BDF"/>
+<g class="garland"><path d="M257 141Q280 226 303 141" fill="none" stroke="#E4AB57" stroke-width="3"/><use href="#flower" x="252.00" y="136.00" width="10" height="10" style="color:#B95396"/><use href="#flower" x="254.56" y="144.92" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="257.11" y="152.79" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="259.67" y="159.61" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="262.22" y="165.38" width="10" height="10" style="color:#B95396"/><use href="#flower" x="264.78" y="170.10" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="267.33" y="173.78" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="269.89" y="176.40" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="272.44" y="177.98" width="10" height="10" style="color:#B95396"/><use href="#flower" x="275.00" y="178.50" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="277.56" y="177.98" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="280.11" y="176.40" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="282.67" y="173.78" width="10" height="10" style="color:#B95396"/><use href="#flower" x="285.22" y="170.10" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="287.78" y="165.38" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="290.33" y="159.61" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="292.89" y="152.79" width="10" height="10" style="color:#B95396"/><use href="#flower" x="295.44" y="144.92" width="10" height="10" style="color:#F6A23B"/><use href="#flower" x="298.00" y="136.00" width="10" height="10" style="color:#F6A23B"/></g></g>
+<g class="scan" stroke="#72D8DC" fill="none" stroke-width="1"><path d="M87 78h66M247 78h66"/><path d="M88 86v-10h10m54 10v-10h-10M248 86v-10h10m54 10v-10h-10"/></g>
+<g class="ready"><rect x="143" y="182" width="114" height="28" rx="14" fill="#254D46" stroke="#81C5A6"/><path d="m155 196 4 4 7-8" fill="none" stroke="#A0E4BC" stroke-width="2"/><text x="177" y="200" fill="#D6F6E4" font-size="8">KEEPSAKE READY</text></g>
+<text x="200" y="234" text-anchor="middle" fill="#AAB9D9" font-size="8">TWO PHOTOS · ONE CELEBRATION</text>
+</svg>
