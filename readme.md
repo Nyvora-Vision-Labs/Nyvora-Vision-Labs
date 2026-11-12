@@ -7,7 +7,7 @@
 
 ## What We Do
 
-We build and release open source tools for machine learning — from data collection and annotation pipelines to inference utilities and dataset schemas, across both **vision** and **language**. Everything we build is free to use, fork, and contribute to.
+We publish machine learning research and datasets, make games on Roblox and the web, and build open source tools for machine learning — from data collection and annotation pipelines to inference utilities and dataset schemas, across both **vision** and **language**. Everything we build is free to use, fork, and contribute to.
 
 - **Computer vision** — detection, classification, segmentation, and real-time inference pipelines
 - **Language & text** — annotated datasets, evaluation diagnostics, and annotation tooling for NLP
@@ -26,23 +26,38 @@ Everything here is open source. Use it in your research, your projects, your pro
 
 ---
 
-## Repositories
+## Projects
 
-| Repo | Description | Links | Status & Tech |
-| ---- | ----------- | ----- | ------------- |
+The website groups the work into three areas.
+
+### Research
+
+| Project | Description | Links | Status & Tech |
+| ------- | ----------- | ----- | ------------- |
 | **[AI Chip Rack Counter](https://github.com/Nyvora-Vision-Labs/Chips-Counter)** | High-precision, computer-vision-based chip inventory system. Segment and classify bags using CLIP with Global NMS to avoid double-counting. | [Live Demo](https://huggingface.co/spaces/Gauurab/chips-counter) | Active (Python, Flask, CLIP) |
+| **[NEPSEE](https://github.com/Nyvora-Vision-Labs/NEPSEE-A-Nepali-Sentiment-Emotion-and-Explanation-Dataset)** | A Nepali-language sentiment, emotion, and explanation dataset. Tweets from 20 public figures are scraped, filtered, split into sentences, and independently labeled by three annotators through a purpose-built Flask annotation app. Sentiment annotation is in progress; emotion and explanation layers are planned next. | [Annotator Brief](https://nepsee-a-nepali-sentiment-emotion-and.onrender.com/brief) · [Preprint](https://arxiv.org/abs/2610.19190) | **Ongoing** (Python, Flask, Postgres) |
+| **[LexFlip](https://github.com/Nyvora-Vision-Labs/LexFlip)** | A diagnostic for legal-text simplification metrics. Dissociates lexical overlap from legal meaning to test whether embedding-based and LLM-judge metrics actually track meaning preservation — or just word overlap — validated on the FrJUDGE corpus. | [Preprint](https://arxiv.org/abs/2609.05296) | Research (Python, LaTeX) |
+
+### Games
+
+| Project | Description | Links | Status & Tech |
+| ------- | ----------- | ----- | ------------- |
 | **[Roblox-LearnNLP](https://github.com/Nyvora-Vision-Labs/Roblox-learn-natural-languge-processing)** | A Roblox experience that teaches the evolution of sequence models, from Naive Bayes and Hidden Markov Models to RNNs, attention, and Transformers, through a 3D hub, interactive lessons, and quizzes. | [Play on Roblox](https://www.roblox.com/games/72565218405440/Learn-Natural-Language-Processing) | Active (Roblox Studio, Luau) |
+| **[Miscrits Games](https://github.com/Nyvora-Vision-Labs/WordleMiscrits)** | Two Miscrits browser games in one page: Miscrits Wordle (guess the hidden Miscrit name in 6 tries) and a word search with 400+ Miscrit names hidden in a 12×12 grid. | [Live Demo](https://nyvora-vision-labs.github.io/WordleMiscrits/) | Active (HTML, JS, JSON) |
+| **[Guess the Miscrit?!](https://github.com/Nyvora-Vision-Labs/Guess_the_Miscrit)** | A nostalgic, interactive web game where players test their knowledge by guessing Miscrits based on their silhouettes. | [Live Demo](https://nyvora-vision-labs.github.io/Guess_the_Miscrit/) | Active (HTML, JS, Python) |
+| **[Miscrits Random Arena Helper](https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper)** | Browser-based draft analyzer for Miscrits. Upload a lobby screenshot to get instant Miscrit detection and a ranked pick order. | [Live Demo](https://nyvora-vision-labs.github.io/Miscrits-Random-Arena-Helper/) | Active (HTML, Python) |
+
+### Mini-projects
+
+| Project | Description | Links | Status & Tech |
+| ------- | ----------- | ----- | ------------- |
+| **[SignPad](https://github.com/Nyvora-Vision-Labs/signpad)** | Sign a .docx or .pdf with your own handwritten signature. An agent finds where the signature goes, you draw it in a local signing pad, then approve the result. Runs on your computer, inside Claude Code or with the Claude API. | [GitHub](https://github.com/Nyvora-Vision-Labs/signpad) | New (Python, MCP, pypdf) |
 | **[TikaTogether](https://github.com/Nyvora-Vision-Labs/tika-together)** | Create a Bhai Tika keepsake from separate photos or a photo together. Add seven-color tika and flower garlands, adjust the fit, and download a PNG. Photos stay on your device. | [Live Demo](https://nyvora-vision-labs.github.io/tika-together/) | Active (JavaScript, MediaPipe, Canvas) |
 | **[Stillroom](https://github.com/Nyvora-Vision-Labs/Stillroom)** | Ambient sound mixer for sleep, focus and meditation: 201 sounds, from rain and drones synthesized live in the browser to recorded Tibetan singing bowls. Sleep timer and saved mixes. | [Live Demo](https://stillroom-sounds.vercel.app) | Active (JavaScript, Web Audio API) |
 | **[FaceToREADME](https://github.com/Nyvora-Vision-Labs/FaceToREADME)** | Turn a face photo into ASCII art for your GitHub profile. Crop and tune the portrait, then export an animated SVG that draws itself line by line in your README. Runs entirely in the browser — photos are never uploaded. | [Live Demo](https://nyvora-vision-labs.github.io/FaceToREADME/) | Active (React, TypeScript, Canvas) |
 | **[Fireplace](https://github.com/Nyvora-Vision-Labs/fireplace)** | A pomodoro timer you keep alive by feeding a fire. Drag a log onto the fire for 15 minutes of focus; every 15 minutes a log burns down and the fire burns a little lower. Flames are drawn live with WebGL and the crackle is synthesized in the browser. | [Live Demo](https://nyvora-vision-labs.github.io/fireplace/) | Active (JavaScript, WebGL, Web Audio) |
-| **[NEPSEE](https://github.com/Nyvora-Vision-Labs/NEPSEE-A-Nepali-Sentiment-Emotion-and-Explanation-Dataset)** | A Nepali-language sentiment, emotion, and explanation dataset. Tweets from 20 public figures are scraped, filtered, split into sentences, and independently labeled by three annotators through a purpose-built Flask annotation app. Sentiment annotation is in progress; emotion and explanation layers are planned next. | [Annotator Brief](https://nepsee-a-nepali-sentiment-emotion-and.onrender.com/brief) · [Preprint](https://arxiv.org/abs/2610.19190) | **Ongoing** (Python, Flask, Postgres) |
-| **[LexFlip](https://github.com/Nyvora-Vision-Labs/LexFlip)** | A diagnostic for legal-text simplification metrics. Dissociates lexical overlap from legal meaning to test whether embedding-based and LLM-judge metrics actually track meaning preservation — or just word overlap — validated on the FrJUDGE corpus. | [Preprint](https://arxiv.org/abs/2609.05296) | Research (Python, LaTeX) |
-| **[Miscrits Games](https://github.com/Nyvora-Vision-Labs/WordleMiscrits)** | Two Miscrits browser games in one page: Miscrits Wordle (guess the hidden Miscrit name in 6 tries) and a word search with 400+ Miscrit names hidden in a 12×12 grid. | [Live Demo](https://nyvora-vision-labs.github.io/WordleMiscrits/) | Active (HTML, JS, JSON) |
-| **[Miscrits Random Arena Helper](https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper)** | Browser-based draft analyzer for Miscrits. Upload a lobby screenshot to get instant Miscrit detection and a ranked pick order. | [Live Demo](https://nyvora-vision-labs.github.io/Miscrits-Random-Arena-Helper/) | Active (HTML, Python) |
-| **[Guess the Miscrit?!](https://github.com/Nyvora-Vision-Labs/Guess_the_Miscrit)** | A nostalgic, interactive web game where players test their knowledge by guessing Miscrits based on their silhouettes. | [Live Demo](https://nyvora-vision-labs.github.io/Guess_the_Miscrit/) | Active (HTML, JS, Python) |
-| **[GitSphere](https://github.com/Nyvora-Vision-Labs/GitSphere)** | An immersive 3D architecture visualizer and AI-powered repository analyzer using DeepSeek AI. | [Watch Demo](https://www.youtube.com/watch?v=52FlQTq3I2Y) | Prototype (Python, Three.js) |
 | **[RDT Animations](https://github.com/Nyvora-Vision-Labs/rdt-animations)** | Interactive animations of the reliable data transfer protocols rdt 1.0, 2.0, 2.1, 2.2 and 3.0. Sender and receiver state machines run next to a live timeline. Click any packet in flight to corrupt, lose or delay it, rewind to branch a new history, and step through scripted cases such as rdt 2.0's fatal flaw and rdt 3.0's premature timeout. | [Live Demo](https://nyvora-vision-labs.github.io/rdt-animations/) | Active (HTML, JS, SVG) |
+| **[GitSphere](https://github.com/Nyvora-Vision-Labs/GitSphere)** | An immersive 3D architecture visualizer and AI-powered repository analyzer using DeepSeek AI. | [Watch Demo](https://www.youtube.com/watch?v=52FlQTq3I2Y) | Prototype (Python, Three.js) |
 
 ---
 

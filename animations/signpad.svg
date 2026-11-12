@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation: a signature is drawn by hand in the signing pad, then replaces the typed name in the document's signature box, the date updates to today, and the signed copy is approved while the original stays untouched" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<title>a signature is drawn by hand in the signing pad, then replaces the typed name in the document's signature box, the date updates to today, and the signed copy is approved</title>
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap');
+svg{display:block;width:100%;height:100%;background:#0B1430}
+.spInk{stroke-dasharray:1;animation:spInk 10s linear infinite}
+@keyframes spInk{0%,4%{stroke-dashoffset:1;opacity:1}38%,44%{stroke-dashoffset:0;opacity:1}50%,100%{stroke-dashoffset:0;opacity:0}}
+.spPen{offset-path:path('M228 140C232 110 244 104 246 122C248 138 236 146 240 132C246 112 258 112 258 130C258 142 252 140 256 128C262 114 272 120 270 134C268 144 280 136 284 124C288 114 296 118 294 132C292 142 304 140 310 126C314 118 322 122 320 134C318 142 334 132 352 120');offset-rotate:0deg;animation:spPen 10s linear infinite}
+@keyframes spPen{0%,3%{opacity:0;offset-distance:0%}4%{opacity:1;offset-distance:0%}38%{opacity:1;offset-distance:100%}41%,100%{opacity:0;offset-distance:100%}}
+.spA{animation:spA 10s linear infinite}.spB{opacity:0;animation:spB 10s linear infinite}
+@keyframes spA{0%,44%{opacity:1}48%,96%{opacity:0}100%{opacity:1}}
+@keyframes spB{0%,46%{opacity:0}52%,96%{opacity:1}100%{opacity:0}}
+.spD1{animation:spD1 10s linear infinite}.spD2{opacity:0;animation:spD2 10s linear infinite}
+@keyframes spD1{0%,56%{opacity:1}60%,96%{opacity:0}100%{opacity:1}}
+@keyframes spD2{0%,57%{opacity:0}61%,96%{opacity:1}100%{opacity:0}}
+.spDone{animation:spDone 10s linear infinite}
+@keyframes spDone{0%,38%{fill:#1A4FA0}40%,44%{fill:#3BB3E8}46%,100%{fill:#1A4FA0}}
+.spOk{opacity:0;animation:spOk 10s ease-out infinite}
+@keyframes spOk{0%,68%{opacity:0;transform:translateY(6px)}73%,96%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.spBox{animation:spBox 10s linear infinite}
+@keyframes spBox{0%,46%{stroke:#1A4FA0}50%,62%{stroke:#2E8B4E}66%,100%{stroke:#1A4FA0}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}.spInk,.spA,.spD1,.spPen{opacity:0}.spB,.spD2,.spOk{opacity:1}}
+]]></style>
+<defs>
+<path id="spSig" pathLength="1" d="M228 140C232 110 244 104 246 122C248 138 236 146 240 132C246 112 258 112 258 130C258 142 252 140 256 128C262 114 272 120 270 134C268 144 280 136 284 124C288 114 296 118 294 132C292 142 304 140 310 126C314 118 322 122 320 134C318 142 334 132 352 120"></path>
+</defs>
+<path d="M10 30V10h20M390 220v20h-20" fill="none" stroke="#3BB3E8" stroke-opacity="0.5" stroke-width="1.5"></path>
+<text x="38" y="24" fill="#FFFFFF" font-family="Geist Mono, monospace" font-size="8.5" font-weight="500">SIGNPAD · HANDWRITTEN SIGNING</text>
+
+<!-- the document -->
+<rect x="24" y="38" width="172" height="192" rx="6" fill="#F4F2EC"></rect>
+<text x="36" y="58" fill="#0E1530" font-family="Geist, sans-serif" font-size="9.5" font-weight="600">Licence Agreement</text>
+<g fill="#CFCDC4"><rect x="36" y="68" width="148" height="4" rx="2"></rect><rect x="36" y="77" width="136" height="4" rx="2"></rect><rect x="36" y="86" width="144" height="4" rx="2"></rect><rect x="36" y="95" width="98" height="4" rx="2"></rect></g>
+<text x="36" y="116" fill="#3C4260" font-family="Geist, sans-serif" font-size="7.5">Name of author: Alex Example</text>
+<g class="spD1"><text x="36" y="128" fill="#3C4260" font-family="Geist, sans-serif" font-size="7.5">Date: 1 January 2026</text></g>
+<g class="spD2"><rect x="33" y="120.5" width="100" height="10" rx="2" fill="#DDF0E2"></rect><text x="36" y="128" fill="#1F6B3A" font-family="Geist, sans-serif" font-size="7.5" font-weight="500">Date: 12 November 2026</text></g>
+<text x="36" y="150" fill="#3C4260" font-family="Geist, sans-serif" font-size="7.5">Signature of Author:</text>
+<rect class="spBox" x="36" y="155" width="148" height="28" rx="3" fill="#FFFFFF" stroke="#1A4FA0" stroke-width="1.2" stroke-dasharray="4 2"></rect>
+<g class="spA"><text x="46" y="173" fill="#0E1530" font-family="Geist, sans-serif" font-size="10">Alex Example</text></g>
+<g class="spB"><use href="#spSig" transform="translate(50 157) scale(0.55) translate(-228 -104)" fill="none" stroke="#0E1530" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"></use></g>
+<text x="36" y="200" fill="#8A8E9E" font-family="Geist, sans-serif" font-size="7">Witness signature: ________________</text>
+<text x="36" y="214" fill="#8A8E9E" font-family="Geist Mono, monospace" font-size="6">LEFT BLANK FOR OTHER PARTIES</text>
+
+<!-- the pad -->
+<rect x="210" y="38" width="166" height="150" rx="8" fill="#111C3F" stroke="#22305E"></rect>
+<g class="spA"><text x="222" y="55" fill="#9FB3D9" font-family="Geist Mono, monospace" font-size="7">DRAW YOUR SIGNATURE</text></g>
+<g class="spB"><text x="222" y="55" fill="#5CC27A" font-family="Geist Mono, monospace" font-size="7">SIGNATURE CAPTURED ✓</text></g>
+<text x="222" y="67" fill="#6B7AA6" font-family="Geist, sans-serif" font-size="6.5">Alex Example · Author signature box</text>
+<path d="M224 150h140" stroke="#3A4570" stroke-dasharray="3 3"></path>
+<text x="224" y="146" fill="#6B7AA6" font-family="Geist Mono, monospace" font-size="8">×</text>
+<use class="spInk" href="#spSig" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></use>
+<g class="spPen"><circle r="3" fill="#3BB3E8"></circle><circle r="7" fill="#3BB3E8" fill-opacity="0.2"></circle></g>
+<rect x="222" y="162" width="62" height="17" rx="4" fill="none" stroke="#3A4570"></rect>
+<text x="253" y="173.5" fill="#C9D2EA" font-family="Geist, sans-serif" font-size="7" text-anchor="middle">Start over</text>
+<rect class="spDone" x="292" y="162" width="72" height="17" rx="4" fill="#1A4FA0"></rect>
+<text x="328" y="173.5" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="7" font-weight="500" text-anchor="middle">Use signature</text>
+
+<!-- approval -->
+<g class="spOk">
+<rect x="210" y="198" width="166" height="32" rx="6" fill="#10301F" stroke="#2E8B4E"></rect>
+<circle cx="226" cy="214" r="7" fill="#2E8B4E"></circle><path d="M222.5 214l2.5 2.5l5-5" stroke="#FFFFFF" stroke-width="1.6" fill="none" stroke-linecap="round"></path>
+<text x="240" y="211" fill="#FFFFFF" font-family="Geist, sans-serif" font-size="8" font-weight="600">Approved</text>
+<text x="240" y="222" fill="#8FD3A4" font-family="Geist Mono, monospace" font-size="6">SAVED AS A NEW COPY · ORIGINAL UNTOUCHED</text>
+</g>
+</svg>
