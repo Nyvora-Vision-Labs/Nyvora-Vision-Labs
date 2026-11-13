@@ -7,7 +7,7 @@
 
 ## What We Do
 
-We publish machine learning research and datasets, make games on Roblox and the web, and build open source tools for machine learning — from data collection and annotation pipelines to inference utilities and dataset schemas, across both **vision** and **language**. Everything we build is free to use, fork, and contribute to.
+We publish machine learning research and datasets, make games, and build open source tools for machine learning — from data collection and annotation pipelines to inference utilities and dataset schemas, across both **vision** and **language**. Everything we build is free to use, fork, and contribute to.
 
 - **Computer vision** — detection, classification, segmentation, and real-time inference pipelines
 - **Language & text** — annotated datasets, evaluation diagnostics, and annotation tooling for NLP
