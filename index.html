@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nyvora Vision Labs</title>
-<meta name="description" content="Nyvora Vision Labs is an open-source lab: machine learning research and datasets, games, and small tools that run on your own device.">
+<meta name="description" content="Nyvora Vision Labs is an open-source lab: machine learning research and datasets, and small tools that run on your own device.">
 <meta property="og:title" content="Nyvora Vision Labs">
-<meta property="og:description" content="Open-source ML research, games and mini-projects.">
+<meta property="og:description" content="Open-source ML research and mini-projects.">
 <meta property="og:image" content="Logo/logo.png">
 <link rel="icon" href="Logo/logo-nobg.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,7 +51,7 @@ h1 .hl{background:linear-gradient(90deg,var(--accent),var(--cyan));-webkit-backg
 .btn--primary{background:var(--accent);border-color:var(--accent);color:#FFF}
 .btn--primary:hover{background:var(--accent-d);border-color:var(--accent-d);color:#FFF}
 .btn--lg{min-height:48px;padding:0 22px;font-size:16px}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-top:14px;max-width:560px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:14px;max-width:560px}
 .stat{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card);transition:transform .25s,border-color .25s,box-shadow .25s}
 .stat:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 24px -14px rgba(26,79,160,.45)}
 .stat b{font-size:30px;font-weight:600;letter-spacing:-.03em;line-height:1.1}
@@ -150,7 +150,6 @@ footer nav a:hover{color:var(--accent)}
 <a class="brand" href="#top" aria-label="Nyvora Vision Labs, back to top"><img src="Logo/logo-nobg.png" alt=""><span>Nyvora Vision Labs</span></a>
 <nav class="nav" aria-label="Main">
 <a href="#research">Research</a>
-<a href="#games">Games</a>
 <a href="#mini-projects">Mini-projects</a>
 <a href="#community">Community</a>
 <a class="gh" href="https://github.com/Nyvora-Vision-Labs" target="_blank" rel="noopener"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.2 11.39.6.1.83-.26.83-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"></path></svg>GitHub</a>
@@ -161,9 +160,9 @@ footer nav a:hover{color:var(--accent)}
 <main id="top">
 <section class="wrap hero">
 <div class="hero-text">
-<div class="mono eyebrow rise">Open-source lab · research, games &amp; tools</div>
+<div class="mono eyebrow rise">Open-source lab · research &amp; tools</div>
 <h1 class="rise" style="--d:.08s">Smarter models start with <span class="hl">better data.</span></h1>
-<p class="lede rise" style="--d:.16s">We publish machine learning research and datasets, make games, and ship small tools that run on your own device. All of it is free to use, play and fork.</p>
+<p class="lede rise" style="--d:.16s">We publish machine learning research and datasets, and ship small tools that run on your own device. All of it is free to use and fork.</p>
 <div class="cta rise" style="--d:.24s">
 <a class="btn btn--primary btn--lg" href="#research">Explore the work<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></a>
 <a class="btn btn--lg" href="https://discord.gg/GXzFNKpnWr" target="_blank" rel="noopener">Join the Discord</a>
@@ -171,7 +170,6 @@ footer nav a:hover{color:var(--accent)}
 </div>
 <div class="stats rise" style="--d:.32s">
 <a class="stat" href="#research"><b class="mono" data-count="3">3</b><span>Research</span></a>
-<a class="stat" href="#games"><b class="mono" data-count="4">4</b><span>Games</span></a>
 <a class="stat" href="#mini-projects"><b class="mono" data-count="7">7</b><span>Mini-projects</span></a>
 </div>
 </div>
@@ -191,14 +189,13 @@ footer nav a:hover{color:var(--accent)}
 
 <nav class="wrap jump" aria-label="Project areas">
 <a href="#research"><b>Research</b> 3</a>
-<a href="#games"><b>Games</b> 4</a>
 <a href="#mini-projects"><b>Mini-projects</b> 7</a>
 </nav>
 
 <div class="wrap">
 <section class="area" id="research" aria-labelledby="research-h">
 <div class="area-head reveal">
-<div class="area-title"><span class="mono idx">01 / 03</span><h2 id="research-h">Research</h2><p>Datasets, evaluation diagnostics and vision pipelines, published with code and preprints.</p></div>
+<div class="area-title"><span class="mono idx">01 / 02</span><h2 id="research-h">Research</h2><p>Datasets, evaluation diagnostics and vision pipelines, published with code and preprints.</p></div>
 <span class="mono area-count">3 projects</span>
 </div>
 <div class="pgrid" data-page="5">
@@ -235,58 +232,9 @@ footer nav a:hover{color:var(--accent)}
 </div>
 <div class="more-wrap" hidden><button type="button" class="more mono">Load more</button></div>
 </section>
-<section class="area" id="games" aria-labelledby="games-h">
-<div class="area-head reveal">
-<div class="area-title"><span class="mono idx">02 / 03</span><h2 id="games-h">Games</h2><p>Games. Some are just fun; some let you play with how models work.</p></div>
-<span class="mono area-count">4 projects</span>
-</div>
-<div class="pgrid" data-page="5">
-<article class="card reveal card--wide" tabindex="-1">
-<div class="snip" style="background:#0B1020"><object type="image/svg+xml" data="animations/roblox-learnnlp.svg" role="img" aria-label="Animation: a player walks past five portals, one per sequence model from Naive Bayes to Transformers; each time they pass a portal&#x27;s quiz, the next one unlocks"></object></div>
-<div class="card-body">
-<div class="card-meta"><span class="mono tag">Roblox · Education</span><span class="badge badge--live mono"><i></i>Live</span></div>
-<h3>Roblox-LearnNLP</h3>
-<p>Explore how sequence models evolved, from Naive Bayes and Hidden Markov Models to RNNs, attention and Transformers. Walk through a 3D hub and learn with interactive lessons and quizzes.</p>
-<div class="mono stack">Roblox Studio · Luau</div>
-<div class="actions"><a class="btn btn--primary" href="https://www.roblox.com/games/72565218405440/Learn-Natural-Language-Processing" target="_blank" rel="noopener">Play on Roblox</a><a class="btn" href="https://github.com/Nyvora-Vision-Labs/Roblox-learn-natural-languge-processing" target="_blank" rel="noopener">GitHub</a></div>
-</div>
-</article>
-<article class="card reveal" tabindex="-1">
-<div class="snip" style="background:#0B1430"><object type="image/svg+xml" data="animations/miscrits-games.svg" role="img" aria-label="Animation: a Wordle board flips a guess with an on-screen keyboard, next to a word search where three words get circled"></object></div>
-<div class="card-body">
-<div class="card-meta"><span class="mono tag">Browser game</span><span class="badge badge--live mono"><i></i>Active</span></div>
-<h3>Miscrits Games</h3>
-<p>Two browser games in one: Miscrits Wordle, where you guess the name in six tries, and a word search with 400+ Miscrit names on a 12×12 grid.</p>
-<div class="mono stack">HTML · JS · JSON</div>
-<div class="actions"><a class="btn btn--primary" href="https://nyvora-vision-labs.github.io/WordleMiscrits/" target="_blank" rel="noopener">Play</a><a class="btn" href="https://github.com/Nyvora-Vision-Labs/WordleMiscrits" target="_blank" rel="noopener">GitHub</a></div>
-</div>
-</article>
-<article class="card reveal" tabindex="-1">
-<div class="snip" style="background:#0B1430"><object type="image/svg+xml" data="animations/guess-the-miscrit.svg" role="img" aria-label="Animation: a creature silhouette under a spotlight; after two wrong guesses and one right one it is revealed as a fire fox Miscrit with sparkles"></object></div>
-<div class="card-body">
-<div class="card-meta"><span class="mono tag">Browser game</span><span class="badge badge--live mono"><i></i>Active</span></div>
-<h3>Guess the Miscrit?!</h3>
-<p>A nostalgic web game. You see a silhouette and have to name the Miscrit behind it.</p>
-<div class="mono stack">HTML · JS · Python</div>
-<div class="actions"><a class="btn btn--primary" href="https://nyvora-vision-labs.github.io/Guess_the_Miscrit/" target="_blank" rel="noopener">Play</a><a class="btn" href="https://github.com/Nyvora-Vision-Labs/Guess_the_Miscrit" target="_blank" rel="noopener">GitHub</a></div>
-</div>
-</article>
-<article class="card reveal" tabindex="-1">
-<div class="snip" style="background:#0B1430"><object type="image/svg+xml" data="animations/arena-helper.svg" role="img" aria-label="Animation: a lobby screenshot is scanned, six Miscrits are detected one by one, then a ranked pick order fills in with scores"></object></div>
-<div class="card-body">
-<div class="card-meta"><span class="mono tag">Game tool</span><span class="badge badge--live mono"><i></i>Active</span></div>
-<h3>Miscrits Random Arena Helper</h3>
-<p>A draft analyzer that runs in the browser. Upload a lobby screenshot, and it detects every Miscrit and gives you a ranked pick order.</p>
-<div class="mono stack">HTML · Python</div>
-<div class="actions"><a class="btn btn--primary" href="https://nyvora-vision-labs.github.io/Miscrits-Random-Arena-Helper/" target="_blank" rel="noopener">Live demo</a><a class="btn" href="https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper" target="_blank" rel="noopener">GitHub</a></div>
-</div>
-</article>
-</div>
-<div class="more-wrap" hidden><button type="button" class="more mono">Load more</button></div>
-</section>
 <section class="area" id="mini-projects" aria-labelledby="mini-projects-h">
 <div class="area-head reveal">
-<div class="area-title"><span class="mono idx">03 / 03</span><h2 id="mini-projects-h">Mini-projects</h2><p>Small, focused tools that run in your browser or on your own computer.</p></div>
+<div class="area-title"><span class="mono idx">02 / 02</span><h2 id="mini-projects-h">Mini-projects</h2><p>Small, focused tools that run in your browser or on your own computer.</p></div>
 <span class="mono area-count">7 projects</span>
 </div>
 <div class="pgrid" data-page="5">
@@ -369,7 +317,7 @@ footer nav a:hover{color:var(--accent)}
 <div class="band reveal">
 <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:12px">
 <h2>Build with us</h2>
-<p>Bug fixes, features, docs, datasets and game ideas are all welcome. Open an issue, send a PR, or come say hi on Discord.</p>
+<p>Bug fixes, features, docs, datasets and ideas are all welcome. Open an issue, send a PR, or come say hi on Discord.</p>
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:12px">
 <a class="btn btn--lg" href="https://discord.gg/GXzFNKpnWr" target="_blank" rel="noopener">Join the Discord</a>

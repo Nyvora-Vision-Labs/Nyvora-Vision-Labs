@@ -7,7 +7,7 @@
 
 ## What We Do
 
-We publish machine learning research and datasets, make games, and build open source tools for machine learning — from data collection and annotation pipelines to inference utilities and dataset schemas, across both **vision** and **language**. Everything we build is free to use, fork, and contribute to.
+We publish machine learning research and datasets, and build open source tools for machine learning — from data collection and annotation pipelines to inference utilities and dataset schemas, across both **vision** and **language**. Everything we build is free to use, fork, and contribute to.
 
 - **Computer vision** — detection, classification, segmentation, and real-time inference pipelines
 - **Language & text** — annotated datasets, evaluation diagnostics, and annotation tooling for NLP
@@ -37,15 +37,6 @@ The website groups the work into three areas.
 | **[AI Chip Rack Counter](https://github.com/Nyvora-Vision-Labs/Chips-Counter)** | High-precision, computer-vision-based chip inventory system. Segment and classify bags using CLIP with Global NMS to avoid double-counting. | [Live Demo](https://huggingface.co/spaces/Gauurab/chips-counter) | Active (Python, Flask, CLIP) |
 | **[NEPSEE](https://github.com/Nyvora-Vision-Labs/NEPSEE-A-Nepali-Sentiment-Emotion-and-Explanation-Dataset)** | A Nepali-language sentiment, emotion, and explanation dataset. Tweets from 20 public figures are scraped, filtered, split into sentences, and independently labeled by three annotators through a purpose-built Flask annotation app. Sentiment annotation is in progress; emotion and explanation layers are planned next. | [Annotator Brief](https://nepsee-a-nepali-sentiment-emotion-and.onrender.com/brief) · [Preprint](https://arxiv.org/abs/2610.19190) | **Ongoing** (Python, Flask, Postgres) |
 | **[LexFlip](https://github.com/Nyvora-Vision-Labs/LexFlip)** | A diagnostic for legal-text simplification metrics. Dissociates lexical overlap from legal meaning to test whether embedding-based and LLM-judge metrics actually track meaning preservation — or just word overlap — validated on the FrJUDGE corpus. | [Preprint](https://arxiv.org/abs/2609.05296) | Research (Python, LaTeX) |
-
-### Games
-
-| Project | Description | Links | Status & Tech |
-| ------- | ----------- | ----- | ------------- |
-| **[Roblox-LearnNLP](https://github.com/Nyvora-Vision-Labs/Roblox-learn-natural-languge-processing)** | A Roblox experience that teaches the evolution of sequence models, from Naive Bayes and Hidden Markov Models to RNNs, attention, and Transformers, through a 3D hub, interactive lessons, and quizzes. | [Play on Roblox](https://www.roblox.com/games/72565218405440/Learn-Natural-Language-Processing) | Active (Roblox Studio, Luau) |
-| **[Miscrits Games](https://github.com/Nyvora-Vision-Labs/WordleMiscrits)** | Two Miscrits browser games in one page: Miscrits Wordle (guess the hidden Miscrit name in 6 tries) and a word search with 400+ Miscrit names hidden in a 12×12 grid. | [Live Demo](https://nyvora-vision-labs.github.io/WordleMiscrits/) | Active (HTML, JS, JSON) |
-| **[Guess the Miscrit?!](https://github.com/Nyvora-Vision-Labs/Guess_the_Miscrit)** | A nostalgic, interactive web game where players test their knowledge by guessing Miscrits based on their silhouettes. | [Live Demo](https://nyvora-vision-labs.github.io/Guess_the_Miscrit/) | Active (HTML, JS, Python) |
-| **[Miscrits Random Arena Helper](https://github.com/Nyvora-Vision-Labs/Miscrits-Random-Arena-Helper)** | Browser-based draft analyzer for Miscrits. Upload a lobby screenshot to get instant Miscrit detection and a ranked pick order. | [Live Demo](https://nyvora-vision-labs.github.io/Miscrits-Random-Arena-Helper/) | Active (HTML, Python) |
 
 ### Mini-projects
 
